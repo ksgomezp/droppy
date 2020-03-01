@@ -25,7 +25,7 @@
   | PUT/PATCH | `/photos/{photo}` | update | photos.update |
   | DELETE | `/photos/{photo}` | destroy | photos.destroy |
   
-  Use of PATCH is encouraged over PUT.
+  The use of PATCH is encouraged over PUT.
   
   Where `{photo}` matches the `id` of that record.
   
