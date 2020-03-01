@@ -1,6 +1,9 @@
 # Droppy
-a
-## Responsabilities
+
+## 1. Overview
+Before writing any code have a look at the [code guidelines](guidelines) that are to be used.
+
+## 2. Responsabilities
 - Kevyn Santiago Gómez Patiño
   - Comment
   - Receipt
