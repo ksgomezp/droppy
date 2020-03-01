@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', 'HomeController@index')->name("home.index");
+
+Route::get('/index', 'HomeController@index')->name("home.index");
+Route::get('/comment/show/{id}', 'CommentController@show')->name("comment.show");
+Route::get('/comment/list', 'CommentController@list')->name("comment.list");
+
+Route::get('/comment/create', 'CommentController@create')->name("comment.create");
+Route::post('/comment/save', 'CommentController@save')->name("comment.save");
+Route::get('/comment/delete/{id}', 'CommentController@delete')->name("comment.delete");
