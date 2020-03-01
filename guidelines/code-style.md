@@ -16,98 +16,92 @@
 
 ## 3. Formatting
 - Classes
-    ```
-    class Example
+    ```php
+    // Good
+    class ClassName
     {
-        # code...
+    	...
     }
-    ```
-    As opposed to 
-    ```
-    class Example {
-        # code...
+    
+    // Bad
+    class ClassName {
+    	...
     }
     ```
     
 - Functions
-    ```
+    ```php
+    // Good
     function functionName() 
     {
-        # code...
+    	...
     }
-    ```
-    As opposed to
-    ```
+    
+    // Bad
     function functionName() {
-        # code...
+    	...
     }
     ```
    
 - Ifs
-    ```
-    if (true) {
-        # code...
+    
+    ```php
+    // Good
+    if ($condition) {
+    	...
     } else {
-        # code...
+    	...
     }
-    ```
-    As opposed to
-    ```
-    if (true) 
+    
+    // Bad
+    if ($condition) 
     {
-        # code...
+    	...
     }
     else
     {
-        # code...
+    	...
     }
-    ```
 
+    // Bad
+    if ($condition) ...
+    ```
+    
 - Fors
-    ```
+    ```php
+    // Good
     for ($i = 0; $i < n; $i++) {
-        # code...
+    	...
     }
-    ```
-    As opposed to 
-    ```
+    
+    // Bad
     for ($i = 0; $i < 3; $i++) 
     {
-        # code...
+    	...
     }
     ```
     
 - Whiles
-    ```
-    while (true) {
-        # code...
-    }
-    ```
-    As opposed to
-    ```
-    while (true) {
-        # code...
-    }
-    ```
+  ```php
+  // Good
+  while (true) {
+    ...
+  }
+
+  // Bad
+  while (true) {
+    ...
+  }
+  ```
 
 ## 4. Comments
-- Single line comments **MUST** use the `#` syntax instead of `//`.
-  ```
-  # Proper comment
-  // Not a good comment
-  ```
-- Multiline comments are to be written like
-  ```
-  /*
-  * Multiple
-  * lines of
-  * comments
-  */
-  ```
-  Instead of
-  ```
-  /* Very
-  ugly
-  comment
-  */
-  ```
+Avoid using comments as much as possible. If truly needed use like them like this.
+```php
+// There should be a space before a single line comment.
+
+/*
+* If you need to explain a lot you can use a comment block. Notice the
+* single * on the first line. Comment blocks don't need to be three
+* lines long or three characters shorter than the previous line.
+*/
+```
