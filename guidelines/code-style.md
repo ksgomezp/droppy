@@ -34,7 +34,7 @@
     // Good
     function functionName() 
     {
-    	...
+        ...
     }
     
     // Bad
