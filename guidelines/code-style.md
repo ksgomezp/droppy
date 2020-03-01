@@ -1,8 +1,9 @@
 # Coding Style
 
 ## 1. Naming
-- Class names **MUST** be declared using Pascal Case and in the singular form. `MyClass`.
-- Methods, variables, parameters, arguments and attributes names **MUST** all be declared using Camel Case. `myIdentifier`.
+- All names **MUST** be in *English* only.
+- Class names **MUST** be declared using PascalCase and in the singular form. `MyClass`.
+- Methods, variables, parameters, arguments and attributes names **MUST** all be declared using camelCase. `myIdentifier`.
 - Constants **MUST** be declared in all upper case with underscore separators. `MY_CONSTANT`.
 
 ## 2. Files
@@ -44,7 +45,7 @@
     ```
    
 - Ifs
-    
+  
     ```php
     // Good
     if ($condition) {

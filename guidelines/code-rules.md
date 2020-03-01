@@ -83,7 +83,7 @@
   Route::get('', HomeController@index')->name('home.index');
   Route::get('/open-source', 'OpenSourceController@index')->name('openSource.index');
   ```
-  
-  
-  
-  
+
+## 5. Languages
+- All text that is to be displayed **MUST** be placed in `resource/lang/en/*` for *English* and `resource/lang/es/*` for *Spanish*. Any hardcoded text will be rejected.
+
