@@ -1,5 +1,5 @@
 # Droppy
-
+a
 ## Responsabilities
 - Kevyn Santiago Gómez Patiño
   - Comment
