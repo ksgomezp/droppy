@@ -20,14 +20,12 @@
   | GET | `/photos` | index | photos.index |
   | GET | `/photos/create` | create | photos.create |
   | POST | `/photos` | store | photos.store |
-  | GET | `/photos/{photo}` | show | photos.show |
-  | GET | `/photos/{photo}/edit` | edit | photos.edit |
-  | PUT/PATCH | `/photos/{photo}` | update | photos.update |
-  | DELETE | `/photos/{photo}` | destroy | photos.destroy |
+  | GET | `/photos/{photoId}` | show | photos.show |
+  | GET | `/photos/{photoId}/edit` | edit | photos.edit |
+  | PUT/PATCH | `/photos/{photoId}` | update | photos.update |
+  | DELETE | `/photos/{photoId}` | destroy | photos.destroy |
   
   The use of PATCH is encouraged over PUT.
-  
-  Where `{photo}` matches the `id` of that record.
   
 ## 3. Views
 - All views **MUST** be blade-based.
@@ -70,7 +68,7 @@
   ```
 - Route parameters and names **MUST** use camelCase.
   ```php
-  Route::get('news/{newsItem}', 'NewsItemsController@index')->name('newsItem.index'); 
+  Route::get('news/{newsItemId}', 'NewsItemsController@index')->name('newsItem.index'); 
   
   ```
 - A Route url **SHOULD NOT** start with `/` unless the url would be an empty string.
