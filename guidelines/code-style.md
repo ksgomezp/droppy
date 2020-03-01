@@ -20,12 +20,12 @@
     // Good
     class ClassName
     {
-    	...
+        ...
     }
     
     // Bad
     class ClassName {
-    	...
+        ...
     }
     ```
     
@@ -39,7 +39,7 @@
     
     // Bad
     function functionName() {
-    	...
+        ...
     }
     ```
    
@@ -48,19 +48,19 @@
     ```php
     // Good
     if ($condition) {
-    	...
+        ...
     } else {
-    	...
+        ...
     }
     
     // Bad
     if ($condition) 
     {
-    	...
+        ...
     }
     else
     {
-    	...
+        ...
     }
 
     // Bad
