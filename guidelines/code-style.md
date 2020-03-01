@@ -71,13 +71,13 @@
     ```php
     // Good
     for ($i = 0; $i < n; $i++) {
-    	...
+        ...
     }
     
     // Bad
     for ($i = 0; $i < n; $i++) 
     {
-    	...
+        ...
     }
     ```
     
@@ -85,12 +85,12 @@
   ```php
   // Good
   while (true) {
-    ...
+      ...
   }
 
   // Bad
   while (true) {
-    ...
+      ...
   }
   ```
 
