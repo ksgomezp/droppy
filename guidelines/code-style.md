@@ -1,11 +1,11 @@
 # Coding Style
 
-## Naming
+## 1. Naming
 - Class names **MUST** be declared using Pascal Case and in the singular form. `MyClass`.
 - Methods, variables, parameters, arguments and attributes names **MUST** all be declared using Camel Case. `myIdentifier`.
 - Constants **MUST** be declared in all upper case with underscore separators. `MY_CONSTANT`.
 
-## Files
+## 2. Files
 - All `.php` files **MUST** use the `<?php` tag at the beginning of the file and **NO** `?>` at the end.
 - If a `.php` file contains a class declaration it is to be named **EXACTLY** as the class is.
 - There **MUST NOT** be more than one class declared per file.
@@ -14,7 +14,7 @@
     - `use` statements.
     - `class` declaration.
 
-## Formatting
+## 3. Formatting
 - Classes
     ```
     class Example
@@ -90,7 +90,7 @@
     }
     ```
 
-## Comments
+## 4. Comments
 - Single line comments **MUST** use the `#` syntax instead of `//`.
   ```
   # Proper comment
