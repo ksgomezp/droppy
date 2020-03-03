@@ -96,7 +96,7 @@
   ```
 
 ## 4. Comments
-Avoid using comments as much as possible. If truly needed use like them like this.
+Avoid using comments as much as possible. If truly needed use them like this.
 ```php
 // There should be a space before a single line comment.
 
