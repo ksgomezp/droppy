@@ -22,7 +22,7 @@ class ProductController extends Controller
     {
         Product::validate($request);
         Product::create($request->only(["name", "description", "category", "stock", "price"]));
-        return back()->with('success', 'Product created successfully!');
+        return back()->with('success', 'true');
     }
 
     public function show($productId)

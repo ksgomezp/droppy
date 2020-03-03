@@ -11,11 +11,7 @@
                 <div class="card-body">
                 @foreach($products as $product)
                 <a href="{{ route('product.show', $product->getId()) }}">
-                    @if($loop->iteration < 3)
-                        <li class="font-weight-bold">{{ $product->getName() }}</li>
-                    @else
-                        <li>{{ $product->getName() }}</li>
-                    @endif
+                    <li>{{ $product->getName() }}</li>
                     </a>
                 @endforeach
                 </div>

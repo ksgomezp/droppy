@@ -2,5 +2,6 @@
 
 return [
     'welcome' => 'Welcome',
-    'home' => 'Home'
+    'home' => 'Home',
+    'success' => 'Product created successfully!'
 ];
