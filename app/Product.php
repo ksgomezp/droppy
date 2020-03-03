@@ -3,10 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Product extends Model
 {
-    // attributes id, name, price, created_at, updated_at
     protected $fillable = ['name', 'description', 'category', 'stock', 'price'];
 
     public static function validate(Request $request)
