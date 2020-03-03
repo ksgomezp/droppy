@@ -27,8 +27,8 @@ class ProductController extends Controller
 
     public function show($productId)
     {
-//        $product = Product::findOrFail($productId);
-        $product = Product::with('comments')->where('id', $productId)->get();
+       $product = Product::findOrFail($productId);
+        // $product = Product::with('comments')->where('id', $productId)->get();
         return view('product.show')->with("product", $product);
     }
 
