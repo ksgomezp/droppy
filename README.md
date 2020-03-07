@@ -9,6 +9,7 @@ Before writing any code have a look at the [code guidelines](guidelines) that ar
   - Receipt
 - Santiago Castrillón Galvis
   - User
+  - Login
 - Santiago Arredondo Quintero
   - Address
   - Item

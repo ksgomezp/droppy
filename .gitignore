@@ -18,6 +18,9 @@ public_html/hot
 # Mac
 .DS_Store
 
+# Jetbrains
+.idea
+
 storage/*.key
 .env
 Homestead.yaml
