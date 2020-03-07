@@ -3,7 +3,17 @@
 ## 1. Overview
 Before writing any code have a look at the [code guidelines](guidelines) that are to be used.
 
-## 2. Responsabilities
+## 2. Setup
+1. Glone the repo.
+2. Run the following commands.
+    1. `cp .env.example .env`. Modify .env as you see fit.
+    2. `composer install`.
+    3. `npm install`.
+    4. `php artisan key:generate`
+    5. `php artisan serve`
+  
+
+## 3. Responsabilities
 - Kevyn Santiago Gómez Patiño
   - Comment
   - Receipt
