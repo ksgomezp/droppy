@@ -11,9 +11,12 @@
                 <div class="card-body">
                     <b>Comment description:</b> {{ $data["comment"]->getDescription() }}<br />
                     <b>Comment date:</b> {{ $data["comment"]->getCreated() }}<br /><br />
-                    @csrf
-                    <a class ="btn btn-danger"  href="{{ route('comment.delete',['id'=> $data["comment"]->getId()]) }}">  Delete comment  </a>
-
+                    <form action="{{ route('comment.delete',['id'=> $data["comment"]->getId()]) }}" method="POST">
+                        @csrf
+                        {{ method_field('DELETE') }}
+                        <input class="btn btn-danger" type="submit" value="Delete" />
+                    </form>
+            
                 </div>
             </div>
         </div>
