@@ -4,8 +4,9 @@
 Before writing any code have a look at the [code guidelines](guidelines) that are to be used.
 
 ## 2. Setup
-1. Clone the repo.
-2. Run the following commands.
+1. Clone the repo using `git clone https://github.com/cgavir29/droppy.git`
+3. Run the following commands.
+    0. `cd droppy`
     1. `cp .env.example .env`. Modify `.env` as you see fit.
     2. `composer install`
     3. `npm install`
