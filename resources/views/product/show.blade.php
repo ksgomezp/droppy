@@ -14,9 +14,11 @@
                     <b>{{ __('products.stock') }}: </b> {{ $product->getStock() }} <br/>
                     <b>{{ __('products.price') }}: </b> {{ $product->getPrice() }} <br/>
                     <form method="POST" action="{{ route('product.destroy', $product->getId()) }}">
+                        @method('DELETE')
                         @csrf
+                        <a class="btn btn-success" href="{{ route('product.edit', $product->getId()) }}">{{ __('buttons.edit') }}</a>
                         <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />
-                    <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.cancel') }}</a>
+                        <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.cancel') }}</a>
                     </form>
 
                 </div>
