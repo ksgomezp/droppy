@@ -4,15 +4,15 @@
 Before writing any code have a look at the [code guidelines](guidelines) that are to be used.
 
 ## 2. Setup
-1. Clone the repo using `git clone https://github.com/cgavir29/droppy.git`
+1. Clone the repository using `git clone https://github.com/cgavir29/droppy.git`
 3. Run the following commands.
-    0. `cd droppy`
-    1. `cp .env.example .env`. Modify `.env` as you see fit.
-    2. `composer install`
-    3. `npm install`
-    4. `npm run dev`
-    5. `php artisan key:generate`
-    6. `php artisan serve`
+    1. `cd droppy`
+    2. `cp .env.example .env`. Modify `.env` as you see fit.
+    3. `composer install`
+    4. `npm install`
+    5. `npm run dev`
+    6. `php artisan key:generate`
+    7. `php artisan serve`
   
 
 ## 3. Responsabilities
