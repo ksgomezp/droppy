@@ -16,17 +16,4 @@ Before writing any code have a look at the [code guidelines](guidelines) that ar
     7. `php artisan migrate`
     8. `php artisan db:seed`
     7. `php artisan serve`
-  
-
-## 3. Responsabilities
-- Kevyn Santiago Gómez Patiño
-  - Comment
-  - Receipt
-- Santiago Castrillón Galvis
-  - User
-  - Login
-- Santiago Arredondo Quintero
-  - Address
-  - Item
-- Camilo Gaviria Castrillón
-  - Product
+ 
