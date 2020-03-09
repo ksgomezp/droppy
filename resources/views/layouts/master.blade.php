@@ -21,6 +21,9 @@
                 <a class="navbar-brand" href="{{ route('product.index') }}">
                     {{ __('products.products') }}
                 </a>
+                <a class="navbar-brand" href="{{ route('user.index') }}">
+                    {{ __('users.users') }}
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

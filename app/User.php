@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
     protected $fillable = ['name', 'email', 'password', 'phone', 'dateOfBirth'];
 /*
-    public static function validator(Request $request)
+    public static function validate(Request $request)
     {
         $request->validate([
             "name" => "required|max:50",
@@ -28,7 +28,7 @@ class User extends Authenticatable
         ]);
     }
 */
-    
+
 
     public function getId()
     {
