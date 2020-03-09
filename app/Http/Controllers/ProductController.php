@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('product.index')->with("products", $products);
+        return view('product.index')->with('products', $products);
     }
 
     public function create()
@@ -50,5 +50,12 @@ class ProductController extends Controller
     {
         Product::destroy($productId);
         return redirect()->route('product.index');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $products = Product::where('name', 'like', '%'.$search.'%')->get();
+        return view('product.index')->with('products', $products);
     }
 }
