@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header font-weight-bold">{{ __('users.user') }}</div>
+                <div class="card-header font-weight-bold">{{ __('users.users') }}</div>
                 <div class="card-body">
                 @foreach($users as $user)
                 <a href="{{ route('user.show', $user->getId()) }}">
