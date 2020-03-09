@@ -23,7 +23,7 @@ public function save(Request $request)
         return back();
     }
 
-    public function delete($id)
+public function delete($id)
         {
 
            $comment = Receipt::find($id);

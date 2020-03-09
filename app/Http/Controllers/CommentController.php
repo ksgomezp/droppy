@@ -18,7 +18,7 @@ class CommentController extends Controller
 
     public function list()
       {
-          $data = []; 
+          $data = [];
           $data["title"] = "Comments";
           $data["comments"] = Comment::all();
           return view('comment.list')->with("data",$data);
@@ -42,7 +42,7 @@ public function save(Request $request)
         return back()->with('success','Comment created successfully!');
     }
 
-    public function delete($id)
+    public function destroy($id)
         {
 
            $comment = Comment::find($id);
