@@ -9,8 +9,8 @@
             <div class="card">
 
                 <div class="card-body">
-                    <b>Comment description:</b> {{ $data["comment"]->getDescription() }}<br />
-                    <b>Comment date:</b> {{ $data["comment"]->getCreated() }}<br /><br />
+                    <b>{{ __('comments.description') }}:</b> {{ $data["comment"]->getDescription() }}<br />
+                    <b>{{ __('comments.date') }}:</b> {{ $data["comment"]->getCreated() }}<br /><br />
                     <form action="{{ route('comment.destroy',['commentId'=> $data["comment"]->getId()]) }}" method="POST">
                         @csrf
                         {{ method_field('DELETE') }}

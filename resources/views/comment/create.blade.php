@@ -8,7 +8,7 @@
         <div class="col-md-8">
           @include('util.message')
             <div class="card">
-                <div class="card-header">Create comment</div>
+                <div class="card-header">{{ __('comments.createCommentTag') }}</div>
                 <div class="card-body">
                 @if($errors->any())
                 <ul id="errors">
@@ -18,10 +18,10 @@
                 </ul>
                 @endif
 
-                <form method="POST" action="{{ route('comment.save') }}">
+                <form method="POST" action="{{ route('comment.store') }}">
                     @csrf
-                    <input type="text" placeholder="Enter description" name="description" value="{{ old('description') }}" />      
-                    <input type="submit" value="Send" />
+                    <input type="text" placeholder="Enter description" name="description" value="{{ old('description') }}" />
+                    <input class="btn btn-success" type="submit" value="Send" />
                 </form>
 
                 </div>

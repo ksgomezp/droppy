@@ -3,17 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Product;
 
 class Comment extends Model
 {
-
-    Public static function validate($request){
+  Public static function validate($request)
+    {
       $request->validate([
          "description" => "required"
       ]);
     }
-    //attributes id, name, price, created_at, updated_at
-    protected $fillable = ['description'];
+    //attributes id, description, product_id, created_at, updated_at
+    protected $fillable = ['description', 'product_id'];
 
     public function getId()
     {
@@ -30,13 +31,27 @@ class Comment extends Model
         return $this->attributes['description'];
     }
 
-    public function setDescription($description)
+    public function setDescription($desc)
     {
-        $this->attributes['description'] = $description;
+        $this->attributes['description'] = $desc;
+    }
+
+    public function getProductId()
+    {
+        return $this->attributes['product_id'];
+    }
+
+    public function setProductId($pId)
+    {
+        $this->attributes['product_id'] = $pId;
     }
 
     public function getCreated()
     {
         return $this->attributes['created_at'];
+    }
+
+    public function product(){
+        return $this->belongsTo(Product::class);
     }
 }

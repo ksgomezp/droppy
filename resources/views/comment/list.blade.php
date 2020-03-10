@@ -17,26 +17,20 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Id</th>
-                                            <th>Description</th>
-                                            <th>Date</th>
-                                            <th>Inspect </th>
+                                            <th>{{ __('comments.id') }}</th>
+                                            <th>{{ __('comments.description') }}</th>
+                                            <th>{{ __('comments.date') }}</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($data["comments"] as $comment)
                                         <tr>
-                                                @if ($loop->index < 2) 
-                                                <th>{{ $comment->getId() }}</th>
-                                                @else
+
                                                 <td>{{ $comment->getId() }}</td>
-                                                @endif
                                                 <td> {{ $comment->getDescription() }}</td>
                                                 <td> {{ $comment->getCreated() }}</td>
-                                                <td>
-                                                    <a class="btn btn-succes" href="{{ route('comment.show', ['id' => $comment->getId()]) }}"> View </a>
 
-                                                </td>
                                         </tr>
 
                                         @endforeach

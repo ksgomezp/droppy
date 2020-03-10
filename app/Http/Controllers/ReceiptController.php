@@ -16,7 +16,7 @@ class ReceiptController extends Controller
         return view('receipt.show')->with("data",$data);
     }
 
-public function save(Request $request)
+public function store(Request $request)
     {
         Comment::create($request->only(["totalAmount"]));
 

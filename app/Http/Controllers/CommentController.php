@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-  public function show($id)
+  public function show($commentId)
     {
         $data = []; //to be sent to the view
-        $comment = Comment::find($id);
+        $comment = Comment::find($commentId);
         $data["title"] = "comment ";
         $data["comment"] = $comment;
         return view('comment.show')->with("data",$data);
@@ -34,15 +34,15 @@ class CommentController extends Controller
       }
 
 
-public function save(Request $request)
+public function store(Request $request)
     {
         Comment::validate($request);
         Comment::create($request->only(["description"]));
 
-        return back()->with('success','Comment created successfully!');
+        return back()->with('success', 'true');
     }
 
-    public function destroy($id)
+public function destroy($id)
         {
 
            $comment = Comment::find($id);

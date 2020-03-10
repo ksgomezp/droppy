@@ -17,7 +17,10 @@
                         @csrf
                         <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />
                     <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.cancel') }}</a>
+                    <a class="btn btn-primary" href="{{ route('comment.create', ['productId' => $product->getId()])}}">{{ __('comments.createComment') }}</a>
+                    <a class="btn btn-info" href="{{ route('comment.list', ['productId' => $product->getId()])}}">{{ __('comments.viewComments') }}</a>
                     </form>
+
 
                 </div>
             </div>
