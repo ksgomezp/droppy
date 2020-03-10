@@ -11,6 +11,13 @@
 |
 */
 
+
+Route::get('products/{productId}/list/{commentId}', 'CommentController@show')->name("comment.show");
+Route::get('products/{productId}/list', 'CommentController@list')->name("comment.list");
+Route::get('products/{productId}/create', 'CommentController@create')->name("comment.create");
+Route::post('products/comment/store', 'CommentController@store')->name("comment.store");
+Route::delete('products/{productId}/list/{commentId}', 'CommentController@destroy')->name("comment.destroy");
+
 Route::get('/', 'HomeController@index')->name('home.index');
 
 Route::get('products', 'ProductController@index')->name('product.index');
