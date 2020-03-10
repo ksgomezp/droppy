@@ -14,19 +14,8 @@ class CommentController extends Controller
         $data = [];
         $data["title"] = "Comments";
         $data["product"] = Product::findOrFail($productId);
-        $data["comments"] = Comment::where('product_id', $productId)->get();
+        $data["comments"] = Comment::where('productId', $productId)->get();
         return view('comment.index')->with("data", $data);
-    }
-
-    public function show($productId, $commentId)
-    {
-        $comment = Comment::find($commentId);
-
-        $data = [];
-        $data["title"] = "comment ";
-        $data["comment"] = $comment;
-
-        return view('comment.show')->with("data", $data);
     }
 
     public function create($productId)
@@ -41,7 +30,7 @@ class CommentController extends Controller
     {
         Comment::validate($request);
         $attributes = $request->only(['description']);
-        $attributes['product_id'] = $productId;
+        $attributes['productId'] = $productId;
         Comment::create($attributes);
         return back()->with('success', 'Comment created successfully!');
     }

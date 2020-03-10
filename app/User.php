@@ -90,9 +90,6 @@ class User extends Authenticatable
         $this->attributes['dateOfBirth'] = $dateOfBirth;
     }
 
-
-
-
     /**
      * The attributes that should be hidden for arrays.
      *

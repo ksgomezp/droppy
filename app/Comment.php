@@ -8,7 +8,7 @@ use App\Product;
 
 class Comment extends Model
 {
-    protected $fillable = ['description', 'product_id'];
+    protected $fillable = ['description', 'productId'];
 
     public static function validate(Request $request)
     {
@@ -39,12 +39,12 @@ class Comment extends Model
 
     public function getProductId()
     {
-        return $this->attributes['product_id'];
+        return $this->attributes['productId'];
     }
 
     public function setProductId($pId)
     {
-        $this->attributes['product_id'] = $pId;
+        $this->attributes['productId'] = $pId;
     }
 
     public function getCreated()

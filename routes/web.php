@@ -34,4 +34,3 @@ Route::get('search', 'ProductController@search')->name('product.search');
 Route::get('products/{productId}/comments', 'CommentController@index')->name("comment.index");
 Route::get('products/{productId}/comments/create', 'CommentController@create')->name("comment.create");
 Route::post('products/{productId}/comments', 'CommentController@store')->name("comment.store");
-Route::get('products/{productId}/comments/{commentId}', 'CommentController@show')->name("comment.show");
