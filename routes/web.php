@@ -29,3 +29,11 @@ Route::patch('products/{productId}', 'ProductController@update')->name('product.
 Route::delete('products/{productId}', 'ProductController@destroy')->name('product.destroy');
 
 Route::get('search', 'ProductController@search')->name('product.search');
+
+Route::get('users', 'UserController@index')->name('user.index');
+Route::get('users/{userId}', 'UserController@show')->name('user.show');
+Route::delete('users/{userId}', 'UserController@destroy')->name('user.destroy');
+
+Route::get('search', 'ProductController@search')->name('product.search');
+
+Auth::routes();
