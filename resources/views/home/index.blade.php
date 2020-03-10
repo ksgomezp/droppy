@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header font-weight-bold">{{ __('messages.welcome') }}</div>
+                <div class="card-header font-weight-bold">{{ __('messages.home') }}</div>
 
                 <div class="card-body">
                     {{ __('messages.welcome') }}
