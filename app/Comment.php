@@ -32,9 +32,9 @@ class Comment extends Model
         return $this->attributes['description'];
     }
 
-    public function setDescription($desc)
+    public function setDescription($description)
     {
-        $this->attributes['description'] = $desc;
+        $this->attributes['description'] = $description;
     }
 
     public function getProductId()
@@ -42,9 +42,9 @@ class Comment extends Model
         return $this->attributes['productId'];
     }
 
-    public function setProductId($pId)
+    public function setProductId($productId)
     {
-        $this->attributes['productId'] = $pId;
+        $this->attributes['productId'] = $productId;
     }
 
     public function getCreated()
