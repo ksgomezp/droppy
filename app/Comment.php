@@ -3,18 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use App\Product;
 
 class Comment extends Model
 {
-  Public static function validate($request)
-    {
-      $request->validate([
-         "description" => "required"
-      ]);
-    }
-    //attributes id, description, product_id, created_at, updated_at
     protected $fillable = ['description', 'product_id'];
+
+    public static function validate(Request $request)
+    {
+        $request->validate([
+            "description" => "required"
+        ]);
+    }
 
     public function getId()
     {
@@ -51,7 +52,8 @@ class Comment extends Model
         return $this->attributes['created_at'];
     }
 
-    public function product(){
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
 }
