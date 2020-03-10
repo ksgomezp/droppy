@@ -9,11 +9,13 @@
             <div class="card">
                 <div class="card-header font-weight-bold">{{ __('users.users') }}</div>
                 <div class="card-body">
-                @foreach($users as $user)
-                <a href="{{ route('user.show', $user->getId()) }}">
-                    <li>{{ $user->getName() }}</li>
+                    <ul class="list-group">
+                    @foreach($users as $user)
+                    <a href="{{ route('user.show', $user->getId()) }}">
+                        <li class="list-group-item">{{ $user->getName() }}</li>
                     </a>
-                @endforeach
+                    @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
