@@ -34,10 +34,8 @@ Route::get('search', 'ProductController@search')->name('product.search');
 Route::get('products/{productId}/comments', 'CommentController@index')->name("comment.index");
 Route::get('products/{productId}/comments/create', 'CommentController@create')->name("comment.create");
 Route::post('products/{productId}/comments', 'CommentController@store')->name("comment.store");
-Route::get('products/{productId}/comments/{commentId}', 'CommentController@show')->name("comment.show");
-Route::delete('products/{productId}/comments/{commentId}', 'CommentController@destroy')->name("comment.destroy");
 
-//Address
+// Addresses
 Route::get('users/{userId}/addresses', 'AddressController@index')->name("address.index");
 Route::get('users/{userId}/addresses/create', 'AddressController@create')->name("address.create");
 Route::post('users/{userId}/addresses', 'AddressController@store')->name("address.store");

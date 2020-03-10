@@ -17,7 +17,6 @@ class UserController extends Controller
     public function show($userId)
     {
        $user = User::findOrFail($userId);
-        // $product = Product::with('comments')->where('id', $productId)->get();
         return view('user.show')->with("user", $user);
     }
 
