@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('product.index')->with("products", $products);
+        return view('product.index')->with('products', $products);
     }
 
     public function create()
@@ -27,24 +27,35 @@ class ProductController extends Controller
 
     public function show($productId)
     {
-       $product = Product::findOrFail($productId);
+        $product = Product::findOrFail($productId);
         // $product = Product::with('comments')->where('id', $productId)->get();
         return view('product.show')->with("product", $product);
     }
 
     public function edit($productId)
     {
-        return;
+        $product = Product::findOrFail($productId);
+        return view('product.edit')->with('product', $product);
     }
 
-    public function update($productId)
+    public function update(Request $request, $productId)
     {
-        return;
+        Product::validate($request);
+        $product = Product::findOrFail($productId);
+        $product->update($request->all());
+        return redirect()->route('product.index');
     }
 
     public function destroy($productId)
     {
         Product::destroy($productId);
         return redirect()->route('product.index');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $products = Product::where('name', 'like', '%'.$search.'%')->get();
+        return view('product.index')->with('products', $products);
     }
 }

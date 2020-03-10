@@ -7,13 +7,25 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header font-weight-bold">{{ __('products.product') }}</div>
+                <div class="card-header font-weight-bold">{{ __('products.products') }}</div>
                 <div class="card-body">
-                @foreach($products as $product)
-                <a href="{{ route('product.show', $product->getId()) }}">
-                    <li>{{ $product->getName() }}</li>
-                    </a>
-                @endforeach
+                    <form method="GET" action="{{ route('product.search') }}">
+                        <div class="input-group mb-3">
+                          <input type="search" class="form-control" name="search" placeholder="Search">
+                          <div class="input-group-append">
+                            <span class="form-group-btn">
+                                <button type="submit" class="btn btn-primary">{{ __('buttons.search') }}</button>
+                            </span>
+                          </div>
+                        </div>
+                    </form>
+                    <ul class="list-group">
+                        @foreach($products as $product)
+                        <a href="{{ route('product.show', $product->getId()) }}">
+                            <li class="list-group-item">{{ $product->getName() }}</li>
+                        </a>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
