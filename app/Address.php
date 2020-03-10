@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class Address extends Model
 {
-    protected $fillable = ['country', 'state', 'city', 'deliveryAddress', 'postalCode'];
+    protected $fillable = ['country', 'state', 'city', 'deliveryAddress', 'postalCode','userId'];
     
     public static function validate(Request $request)
     {
@@ -78,5 +78,20 @@ class Address extends Model
     public function setPostalCode($postalCode)
     {
         $this->attributes['postalCode'] = $postalCode;
+    }
+
+    public function setUserId($userId)
+    {
+        $this->attributes['userId'] = $userId;
+    }
+
+    public function getUserId()
+    {
+        return $this->attributes['userId'];
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

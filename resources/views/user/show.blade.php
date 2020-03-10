@@ -16,6 +16,8 @@
                     <form method="POST" action="{{ route('user.destroy', $user->getId()) }}">
                         @method('DELETE')
                         @csrf
+                        <a class="btn btn-primary" href="{{ route('address.create', $user->getId()) }}">{{ __('addresses.createAddress') }}</a>
+                        <a class="btn btn-info" href="{{ route('address.index', $user->getId()) }}">{{ __('addresses.viewAddress') }}</a>
                         <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />
                         <a class="btn btn-light" href="{{ route('user.index') }}">{{ __('buttons.cancel') }}</a>
                     </form>

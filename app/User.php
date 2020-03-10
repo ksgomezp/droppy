@@ -90,7 +90,10 @@ class User extends Authenticatable
         $this->attributes['dateOfBirth'] = $dateOfBirth;
     }
 
-
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
 
 
     /**
