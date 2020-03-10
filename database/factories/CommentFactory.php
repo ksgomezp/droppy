@@ -20,7 +20,6 @@ use Illuminate\Support\Str;
 $factory->define(Comment::class, function (Faker $faker) {
     return [
         'description' => $faker->realText,
-        'product_id' => numberBetween($min = 0, $max = 500),
-
+        'product_id' => $faker->numberBetween($min = 0, $max = 500),
     ];
 });
