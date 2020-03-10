@@ -3,5 +3,8 @@
 return [
     'create' => 'Create',
     'cancel' => 'Cancel',
-    'delete' => 'Delete'
+    'delete' => 'Delete',
+    'login' => 'Login',
+    'logout' => 'Logout',
+    'register' => 'Register'
 ];
