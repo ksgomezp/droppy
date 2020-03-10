@@ -1,11 +1,14 @@
 <?php
 
 return [
-    'user' => 'user',
-    'users' => "users",
+    'user' => 'User',
+    'users' => "Users",
     'createProduct' => 'Create Product',
     'name' => 'Name',
+    'password' => 'Password',
+    'confirmPassword' => 'Confirm Password',
     'phone' => 'Phone',
     'email' => 'E-mail',
-    'dateOfBirth' => 'Date Of Birth',
+    'emailadress' => 'E-Mail Address',
+    'dateOfBirth' => 'Date Of Birth'
 ];
