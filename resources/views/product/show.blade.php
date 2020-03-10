@@ -9,10 +9,10 @@
             <div class="card">
                 <div class="card-header font-weight-bold">{{ $product->getName() }}</div>
                 <div class="card-body">
-                    <b>{{ __('products.description') }}: </b> {{ $product->getDescription() }}<br/>
-                    <b>{{ __('products.category') }}: </b> {{ $product->getCategory() }}<br/>
-                    <b>{{ __('products.stock') }}: </b> {{ $product->getStock() }} <br/>
-                    <b>{{ __('products.price') }}: </b> {{ $product->getPrice() }} <br/>
+                    <b>{{ __('products.description') }}: </b> {{ $product->getDescription() }}<br />
+                    <b>{{ __('products.category') }}: </b> {{ $product->getCategory() }}<br />
+                    <b>{{ __('products.stock') }}: </b> {{ $product->getStock() }} <br />
+                    <b>{{ __('products.price') }}: </b> {{ $product->getPrice() }} <br />
                     <form method="POST" action="{{ route('product.destroy', $product->getId()) }}">
                         @method('DELETE')
                         @csrf
@@ -20,8 +20,8 @@
                         <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />
 
 
-                    <a class="btn btn-primary" href="{{ route('comment.create', ['productId' => $product->getId()])}}">{{ __('comments.createComment') }}</a>
-                    <a class="btn btn-info" href="{{ route('comment.list', ['productId' => $product->getId()])}}">{{ __('comments.viewComments') }}</a>
+                        <a class="btn btn-primary" href="{{ route('comment.create', ['productId' => $product->getId()])}}">{{ __('comments.createComment') }}</a>
+                        <a class="btn btn-info" href="{{ route('comment.list', ['productId' => $product->getId()])}}">{{ __('comments.viewComments') }}</a>
 
                         <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.cancel') }}</a>
 

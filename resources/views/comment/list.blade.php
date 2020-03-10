@@ -27,9 +27,9 @@
                                         @foreach($data["comments"] as $comment)
                                         <tr>
 
-                                                <td>{{ $comment->getId() }}</td>
-                                                <td> {{ $comment->getDescription() }}</td>
-                                                <td> {{ $comment->getCreated() }}</td>
+                                            <td>{{ $comment->getId() }}</td>
+                                            <td> {{ $comment->getDescription() }}</td>
+                                            <td> {{ $comment->getCreated() }}</td>
 
                                         </tr>
 

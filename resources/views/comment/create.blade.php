@@ -6,23 +6,23 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          @include('util.message')
+            @include('util.message')
             <div class="card">
                 <div class="card-header">{{ __('comments.createCommentTag') }}</div>
                 <div class="card-body">
-                @if($errors->any())
-                <ul id="errors">
-                    @foreach($errors->all() as $error)
+                    @if($errors->any())
+                    <ul id="errors">
+                        @foreach($errors->all() as $error)
                         <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-                @endif
+                        @endforeach
+                    </ul>
+                    @endif
 
-                <form method="POST" action="{{ route('comment.store') }}">
-                    @csrf
-                    <input type="text" placeholder="Enter description" name="description" value="{{ old('description') }}" />
-                    <input class="btn btn-success" type="submit" value="Send" />
-                </form>
+                    <form method="POST" action="{{ route('comment.store') }}">
+                        @csrf
+                        <input type="text" placeholder="Enter description" name="description" value="{{ old('description') }}" />
+                        <input class="btn btn-success" type="submit" value="Send" />
+                    </form>
 
                 </div>
             </div>

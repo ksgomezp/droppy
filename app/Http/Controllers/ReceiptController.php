@@ -1,35 +1,33 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Receipt;
 use Illuminate\Http\Request;
 
 
 class ReceiptController extends Controller
 {
-  public function show($id)
+    public function show($receiptId)
     {
         $data = []; //to be sent to the view
-        $receipt = Receipt::find($id);
+        $receipt = Receipt::find($receiptId);
         $data["title"] = "Receipt ";
         $data["receipt"] = $receipt;
-        return view('receipt.show')->with("data",$data);
+        return view('receipt.show')->with("data", $data);
     }
 
-public function store(Request $request)
+    public function store(Request $request)
     {
-        Comment::create($request->only(["totalAmount"]));
+        Receipt::create($request->only(["totalAmount"]));
 
         return back();
     }
 
-public function delete($id)
-        {
+    public function delete($receiptId)
+    {
 
-           $comment = Receipt::find($id);
-           $comment->delete();
-
-            return redirect()->route('home.index');
-        }
-
+        Receipt::destroy($receiptId);
+        return redirect()->route('home.index');
+    }
 }
