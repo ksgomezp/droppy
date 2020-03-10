@@ -6,5 +6,8 @@ return [
     'delete' => 'Delete',
     'save' => 'Save',
     'edit' => 'Edit',
-    'search' => 'Search'
+    'search' => 'Search',
+    'login' => 'Login',
+    'logout' => 'Logout',
+    'register' => 'Register'
 ];
