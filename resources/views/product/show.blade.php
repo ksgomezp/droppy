@@ -13,21 +13,17 @@
                     <b>{{ __('products.category') }}: </b> {{ $product->getCategory() }}<br />
                     <b>{{ __('products.stock') }}: </b> {{ $product->getStock() }} <br />
                     <b>{{ __('products.price') }}: </b> {{ $product->getPrice() }} <br />
+                    <br/>
                     <form method="POST" action="{{ route('product.destroy', $product->getId()) }}">
                         @method('DELETE')
                         @csrf
+                        <a class="btn btn-primary" href="{{ route('comment.create', $product->getId()) }}">{{ __('comments.createComment') }}</a>
+                        <a class="btn btn-info" href="{{ route('comment.index', $product->getId()) }}">{{ __('comments.viewComments') }}</a>
                         <a class="btn btn-success" href="{{ route('product.edit', $product->getId()) }}">{{ __('buttons.edit') }}</a>
-                        <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />
-
-
-                        <a class="btn btn-primary" href="{{ route('comment.create', ['productId' => $product->getId()])}}">{{ __('comments.createComment') }}</a>
-                        <a class="btn btn-info" href="{{ route('comment.list', ['productId' => $product->getId()])}}">{{ __('comments.viewComments') }}</a>
-
                         <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.cancel') }}</a>
-
+                        <br/><br/>
+                        <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />
                     </form>
-
-
                 </div>
             </div>
         </div>

@@ -2,52 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use App\Comment;
 use Illuminate\Http\Request;
 
-
 class CommentController extends Controller
 {
-    public function show($commentId)
-    {
-        $data = []; //to be sent to the view
-        $comment = Comment::find($commentId);
-        $data["title"] = "comment ";
-        $data["comment"] = $comment;
-        return view('comment.show')->with("data", $data);
-    }
 
-    public function list()
+    public function index($productId)
     {
         $data = [];
         $data["title"] = "Comments";
-        $data["comments"] = Comment::all();
-        return view('comment.list')->with("data", $data);
+        $data["product"] = Product::findOrFail($productId);
+        $data["comments"] = Comment::where('product_id', $productId)->get();
+        return view('comment.index')->with("data", $data);
     }
 
+    public function show($productId, $commentId)
+    {
+        $comment = Comment::find($commentId);
 
-    public function create()
+        $data = [];
+        $data["title"] = "comment ";
+        $data["comment"] = $comment;
+
+        return view('comment.show')->with("data", $data);
+    }
+
+    public function create($productId)
     {
         $data = [];
         $data["title"] = "Create comment";
-
+        $data["product"] = Product::findOrFail($productId);
         return view('comment.create')->with("data", $data);
     }
 
-
-    public function store(Request $request)
+    public function store(Request $request, $productId)
     {
         Comment::validate($request);
-        Comment::create($request->only(["description"]));
-
-        return back()->with('success', 'true');
+        $attributes = $request->only(['description']);
+        $attributes['product_id'] = $productId;
+        Comment::create($attributes);
+        return back()->with('success', 'Comment created successfully!');
     }
 
-    public function destroy($commentId)
+    public function destroy($productId, $commentId)
     {
-
         Comment::destroy($commentId);
-
-        return redirect()->route('comment.list');
+        return redirect()->route('comment.index');
     }
 }

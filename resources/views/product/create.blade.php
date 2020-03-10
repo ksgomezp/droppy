@@ -41,6 +41,7 @@
                             <input class="form-control" type="text" placeholder="Enter price" name="price" value="{{ old('price') }}" />
                         </div>
                     <input class="btn btn-primary" type="submit" value="{{ __('buttons.create') }}" />
+                    <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.cancel') }}</a>
                     </form>
                 </div>
             </div>
