@@ -35,4 +35,3 @@ Route::get('products/{productId}/comments', 'CommentController@index')->name("co
 Route::get('products/{productId}/comments/create', 'CommentController@create')->name("comment.create");
 Route::post('products/{productId}/comments', 'CommentController@store')->name("comment.store");
 Route::get('products/{productId}/comments/{commentId}', 'CommentController@show')->name("comment.show");
-Route::delete('products/{productId}/comments/{commentId}', 'CommentController@destroy')->name("comment.destroy");

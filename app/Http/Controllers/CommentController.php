@@ -46,9 +46,4 @@ class CommentController extends Controller
         return back()->with('success', 'Comment created successfully!');
     }
 
-    public function destroy($productId, $commentId)
-    {
-        Comment::destroy($commentId);
-        return redirect()->route('comment.index');
-    }
 }
