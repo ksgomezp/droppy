@@ -21,12 +21,12 @@ class UserController extends Controller
         return view('user.show')->with("user", $user);
     }
 
-    public function edit($productId)
+    public function edit($userId)
     {
         return;
     }
 
-    public function update($productId)
+    public function update($userId)
     {
         return;
     }
