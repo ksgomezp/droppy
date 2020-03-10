@@ -25,4 +25,6 @@ Route::get('users', 'UserController@index')->name('user.index');
 Route::get('users/{userId}', 'UserController@show')->name('user.show');
 Route::delete('users/{userId}', 'UserController@destroy')->name('user.destroy');
 
+Route::get('search', 'ProductController@search')->name('product.search');
+
 Auth::routes();
