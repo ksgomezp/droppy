@@ -27,3 +27,5 @@ Route::get('products/{productId}', 'ProductController@show')->name('product.show
 Route::get('products/{productId}/edit', 'ProductController@edit')->name('product.edit');
 Route::patch('products/{productId}', 'ProductController@update')->name('product.update');
 Route::delete('products/{productId}', 'ProductController@destroy')->name('product.destroy');
+
+Route::get('search', 'ProductController@search')->name('product.search');
