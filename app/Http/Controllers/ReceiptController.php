@@ -10,10 +10,9 @@ class ReceiptController extends Controller
 {
     public function show($receiptId)
     {
-        $data = []; //to be sent to the view
-        $receipt = Receipt::find($receiptId);
-        $data["title"] = "Receipt ";
-        $data["receipt"] = $receipt;
+        $data = [];
+        $data["receipt"] = Receipt::find($receiptId);
+
         return view('receipt.show')->with("data", $data);
     }
 
@@ -26,8 +25,8 @@ class ReceiptController extends Controller
 
     public function delete($receiptId)
     {
-
         Receipt::destroy($receiptId);
+
         return redirect()->route('home.index');
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section("title", $data["title"])
+@section("title", __('comments.createComment'))
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
         <div class="col-md-8">
             @include('util.message')
             <div class="card">
-                <div class="card-header font-weight-bold">{{ __('comments.createCommentTag') }}</div>
+                <div class="card-header font-weight-bold">{{ __('comments.createComment') }}</div>
                 <div class="card-body">
                     @if($errors->any())
                     <ul id="errors">

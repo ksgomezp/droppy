@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section("title", $data["title"])
+@section("title", __('comments.comments'))
 
 @section('content')
 <div class="container">

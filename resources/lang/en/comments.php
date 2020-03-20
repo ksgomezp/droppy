@@ -2,11 +2,10 @@
 
 return [
   'comments' => 'Comments',
-  'createComment' => 'Comment this product',
-  'createCommentTag' => 'Create comment',
+  'commentProduct' => 'Comment this product',
+  'createComment' => 'Create comment',
   'viewComments' => 'Show all comments',
   'id' => 'Id',
   'description' => 'Description',
-  'date' =>'Date'
-
+  'date' => 'Date'
 ];
