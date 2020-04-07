@@ -20,7 +20,7 @@
                         </div>
                     </form>
                     <ul class="list-group">
-                        @foreach($products as $product)
+                        @foreach($data['products'] as $product)
                         <a href="{{ route('product.show', $product->getId()) }}">
                             <li class="list-group-item">{{ $product->getName() }}</li>
                         </a>

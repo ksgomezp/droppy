@@ -1,8 +1,11 @@
 # Coding Rules
 
 ## 1. Models
+
+- Access and changes to attributes **MUST ALWAYS** be done using getters and setters.
 - Validations **MUST** be made here and not in controller.
 - Avoid triggering lazy loading when querying. If certain attribute information is needed, load it before hand.
+
   ```php
   // Good
   Product::with('comments')->get();
@@ -12,6 +15,7 @@
   ```
 
 ## 2. Controllers
+
 - **NEVER** use `echo` in a controller.
 - Stick to default CRUD keywords (`index`, `create`, `store`, `show`, `edit`, `update`, `destroy`).
 - Use the following guideline for controller names and routes.
@@ -28,11 +32,13 @@
   The use of PATCH is encouraged over PUT.
   
 ## 3. Views
+
 - All views **MUST** be blade-based.
 - All views **MUST** extend from the `layout.master` view.
 - There **MUST NOT** be any PHP in a view.
 - View files **MUST** use camelCase and be grouped in a directory.
-  ```
+
+  ```php
   resources/
     views/
       openSource/
@@ -53,12 +59,16 @@
   ```
 
 ## 4. Routes
-- Every route **MUST** be linked to a controller. 
+
+- Every route **MUST** be linked to a controller.
 - All routes **MUST** use the following form.
+
   ```php
   Route::get('/', 'HomeController@index')->name('home.index');
   ```
+
 - All routes **MUST** be named.
+
   ```php
   // Good
   Route::get('/', 'HomeController@index')->name('home.index');
@@ -66,12 +76,15 @@
   // Bad
   Route::get('/', 'HomeController@index');
   ```
+
 - Route parameters and names **MUST** use camelCase.
+
   ```php
-  Route::get('news/{newsItemId}', 'NewsItemsController@index')->name('newsItem.index'); 
-  
+  Route::get('news/{newsItemId}', 'NewsItemsController@index')->name('newsItem.index');
   ```
+
 - A Route url **SHOULD NOT** start with `/` unless the url would be an empty string.
+
   ```php
   // Good
   Route::get('/', HomeController@index')->name('home.index');
@@ -83,5 +96,5 @@
   ```
 
 ## 5. Languages
-- All text that is to be displayed **MUST** be placed in `resource/lang/en/*` for *English* and `resource/lang/es/*` for *Spanish*. Any hardcoded text will be rejected.
 
+- All text that is to be displayed **MUST** be placed in `resource/lang/en/*` for *English* and `resource/lang/es/*` for *Spanish*. Any hardcoded text will be rejected.

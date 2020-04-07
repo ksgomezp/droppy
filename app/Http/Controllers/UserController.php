@@ -9,15 +9,19 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        return view('user.index')->with("users", $users);
+        $data = [];
+        $data['users'] = User::all();
+
+        return view('user.index')->with('data', $data);
     }
 
 
     public function show($userId)
     {
-       $user = User::findOrFail($userId);
-        return view('user.show')->with("user", $user);
+        $data = [];
+        $data['user'] = User::findOrFail($userId);
+
+        return view('user.show')->with('data', $data);
     }
 
     public function edit($userId)
@@ -33,6 +37,7 @@ class UserController extends Controller
     public function destroy($userId)
     {
         User::destroy($userId);
+
         return redirect()->route('user.index');
     }
 }

@@ -10,5 +10,6 @@ return [
     'phone' => 'Phone',
     'email' => 'E-mail',
     'emailadress' => 'E-Mail Address',
-    'dateOfBirth' => 'Date Of Birth'
+    'dateOfBirth' => 'Date Of Birth',
+    'wallet' => 'Wallet'
 ];

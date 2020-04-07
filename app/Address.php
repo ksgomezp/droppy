@@ -7,16 +7,15 @@ use Illuminate\Http\Request;
 
 class Address extends Model
 {
-    protected $fillable = ['country', 'state', 'city', 'deliveryAddress', 'postalCode','userId'];
-    
+    protected $fillable = ['deliveryAddress', 'postalCode', 'userId', 'cityId'];
+
     public static function validate(Request $request)
     {
         $request->validate([
-            "country" => "required|max:50",
-            "state" => "required|max:50",
-            "city" => "required|max:50",
-            "deliveryAddress" => "required|max:50",
-            "postalCode" => "required|max:50"
+            'deliveryAddress' => 'required|max:50',
+            'postalCode' => 'required|numeric|min:000000|max:999999',
+            'userId' => 'required',
+            'cityId' => 'required'
         ]);
     }
 
@@ -28,36 +27,6 @@ class Address extends Model
     public function setId($id)
     {
         $this->attributes['id'] = $id;
-    }
-
-    public function getCountry()
-    {
-        return $this->attributes['country'];
-    }
-
-    public function setCountry($country)
-    {
-        $this->attributes['country'] = $country;
-    }
-
-    public function getState()
-    {
-        return $this->attributes['state'];
-    }
-
-    public function setState($state)
-    {
-        $this->attributes['state'] = $state;
-    }
-
-    public function getCity()
-    {
-        return $this->attributes['city'];
-    }
-
-    public function setCity($city)
-    {
-        $this->attributes['city'] = $city;
     }
 
     public function getDeliveryAddress()
@@ -80,18 +49,38 @@ class Address extends Model
         $this->attributes['postalCode'] = $postalCode;
     }
 
-    public function setUserId($userId)
-    {
-        $this->attributes['userId'] = $userId;
-    }
-
     public function getUserId()
     {
         return $this->attributes['userId'];
     }
 
+    public function setUserId($userId)
+    {
+        $this->attributes['userId'] = $userId;
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function getCityId()
+    {
+        return $this->attributes['cityId'];
+    }
+
+    public function setCityId($cityId)
+    {
+        $this->attributes['cityId'] = $cityId;
+    }
+
+    public function cities()
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function receipts()
+    {
+        return $this->hasMany(Receipt::class);
     }
 }

@@ -3,5 +3,6 @@
 return [
     'welcome' => 'Welcome to Droppy',
     'home' => 'Home',
-    'droppy' => 'Droppy'
+    'droppy' => 'Droppy',
+    'success' => 'Created successfully!'
 ];
