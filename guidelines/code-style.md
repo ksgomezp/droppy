@@ -5,6 +5,7 @@
 - Class names **MUST** be declared using PascalCase and in the singular form. `MyClass`.
 - Methods, variables, parameters, arguments and attributes names **MUST** all be declared using camelCase. `myIdentifier`.
 - Constants **MUST** be declared in all upper case with underscore separators. `MY_CONSTANT`.
+- All php strings **MUST** use single quotes `''` only unless completely necessary.
 
 ## 2. Files
 - All `.php` files **MUST** use the `<?php` tag at the beginning of the file and **NO** `?>` at the end.
