@@ -24,7 +24,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         Product::validate($request);
-        Product::create($request->only(["name", "description", "category", "stock", "price"]));
+        Product::create($request->only(['name', 'description', 'stock', 'price']));
 
         return back()->with('success', 'true');
     }

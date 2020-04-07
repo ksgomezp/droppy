@@ -6,6 +6,7 @@ return [
   'createComment' => 'Create comment',
   'viewComments' => 'Show all comments',
   'id' => 'Id',
-  'description' => 'Description',
-  'date' => 'Date'
+  'content' => 'Content',
+  'date' => 'Date',
+  'speakYourMind' => 'Speak Your Mind!'
 ];

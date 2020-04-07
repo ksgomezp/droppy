@@ -4,16 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use App\Product;
 
 class Comment extends Model
 {
-    protected $fillable = ['description', 'productId'];
+    protected $fillable = ['content', 'productId'];
 
     public static function validate(Request $request)
     {
         $request->validate([
-            "description" => "required"
+            "content" => "required"
         ]);
     }
 
@@ -27,14 +26,14 @@ class Comment extends Model
         $this->attributes['id'] = $id;
     }
 
-    public function getDescription()
+    public function getContent()
     {
-        return $this->attributes['description'];
+        return $this->attributes['content'];
     }
 
-    public function setDescription($description)
+    public function setContent($content)
     {
-        $this->attributes['description'] = $description;
+        $this->attributes['content'] = $content;
     }
 
     public function getProductId()

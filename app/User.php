@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
@@ -15,20 +16,42 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'phone', 'dateOfBirth'];
-/*
+    protected $fillable = ['name', 'email', 'password', 'phone', 'dateOfBirth', 'wallet', 'isAdmin'];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    protected $attributes = [
+        'isAdmin' => false
+    ];
+
     public static function validate(Request $request)
     {
         $request->validate([
-            "name" => "required|max:50",
-            'email' => "required|email|unique:users",
-            'password' => "required|string|min:8|confirmed",
-            'phone' => "required|numeric|gte:0|min:7",
-            'dateOfBirth' => "required|date"
+            'name' => 'required|max:50',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+            'phone' => 'required|numeric|min:3000000000',
+            'dateOfBirth' => 'required|date',
+            'wallet' => 'required|gte:0',
+            'isAdmin' => 'required'
         ]);
     }
-*/
-
 
     public function getId()
     {
@@ -90,26 +113,33 @@ class User extends Authenticatable
         $this->attributes['dateOfBirth'] = $dateOfBirth;
     }
 
+    public function getWallet()
+    {
+        return $this->attributes['wallet'];
+    }
+
+    public function setWallet($wallet)
+    {
+        $this->attributes['wallet'] = $wallet;
+    }
+
+    public function getIsAdmin()
+    {
+        return $this->attributes['isAdmin'];
+    }
+
+    public function setIsAdmin($isAdmin)
+    {
+        $this->attributes['isAdmin'] = $isAdmin;
+    }
+
     public function addresses()
     {
         return $this->hasMany(Address::class);
     }
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function receipts()
+    {
+        return $this->hasMany(Receipt::class);
+    }
 }

@@ -20,14 +20,16 @@
                     <form method="POST" action="{{ route('comment.store', $data['product']->getId()) }}">
                         @csrf
                         <div class="input-group mb-3">
-                            <input class="form-control" type="text" placeholder="Enter description" name="description" value="{{ old('description') }}" />
+                            <input class="form-control" type="text" placeholder="{{ __('comments.speakYourMind') }}"
+                                name="content" value="{{ old('content') }}" />
                             <div class="input-group-append">
                                 <span class="form-group-btn">
                                     <input class="btn btn-success" type="submit" value="Send" />
                                 </span>
                             </div>
                         </div>
-                        <a class="btn btn-light" href="{{ route('product.show', $data['product']->getId()) }}">{{ __('buttons.cancel') }}</a>
+                        <a class="btn btn-light"
+                            href="{{ route('product.show', $data['product']->getId()) }}">{{ __('buttons.cancel') }}</a>
                     </form>
                 </div>
             </div>

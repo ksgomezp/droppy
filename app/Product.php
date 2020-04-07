@@ -7,16 +7,15 @@ use Illuminate\Http\Request;
 
 class Product extends Model
 {
-    protected $fillable = ['name', 'description', 'category', 'stock', 'price'];
+    protected $fillable = ['name', 'description', 'stock', 'price'];
 
     public static function validate(Request $request)
     {
         $request->validate([
-            "name" => "required|max:50",
-            "description" => "required|max:255",
-            "category" => "required|max:20",
-            "stock" => "required|numeric|gte:0",
-            "price" => "required|numeric|gt:0"
+            'name' => 'required|max:50',
+            'description' => 'required|max:255',
+            'stock' => 'required|numeric|gte:0',
+            'price' => 'required|numeric|gte:0'
         ]);
     }
 
@@ -78,6 +77,16 @@ class Product extends Model
     public function setPrice($price)
     {
         $this->attributes['price'] = $price;
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
     }
 
     public function comments()

@@ -11,19 +11,19 @@ class AddressController extends Controller
     public function index($userId)
     {
         $data = [];
-        $data["user"] = User::findOrFail($userId);
-        $data["addresses"] = Address::where('userId', $userId)->get();
+        $data['user'] = User::findOrFail($userId);
+        $data['addresses'] = Address::where('userId', $userId)->get();
 
-        return view('address.index')->with("data", $data);
+        return view('address.index')->with('data', $data);
     }
 
 
     public function create($userId)
     {
         $data = [];
-        $data["user"] = User::findOrFail($userId);
+        $data['user'] = User::findOrFail($userId);
 
-        return view('address.create')->with("data", $data);
+        return view('address.create')->with('data', $data);
     }
 
     public function store(Request $request, $userId)

@@ -24,6 +24,12 @@
                 <a class="navbar-brand" href="{{ route('product.index') }}">
                     {{ __('products.products') }}
                 </a>
+                <a class="navbar-brand" href="{{ route('category.create') }}">
+                    {{ __('categories.createCategory') }}
+                </a>
+                <a class="navbar-brand" href="{{ route('category.index') }}">
+                    {{ __('categories.categories') }}
+                </a>
                 <a class="navbar-brand" href="{{ route('user.index') }}">
                     {{ __('users.users') }}
                 </a>

@@ -12,24 +12,24 @@ class CommentController extends Controller
     public function index($productId)
     {
         $data = [];
-        $data["product"] = Product::findOrFail($productId);
-        $data["comments"] = Comment::where('productId', $productId)->get();
+        $data['product'] = Product::findOrFail($productId);
+        $data['comments'] = Comment::where('productId', $productId)->get();
 
-        return view('comment.index')->with("data", $data);
+        return view('comment.index')->with('data', $data);
     }
 
     public function create($productId)
     {
         $data = [];
-        $data["product"] = Product::findOrFail($productId);
+        $data['product'] = Product::findOrFail($productId);
 
-        return view('comment.create')->with("data", $data);
+        return view('comment.create')->with('data', $data);
     }
 
     public function store(Request $request, $productId)
     {
         Comment::validate($request);
-        $attributes = $request->only(['description']);
+        $attributes = $request->only(['content']);
         $attributes['productId'] = $productId;
         Comment::create($attributes);
 

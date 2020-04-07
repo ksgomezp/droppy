@@ -15,9 +15,7 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->double('totalAmount');
-            // $table->bigInteger('itemId');
-            // $table->foreign('itemId')->references('id')->on('items');
+            $table->unsignedDecimal('totalAmount');
             $table->timestamps();
         });
     }

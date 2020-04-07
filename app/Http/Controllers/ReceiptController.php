@@ -11,14 +11,14 @@ class ReceiptController extends Controller
     public function show($receiptId)
     {
         $data = [];
-        $data["receipt"] = Receipt::find($receiptId);
+        $data['receipt'] = Receipt::find($receiptId);
 
-        return view('receipt.show')->with("data", $data);
+        return view('receipt.show')->with('data', $data);
     }
 
     public function store(Request $request)
     {
-        Receipt::create($request->only(["totalAmount"]));
+        Receipt::create($request->only(['totalAmount']));
 
         return back();
     }
