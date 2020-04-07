@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class Product extends Model
 {
-    protected $fillable = ['name', 'description', 'stock', 'price'];
+    protected $fillable = ['name', 'description', 'stock', 'price', 'categoryId'];
 
     public static function validate(Request $request)
     {
@@ -15,7 +15,8 @@ class Product extends Model
             'name' => 'required|max:50',
             'description' => 'required|max:255',
             'stock' => 'required|numeric|gte:0',
-            'price' => 'required|numeric|gte:0'
+            'price' => 'required|numeric|gte:0',
+            'categoryId' => 'required'
         ]);
     }
 
@@ -49,16 +50,6 @@ class Product extends Model
         $this->attributes['description'] = $description;
     }
 
-    public function getCategory()
-    {
-        return $this->attributes['category'];
-    }
-
-    public function setCategory($category)
-    {
-        $this->attributes['category'] = $category;
-    }
-
     public function getStock()
     {
         return $this->attributes['stock'];
@@ -79,9 +70,19 @@ class Product extends Model
         $this->attributes['price'] = $price;
     }
 
-    public function categories()
+    public function getCategoryId()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->attributes['categoryId'];
+    }
+
+    public function setCategoryId($categoryId)
+    {
+        $this->attributes['categoryId'] = $categoryId;
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
     public function items()

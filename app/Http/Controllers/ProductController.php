@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use App\Comment;
 use Illuminate\Http\Request;
@@ -18,13 +19,16 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('product.create');
+        $data = [];
+        $data['categories'] = Category::all();
+
+        return view('product.create')->with('data', $data);
     }
 
     public function store(Request $request)
     {
         Product::validate($request);
-        Product::create($request->only(['name', 'description', 'stock', 'price']));
+        Product::create($request->all());
 
         return back()->with('success', 'true');
     }
@@ -32,7 +36,9 @@ class ProductController extends Controller
     public function show($productId)
     {
         $data = [];
-        $data['product'] = Product::findOrFail($productId);
+        $product = Product::findOrFail($productId);
+        $data['product'] = $product;
+        $data['category'] = Category::findOrFail($product->getCategoryId());
 
         return view('product.show')->with('data', $data);
     }
@@ -41,6 +47,7 @@ class ProductController extends Controller
     {
         $data = [];
         $data['product'] = Product::findOrFail($productId);
+        $data['categories'] = Category::all();
 
         return view('product.edit')->with('data', $data);
     }
@@ -65,9 +72,10 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
+
         $data = [];
         $data['products'] = Product::where('name', 'like', '%' . $search . '%')->get();
-        
+
         return view('product.index')->with('data', $data);
     }
 }

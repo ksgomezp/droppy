@@ -12,7 +12,7 @@ class Comment extends Model
     public static function validate(Request $request)
     {
         $request->validate([
-            "content" => "required"
+            'content' => 'required'
         ]);
     }
 
