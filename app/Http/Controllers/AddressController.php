@@ -33,6 +33,6 @@ class AddressController extends Controller
         $attributes['userId'] = $userId;
         Address::create($attributes);
 
-        return back()->with('success', 'true');
+        return back()->with('success', true);
     }
 }

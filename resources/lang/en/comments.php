@@ -4,7 +4,7 @@ return [
   'comments' => 'Comments',
   'commentProduct' => 'Comment this product',
   'createComment' => 'Create comment',
-  'viewComments' => 'Show all comments',
+  'viewComments' => 'Show comments',
   'id' => 'Id',
   'content' => 'Content',
   'date' => 'Date',

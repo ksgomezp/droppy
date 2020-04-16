@@ -2,14 +2,12 @@
 
 return [
     'user' => 'User',
-    'users' => "Users",
-    'createProduct' => 'Create Product',
+    'users' => 'Users',
     'name' => 'Name',
     'password' => 'Password',
-    'confirmPassword' => 'Confirm Password',
+    'confirmPassword' => 'Confirm password',
     'phone' => 'Phone',
     'email' => 'E-mail',
-    'emailadress' => 'E-Mail Address',
-    'dateOfBirth' => 'Date Of Birth',
+    'dateOfBirth' => 'Date of birth',
     'wallet' => 'Wallet'
 ];

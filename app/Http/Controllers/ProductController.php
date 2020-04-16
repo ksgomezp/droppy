@@ -30,7 +30,7 @@ class ProductController extends Controller
         Product::validate($request);
         Product::create($request->all());
 
-        return back()->with('success', 'true');
+        return back()->with('success', true);
     }
 
     public function show($productId)

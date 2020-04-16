@@ -4,10 +4,10 @@ return [
     'address' => 'Address',
     'addresses' => 'Addresses',
     'createAddress' => 'Create address',
-    'viewAddress' => 'Show all addresses',
+    'viewAddress' => 'Show addresses',
     'country' => 'Country',
     'state' => 'State',
     'city' => 'City',
-    'deliveryAddress' => 'DeliveryAddress',
+    'deliveryAddress' => 'Delivery address',
     'postalCode' => 'PostalCode',
 ];

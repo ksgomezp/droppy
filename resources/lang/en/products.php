@@ -3,7 +3,7 @@
 return [
     'product' => 'Product',
     'products' => "Products",
-    'createProduct' => 'Create Product',
+    'createProduct' => 'Create product',
     'name' => 'Name',
     'description' => 'Description',
     'category' => 'Category',

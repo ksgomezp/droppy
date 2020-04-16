@@ -33,6 +33,6 @@ class CommentController extends Controller
         $attributes['productId'] = $productId;
         Comment::create($attributes);
 
-        return back()->with('success', 'true');
+        return back()->with('success', true);
     }
 }
