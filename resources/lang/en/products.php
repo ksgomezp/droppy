@@ -8,5 +8,7 @@ return [
     'description' => 'Description',
     'category' => 'Category',
     'stock' => 'Stock',
-    'price' => 'Price'
+    'price' => 'Price',
+    'commentedProducts' => 'Most commented products',
+    'topProducts' => 'Top 3 selling products'
 ];

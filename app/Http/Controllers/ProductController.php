@@ -78,4 +78,25 @@ class ProductController extends Controller
 
         return view('product.index')->with('data', $data);
     }
+
+    public function mostComments()
+    {
+    
+        $data = [];
+        $data['products'] =  Product::with("comments")
+                                    ->get()
+                                    ->orderBy("comments", "desc")->take(3)->get();
+
+        return view('product.index')->with('data', $data);
+    }
+
+    public function topProducts()
+    {
+    
+        $data = [];
+        $data['products'] =  Product::orderBy("items", "desc")->take(3)->get();
+                                    
+
+        return view('product.index')->with('data', $data);
+    }
 }

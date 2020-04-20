@@ -26,7 +26,11 @@
                         </a>
                         @endforeach
                     </ul>
+                    <a class="btn btn-primary" href="{{ route('product.mostComments') }}">{{ __('products.commentedProducts') }}</a>
+                    <a class="btn btn-primary" href="{{ route('product.topProducts') }}">{{ __('products.topProducts') }}</a>
+
                 </div>
+
             </div>
         </div>
     </div>

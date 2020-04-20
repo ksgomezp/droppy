@@ -18,6 +18,8 @@ Route::get('products/{productId}/edit', 'ProductController@edit')->name('product
 Route::patch('products/{productId}', 'ProductController@update')->name('product.update');
 Route::delete('products/{productId}', 'ProductController@destroy')->name('product.destroy');
 Route::get('search', 'ProductController@search')->name('product.search');
+Route::get('mostComments', 'ProductController@mostComments')->name('product.mostComments');
+Route::get('topProducts', 'ProductController@topProducts')->name('product.topProducts');
 
 // Categories
 Route::get('categories', 'CategoryController@index')->name('category.index');
