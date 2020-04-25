@@ -6,6 +6,7 @@ use App\Category;
 use App\Product;
 use App\Comment;
 use Illuminate\Http\Request;
+use App\Interfaces\ImageStorage;
 
 class ProductController extends Controller
 {
@@ -27,6 +28,9 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        $storeInterface = app(ImageStorage::class);
+        $storeInterface->store($request);
+
         Product::validate($request);
         Product::create($request->all());
 
