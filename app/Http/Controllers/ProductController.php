@@ -28,11 +28,15 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        Product::validate($request);
+
         $storeInterface = app(ImageStorage::class);
         $storeInterface->store($request);
 
-        Product::validate($request);
-        Product::create($request->all());
+        $attributes = $request->only(['name', 'description', 'stock', 'price', 'categoryId']);
+        $attributes['image'] = $request->file('image')->getClientOriginalName();
+
+        Product::create($attributes);
 
         return back()->with('success', true);
     }
@@ -59,8 +63,20 @@ class ProductController extends Controller
     public function update(Request $request, $productId)
     {
         Product::validate($request);
+
+        $storeInterface = app(ImageStorage::class);
+        $storeInterface->store($request);
+
         $product = Product::findOrFail($productId);
-        $product->update($request->all());
+        $attributes = $request->all();
+
+        // If a new image is uploaded, set the new image's name attribute
+        if ($request->hasFile('image')) {
+            $attributes = $request->only(['name', 'description', 'stock', 'price', 'categoryId']);
+            $attributes['image'] = $request->file('image')->getClientOriginalName();
+        }
+
+        $product->update($attributes);
 
         return redirect()->route('product.show', $productId);
     }
