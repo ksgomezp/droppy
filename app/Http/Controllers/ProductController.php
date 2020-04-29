@@ -103,9 +103,7 @@ class ProductController extends Controller
     {
     
         $data = [];
-        $data['products'] =  Product::with("comments")
-                                    ->get()
-                                    ->orderBy("comments", "desc")->take(3)->get();
+        $data['products'] =  Product::withCount('comments')->orderBy('comments_count', 'desc')->take(3)->get();
 
         return view('product.index')->with('data', $data);
     }
@@ -114,7 +112,7 @@ class ProductController extends Controller
     {
     
         $data = [];
-        $data['products'] =  Product::orderBy("items", "desc")->take(3)->get();
+        $data['products'] =  Product::withCount('items')->orderBy('items_count', 'desc')->take(3)->get();
                                     
 
         return view('product.index')->with('data', $data);
