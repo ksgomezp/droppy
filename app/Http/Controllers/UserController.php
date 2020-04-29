@@ -24,6 +24,14 @@ class UserController extends Controller
         return view('user.show')->with('data', $data);
     }
 
+    public function buyers($userId)
+    {
+        $data = [];
+        $data['user'] = User::findOrFail($userId);
+
+        return view('user.buyers')->with('data', $data);
+    }
+
     public function edit($userId)
     {
         return;
