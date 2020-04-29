@@ -10,6 +10,8 @@
                 <div class="card-header font-weight-bold">{{ $data['product']->getName() }}</div>
                 <div class="card-body">
                     <b>{{ __('products.description') }}: </b> {{ $data['product']->getDescription() }}<br />
+                    <b>{{ __('products.image') }}: </b> <img
+                        src="{{ URL::asset(sprintf('storage/%s', $data['product']->getImage())) }}"><br />
                     <b>{{ __('categories.category') }}: </b> {{ $data['category']->getName() }}<br />
                     <b>{{ __('products.stock') }}: </b> {{ $data['product']->getStock() }} <br />
                     <b>{{ __('products.price') }}: </b> {{ $data['product']->getPrice() }} <br />
