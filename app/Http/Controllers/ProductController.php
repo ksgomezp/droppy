@@ -64,14 +64,14 @@ class ProductController extends Controller
     {
         Product::validate($request);
 
-        $storeInterface = app(ImageStorage::class);
-        $storeInterface->store($request);
-
         $product = Product::findOrFail($productId);
         $attributes = $request->all();
 
-        // If a new image is uploaded, set the new image's name attribute
+        // If a new image is uploaded set the product's image attribute to match the image's name
         if ($request->hasFile('image')) {
+            $storeInterface = app(ImageStorage::class);
+            $storeInterface->store($request);
+
             $attributes = $request->only(['name', 'description', 'stock', 'price', 'categoryId']);
             $attributes['image'] = $request->file('image')->getClientOriginalName();
         }

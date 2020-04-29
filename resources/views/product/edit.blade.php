@@ -36,7 +36,8 @@
                         <div class="form-group">
                             <label>{{ __('products.image') }}</label>
                             <img src="{{ URL::asset(sprintf('storage/%s', $data['product']->getImage())) }}">
-                            <input type="file" name="image" value="{{ $data['product']->getImage() }}">
+                            <input type="file" name="image">
+                            <input type="hidden" name="image" value="{{ $data['product']->getImage() }}">
                         </div>
 
                         <div class="form-group">
