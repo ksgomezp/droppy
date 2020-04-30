@@ -36,10 +36,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $attributes = [
-        'isAdmin' => false
-    ];
-
     public static function validate(Request $request)
     {
         $request->validate([

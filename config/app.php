@@ -177,6 +177,7 @@ return [
 
         /* Our Providers */
         App\Providers\ImageServiceProvider::class,
+        App\Providers\PaymentServiceProvider::class
     ],
 
     /*
