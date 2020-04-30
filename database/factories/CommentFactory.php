@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 $factory->define(Comment::class, function (Faker $faker) {
     $product = Product::inRandomOrder()->value('id');
     return [
-        'description' => $faker->realText,
+        'content' => $faker->sentence,
         'productId' => $product,
     ];
 });

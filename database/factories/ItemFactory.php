@@ -11,13 +11,13 @@ use Illuminate\Support\Str;
 
 
 $factory->define(Item::class, function (Faker $faker) {
-    $product = Product::inRandomOrder()->value('id');
+    $product = Product::all()->random(1)->first();
     $receipt = Receipt::inRandomOrder()->value('id');
     $quantity = $faker->numberBetween(0, 500);
     return [
             'quantity' => $quantity,
             'subtotal' => $product->getPrice()*$quantity,
-            'productId' => $product,
+            'productId' => $product->getId(),
             'receiptId' => $receipt
     ];
 });
