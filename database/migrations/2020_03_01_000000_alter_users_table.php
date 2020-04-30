@@ -12,7 +12,7 @@ class AlterUsersTable extends Migration
             $table->unsignedInteger('phone');
             $table->date('dateOfBirth');
             $table->unsignedDecimal('wallet')->default(100000);
-            $table->boolean('isAdmin');
+            $table->boolean('isAdmin')->default(false);
         });
     }
 

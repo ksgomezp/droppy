@@ -13,10 +13,10 @@ class Product extends Model
     {
         $request->validate([
             'name' => 'required|max:50',
-            'description' => 'required|max:500',
+            'description' => 'required|max:255',
             'image' => 'required',
-            'stock' => 'required|numeric|gte:0',
-            'price' => 'required|numeric|gte:0',
+            'stock' => 'required|numeric|gte:0|max:500',
+            'price' => 'required|numeric|gte:0|max:999.99',
             'categoryId' => 'required'
         ]);
     }
