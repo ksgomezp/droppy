@@ -6,6 +6,7 @@ Route::get('/', 'HomeController@index')->name('home.index');
 // Users
 Route::get('users', 'UserController@index')->name('user.index');
 Route::get('users/{userId}', 'UserController@show')->name('user.show');
+Route::get('users/buyers/{userId}', 'UserController@buyers')->name('user.buyers');
 Route::delete('users/{userId}', 'UserController@destroy')->name('user.destroy');
 Auth::routes();
 

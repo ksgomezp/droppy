@@ -11,7 +11,7 @@ class AlterUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedInteger('phone');
             $table->date('dateOfBirth');
-            $table->unsignedDecimal('wallet');
+            $table->unsignedDecimal('wallet')->default(100000);
             $table->boolean('isAdmin');
         });
     }
