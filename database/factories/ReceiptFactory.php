@@ -9,11 +9,10 @@ use Faker\Generator as Faker;
 $factory->define(Receipt::class, function (Faker $faker) {
     $user = User::inRandomOrder()->value('id');
     $address = Address::inRandomOrder()->value('id');
-    $item = factory(Item::class)->create();
+    $items = Item::all()->random(4);
     return [
-        'totalAmount' => $item->getSubtotal(),
+        'totalAmount' => $items->sum('subTotal'),
         'userId' => $user,
-        'addressId' => $address,
-        'itemId' => $item
+        'addressId' => $address
     ];
 });
