@@ -14,6 +14,6 @@ $factory->define(Product::class, function (Faker $faker) {
             return factory(Category::class)->create()->id;
         },
         'stock' => $faker->numberBetween(0, 500),
-        'price' => $faker->randomFloat(2, 0, 999)
+        'price' => $faker->randomFloat(2, 0, 999.99)
     ];
 });
