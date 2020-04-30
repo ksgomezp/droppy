@@ -13,9 +13,10 @@ use Illuminate\Support\Str;
 $factory->define(Item::class, function (Faker $faker) {
     $product = Product::inRandomOrder()->value('id');
     $receipt = Receipt::inRandomOrder()->value('id');
+    $quantity = $faker->numberBetween(0, 500);
     return [
-            'quantity' => $faker->numberBetween(0, 500),
-            'subtotal' => $faker->randomFloat(2, 0, 999),
+            'quantity' => $quantity,
+            'subtotal' => $product->getPrice()*$quantity,
             'productId' => $product,
             'receiptId' => $receipt
     ];
