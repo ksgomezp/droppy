@@ -17,16 +17,26 @@
                                 <th>{{ __('addresses.city') }}</th>
                                 <th>{{ __('addresses.deliveryAddress') }}</th>
                                 <th>{{ __('addresses.postalCode') }}</th>
+                                <th></th>
                             </tr>
+
                         </thead>
                         <tbody>
                             @foreach($data["addresses"] as $address)
                             <tr>
-                                <td>{{ $address->getCountry() }}</td>
-                                <td> {{ $address->getState() }}</td>
-                                <td> {{ $address->getCity() }}</td>
+                                <td></td>
+                                <td></td>
+                                <td> {{ $address->getCityId() }}</td>
                                 <td> {{ $address->getDeliveryAddress() }}</td>
                                 <td> {{ $address->getPostalCode() }}</td>
+                                <td>
+                                    <form method="POST" action="{{ route('address.destroy', [$data['user']->getId(), $address->getId()]) }}">
+                                        @method('DELETE')
+                                        @csrf
+                                        <a class="btn btn-success" href="{{ route('address.edit', [$data['user']->getId(), $address->getId()]) }}">{{ __('buttons.edit') }}</a>
+                                        <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

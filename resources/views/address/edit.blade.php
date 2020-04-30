@@ -1,31 +1,26 @@
 @extends('layouts.master')
 
-@section("title", __('addresses.createAddress'))
+@section("title", __('addresses.editAddress'))
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @include('util.message')
             <div class="card">
-                <div class="card-header font-weight-bold">{{ __('addresses.createAddress') }}</div>
+                <div class="card-header font-weight-bold">{{ __('addresses.editAddress') }}</div>
                 <div class="card-body">
-                    @if($errors->any())
-                    <ul id="errors">
-                        @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                    @endif
-                    <form method="POST" action="{{ route('address.store', $data['user']->getId()) }}">
+                    <form method="POST" action="{{ route('address.update', [$data['user']->getId(), $data['address']->getId()]) }}">
+                        @method('PATCH')
                         @csrf
-
                         <div class="form-group">
                             <label>{{ __('addresses.country') }}</label>
                             <select name="country" id="country" class="form-control input-lg dynamic" data-dependent="state" value="{{ old('city') }}">
                                 <option value="">Select Country</option>
                                 @foreach($data['countries'] as $country)
-                                <option value="{{ $country->getId() }}">{{ $country->getName() }}</option>
+                                <option value="{{ $country->getId() }}"@if ($country->getId() ==
+                                    $data['country']->getId())
+                                    selected
+                                    @endif>{{ $country->getName() }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -35,7 +30,10 @@
                             <select name="state" id="state" class="form-control input-lg dynamic" data-dependent="city" value="{{ old('city') }}">
                                 <option value="">Select State</option>
                                 @foreach($data['states'] as $state)
-                                <option value="{{ $state->getId() }}">{{ $state->getName() }}</option>
+                                <option value="{{ $state->getId() }}"@if ($state->getId() ==
+                                    $data['state']->getId())
+                                    selected
+                                    @endif>{{ $state->getName() }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -45,22 +43,26 @@
                             <select name="cityId" id="cityId" class="form-control input-lg" value="{{ old('cityId') }}">
                                 <option value="">Select City</option>
                                 @foreach($data['cities'] as $city)
-                                <option value="{{ $city->getId() }}">{{ $city->getName() }}</option>
+                                <option value="{{ $city->getId() }}" @if ($city->getId() ==
+                                    $data['address']->getCityId())
+                                    selected
+                                    @endif>{{ $city->getName() }}</option>
                                 @endforeach
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label>{{ __('addresses.deliveryAddress') }}</label>
-                            <input class="form-control" type="text" placeholder="Enter deliveryAddress" name="deliveryAddress" value="{{ old('deliveryAddress') }}" />
+                            <input class="form-control" type="text" placeholder="Enter deliveryAddress" name="deliveryAddress" value="{{ $data['address']->getDeliveryAddress() }}" />
                         </div>
 
                         <div class="form-group">
                             <label>{{ __('addresses.postalCode') }}</label>
-                            <input class="form-control" type="text" placeholder="Enter postalCode" name="postalCode" value="{{ old('postalCode') }}" />
+                            <input class="form-control" type="text" placeholder="Enter postalCode" name="postalCode" value="{{ $data['address']->getPostalCode() }}" />
                         </div>
-                        <input class="btn btn-primary" type="submit" value="{{ __('buttons.create') }}" />
-                        <a class="btn btn-light" href="{{ route('user.show', $data['user']->getId()) }}">{{ __('buttons.cancel') }}</a>
+
+                        <input class="btn btn-primary" type="submit" value="{{ __('buttons.save') }}" />
+                        <a class="btn btn-light" href="{{ route('address.index', $data['user']->getId()) }}">{{ __('buttons.cancel') }}</a>
                     </form>
                 </div>
             </div>

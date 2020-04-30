@@ -33,3 +33,6 @@ Route::post('products/{productId}/comments', 'CommentController@store')->name("c
 Route::get('users/{userId}/addresses', 'AddressController@index')->name("address.index");
 Route::get('users/{userId}/addresses/create', 'AddressController@create')->name("address.create");
 Route::post('users/{userId}/addresses', 'AddressController@store')->name("address.store");
+Route::get('users/{userId}/addresses/{addressId}/edit', 'AddressController@edit')->name('address.edit');
+Route::patch('users/{userId}/addresses/{addressId}', 'AddressController@update')->name('address.update');
+Route::delete('users/{userId}/addresses/{addressId}', 'AddressController@destroy')->name('address.destroy');
