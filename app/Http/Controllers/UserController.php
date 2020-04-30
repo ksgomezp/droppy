@@ -27,7 +27,7 @@ class UserController extends Controller
     public function buyers($userId)
     {
         $data = [];
-        $data['user'] = User::findOrFail($userId);
+        $data['user'] =  User::withCount('receipts')->orderBy('receipts_count', 'desc')->take(3)->get();
 
         return view('user.buyers')->with('data', $data);
     }
