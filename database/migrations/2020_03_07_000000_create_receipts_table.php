@@ -17,7 +17,7 @@ class CreateReceiptsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedDecimal('totalAmount',10,2);
             $table->unsignedBigInteger('userId');
-            $table->foreign('usertId')->references('id')->on('users');
+            $table->foreign('userId')->references('id')->on('users');
             $table->unsignedBigInteger('addressId');
             $table->foreign('addressId')->references('id')->on('address');
             $table->timestamps();

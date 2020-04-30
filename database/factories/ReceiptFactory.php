@@ -10,7 +10,7 @@ $factory->define(Receipt::class, function (Faker $faker) {
     $user = User::inRandomOrder()->value('id');
     $address = Address::inRandomOrder()->value('id');
     return [
-        'totalAmount' => $faker->company,
+        'totalAmount' => 500,
         'userId' => $user,
         'addressId' => $address,
         'itemId' => function () {
