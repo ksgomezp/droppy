@@ -13,9 +13,22 @@ class AddressController extends Controller
 {
     public function index($userId)
     {
+
         $data = [];
         $data['user'] = User::findOrFail($userId);
         $data['addresses'] = Address::where('userId', $userId)->get();
+        $data['cities'] = [];
+        $data['states'] = [];
+        $data['countries'] = [];
+        foreach ($data['addresses'] as $address) {
+            $data['cities'][] = City::findOrFail($address->getCityId());
+        }
+        foreach ($data['cities'] as $city) {
+            $data['states'][] = State::findOrFail($city->getStateId());
+        }
+        foreach ($data['states'] as $state) {
+            $data['countries'][] = Country::findOrFail($state->getCountryId());
+        }
         return view('address.index')->with('data', $data);
     }
 

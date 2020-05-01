@@ -9,5 +9,6 @@ return [
     'search' => 'Buscar',
     'login' => 'Ingresar',
     'logout' => 'Salir',
-    'register' => 'Registro'
+    'register' => 'Registro',
+    'edit' => 'Editar'
 ];

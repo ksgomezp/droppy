@@ -24,9 +24,9 @@
                         <tbody>
                             @foreach($data["addresses"] as $address)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td> {{ $address->getCityId() }}</td>
+                                <td>{{ $data["countries"][$loop->index]->getName() }}</td>
+                                <td>{{ $data["states"][$loop->index]->getName() }}</td>
+                                <td>{{ $data["cities"][$loop->index]->getName() }}</td>
                                 <td> {{ $address->getDeliveryAddress() }}</td>
                                 <td> {{ $address->getPostalCode() }}</td>
                                 <td>

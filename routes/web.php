@@ -36,3 +36,8 @@ Route::post('users/{userId}/addresses', 'AddressController@store')->name("addres
 Route::get('users/{userId}/addresses/{addressId}/edit', 'AddressController@edit')->name('address.edit');
 Route::patch('users/{userId}/addresses/{addressId}', 'AddressController@update')->name('address.update');
 Route::delete('users/{userId}/addresses/{addressId}', 'AddressController@destroy')->name('address.destroy');
+
+//ShoppingCar
+Route::get('shoppingCar/index', 'ShoppingCarController@index')->name("shoppingCar.index");
+Route::post('shoppingCar/save/{productId}', 'ShoppingCarController@save')->name("shoppingCar.save");
+Route::delete('shoppingCar/delete/{productId}', 'ShoppingCarController@delete')->name("shoppingCar.delete");

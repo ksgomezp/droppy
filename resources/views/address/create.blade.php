@@ -22,7 +22,7 @@
 
                         <div class="form-group">
                             <label>{{ __('addresses.country') }}</label>
-                            <select name="country" id="country" class="form-control input-lg dynamic" data-dependent="state" value="{{ old('city') }}">
+                            <select name="country" id="country" class="form-control input-lg dynamic" data-dependent="state" value="{{ old('city') }}" required>
                                 <option value="">Select Country</option>
                                 @foreach($data['countries'] as $country)
                                 <option value="{{ $country->getId() }}">{{ $country->getName() }}</option>
@@ -32,7 +32,7 @@
 
                         <div class="form-group">
                             <label>{{ __('addresses.state') }}</label>
-                            <select name="state" id="state" class="form-control input-lg dynamic" data-dependent="city" value="{{ old('city') }}">
+                            <select name="state" id="state" class="form-control input-lg dynamic" data-dependent="city" value="{{ old('city') }}" required>
                                 <option value="">Select State</option>
                                 @foreach($data['states'] as $state)
                                 <option value="{{ $state->getId() }}">{{ $state->getName() }}</option>
@@ -42,7 +42,7 @@
 
                         <div class="form-group">
                             <label>{{ __('addresses.city') }}</label>
-                            <select name="cityId" id="cityId" class="form-control input-lg" value="{{ old('cityId') }}">
+                            <select name="cityId" id="cityId" class="form-control input-lg" value="{{ old('cityId') }}" required>
                                 <option value="">Select City</option>
                                 @foreach($data['cities'] as $city)
                                 <option value="{{ $city->getId() }}">{{ $city->getName() }}</option>
