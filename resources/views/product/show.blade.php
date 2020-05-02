@@ -18,11 +18,11 @@
                     <b>{{ __('products.price') }}: </b> {{ $data['product']->getPrice() }} <br />
                     <br />
 
-                    <form method="POST" action="{{ route('shoppingCar.save', $data['product']->getId()) }}">
+                    <form method="POST" action="{{ route('shoppingCart.store', $data['product']->getId()) }}">
                         @csrf
                         <a class="btn btn-primary" href="{{ route('comment.create', $data['product']->getId()) }}">{{ __('comments.createComment') }}</a>
                         <a class="btn btn-info" href="{{ route('comment.index', $data['product']->getId()) }}">{{ __('comments.viewComments') }}</a>
-                        <input class="btn btn-warning" type="submit" value="{{ __('shoppingCar.addToCar') }}" />
+                        <input class="btn btn-warning" type="submit" value="{{ __('shoppingCart.addToCart') }}" />
                         <a class="btn btn-success" href="{{ route('product.edit', $data['product']->getId()) }}">{{ __('buttons.edit') }}</a>
                         <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.cancel') }}</a>
                     </form>

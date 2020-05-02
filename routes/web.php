@@ -40,7 +40,7 @@ Route::get('users/{userId}/addresses/{addressId}/edit', 'AddressController@edit'
 Route::patch('users/{userId}/addresses/{addressId}', 'AddressController@update')->name('address.update');
 Route::delete('users/{userId}/addresses/{addressId}', 'AddressController@destroy')->name('address.destroy');
 
-//ShoppingCar
-Route::get('shoppingCar/index', 'ShoppingCarController@index')->name("shoppingCar.index");
-Route::post('shoppingCar/save/{productId}', 'ShoppingCarController@save')->name("shoppingCar.save");
-Route::delete('shoppingCar/delete/{productId}', 'ShoppingCarController@delete')->name("shoppingCar.delete");
+//ShoppingCart
+Route::get('shoppingCart/index', 'ShoppingCartController@index')->name("shoppingCart.index");
+Route::post('shoppingCart/store/{productId}', 'ShoppingCartController@store')->name("shoppingCart.store");
+Route::delete('shoppingCart/destroy/{productId}', 'ShoppingCartController@destroy')->name("shoppingCart.destroy");

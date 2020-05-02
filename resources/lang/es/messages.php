@@ -5,5 +5,6 @@ return [
     'home' => 'Inicio',
     'droppy' => 'Droppy',
     'success' => 'Creado satisfactoriamente!',
-    'add' => 'Añadido satisfactoriamente!'
+    'add' => 'Añadido satisfactoriamente!',
+    'delete' => 'Borrado satisfactoriamente!'
 ];

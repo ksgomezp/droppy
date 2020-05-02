@@ -2,5 +2,5 @@
 
 return [
     'shoppingCar' => 'Carrito de Compra',
-    'addToCar' => 'Añadir al carrito'
+    'addToCart' => 'Añadir al carrito'
 ];

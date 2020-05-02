@@ -6,8 +6,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @include('util.message')
             <div class="card">
-                <div class="card-header font-weight-bold">{{ __('shoppingCar.shoppingCar') }}</div>
+                <div class="card-header font-weight-bold">{{ __('shoppingCart.shoppingCart') }}</div>
                 <div class="card-body">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
@@ -27,7 +28,7 @@
                                 <td>{{ $product->getDescription() }}</td>
                                 <td>{{ $product->getPrice() }}</td>
                                 <td>
-                                    <form method="POST" action="{{ route('shoppingCar.delete', $product->getId()) }}">
+                                    <form method="POST" action="{{ route('shoppingCart.destroy', $product->getId()) }}">
                                         @method('DELETE')
                                         @csrf
                                         <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />

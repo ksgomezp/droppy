@@ -5,5 +5,6 @@ return [
     'home' => 'Home',
     'droppy' => 'Droppy',
     'success' => 'Created successfully!',
-    'add' => 'added successfully!'
+    'add' => 'added successfully!',
+    'delete' => 'deleted successfully!'
 ];

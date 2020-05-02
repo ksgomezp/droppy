@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 
-class ShoppingCarController extends Controller
+class ShoppingCartController extends Controller
 {
     public function index(Request $request)
     {
@@ -18,12 +18,15 @@ class ShoppingCarController extends Controller
             }
         }
 
-        return view('shoppingCar.index')->with('data', $data);
+        return view('shoppingCart.index')->with('data', $data);
     }
 
-    public function save(Request $request, $productId)
+    public function store(Request $request, $productId)
     {
         $productsId = $request->session()->get('products');
+        if ($productsId == null) {
+            $productsId = [];
+        }
         if (array_search($productId, $productsId) === false) {
             $productsId[] = $productId;
         }
@@ -33,13 +36,13 @@ class ShoppingCarController extends Controller
         return back()->with('add', true);
     }
 
-    public function delete(Request $request, $productId)
+    public function destroy(Request $request, $productId)
     {
         $productsId = $request->session()->get('products');
         if (($key = array_search($productId, $productsId)) !== false) {
             unset($productsId[$key]);
         }
         $request->session()->put('products', $productsId);
-        return back();
+        return back()->with('delete', true);
     }
 }

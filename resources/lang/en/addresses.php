@@ -10,5 +10,5 @@ return [
     'state' => 'State',
     'city' => 'City',
     'deliveryAddress' => 'Delivery address',
-    'postalCode' => 'PostalCode',
+    'postalCode' => 'Postal code',
 ];

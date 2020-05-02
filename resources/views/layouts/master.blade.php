@@ -33,8 +33,8 @@
                 <a class="navbar-brand" href="{{ route('user.index') }}">
                     {{ __('users.users') }}
                 </a>
-                <a class="navbar-brand" href="{{ route('shoppingCar.index') }}">
-                    {{ __('categories.shoppingCar') }}
+                <a class="navbar-brand" href="{{ route('shoppingCart.index') }}">
+                    {{ __('categories.shoppingCart') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
