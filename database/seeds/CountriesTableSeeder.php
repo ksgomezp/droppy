@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Address;
+use App\Country;
 
-class AddressesTableSeeder extends Seeder
+class CountriesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class AddressesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Address::class, 1)->create();
+        factory(Country::class, 1)->create();
     }
 }
