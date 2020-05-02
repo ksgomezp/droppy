@@ -6,6 +6,7 @@ use App\Category;
 use App\Product;
 use App\Comment;
 use Illuminate\Http\Request;
+use App\Interfaces\ImageStorage;
 
 class ProductController extends Controller
 {
@@ -28,7 +29,14 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         Product::validate($request);
-        Product::create($request->all());
+
+        $storeInterface = app(ImageStorage::class);
+        $storeInterface->store($request);
+
+        $attributes = $request->only(['name', 'description', 'stock', 'price', 'categoryId']);
+        $attributes['image'] = $request->file('image')->getClientOriginalName();
+
+        Product::create($attributes);
 
         return back()->with('success', true);
     }
@@ -55,8 +63,20 @@ class ProductController extends Controller
     public function update(Request $request, $productId)
     {
         Product::validate($request);
+
         $product = Product::findOrFail($productId);
-        $product->update($request->all());
+        $attributes = $request->all();
+
+        // If a new image is uploaded set the product's image attribute to match the image's name
+        if ($request->hasFile('image')) {
+            $storeInterface = app(ImageStorage::class);
+            $storeInterface->store($request);
+
+            $attributes = $request->only(['name', 'description', 'stock', 'price', 'categoryId']);
+            $attributes['image'] = $request->file('image')->getClientOriginalName();
+        }
+
+        $product->update($attributes);
 
         return redirect()->route('product.show', $productId);
     }
@@ -75,6 +95,25 @@ class ProductController extends Controller
 
         $data = [];
         $data['products'] = Product::where('name', 'like', '%' . $search . '%')->get();
+
+        return view('product.index')->with('data', $data);
+    }
+
+    public function mostComments()
+    {
+    
+        $data = [];
+        $data['products'] =  Product::withCount('comments')->orderBy('comments_count', 'desc')->take(3)->get();
+
+        return view('product.index')->with('data', $data);
+    }
+
+    public function topProducts()
+    {
+    
+        $data = [];
+        $data['products'] =  Product::withCount('items')->orderBy('items_count', 'desc')->take(3)->get();
+                                    
 
         return view('product.index')->with('data', $data);
     }

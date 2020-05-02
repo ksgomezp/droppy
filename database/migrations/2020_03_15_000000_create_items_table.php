@@ -11,7 +11,7 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('quantity');
-            $table->unsignedDecimal('subtotal');
+            $table->unsignedDecimal('subtotal',10,2);
             $table->unsignedBigInteger('productId');
             $table->foreign('productId')->references('id')->on('products');
             $table->unsignedBigInteger('receiptId');

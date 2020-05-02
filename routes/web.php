@@ -6,6 +6,7 @@ Route::get('/', 'HomeController@index')->name('home.index');
 // Users
 Route::get('users', 'UserController@index')->name('user.index');
 Route::get('users/{userId}', 'UserController@show')->name('user.show');
+Route::get('users/buyers/{userId}', 'UserController@buyers')->name('user.buyers');
 Route::delete('users/{userId}', 'UserController@destroy')->name('user.destroy');
 Auth::routes();
 
@@ -18,6 +19,8 @@ Route::get('products/{productId}/edit', 'ProductController@edit')->name('product
 Route::patch('products/{productId}', 'ProductController@update')->name('product.update');
 Route::delete('products/{productId}', 'ProductController@destroy')->name('product.destroy');
 Route::get('search', 'ProductController@search')->name('product.search');
+Route::get('mostComments', 'ProductController@mostComments')->name('product.mostComments');
+Route::get('topProducts', 'ProductController@topProducts')->name('product.topProducts');
 
 // Categories
 Route::get('categories', 'CategoryController@index')->name('category.index');

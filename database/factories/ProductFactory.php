@@ -1,15 +1,19 @@
 <?php
 
 use App\Product;
+use App\Category;
 use Faker\Generator as Faker;
-use Illiminate\Support\Str;
 
 $factory->define(Product::class, function (Faker $faker) {
     return [
         'name' => $faker->company,
-        'description' => $faker->company,
-        'category' => $faker->company,
-        'stock' => $faker->numberBetween($min = 0, $max = 500),
-        'price' => $faker->numberBetween($min = 1, $max = 5000),
+        'description' => $faker->sentence,
+        'image' => $faker->word . '.png',
+        // 'image' => $faker->image('public/storage/', 640, 480, null, false),
+        'categoryId' => function () {
+            return factory(Category::class)->create()->id;
+        },
+        'stock' => $faker->numberBetween(0, 500),
+        'price' => $faker->randomFloat(2, 0, 999.99)
     ];
 });
