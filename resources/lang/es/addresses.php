@@ -4,6 +4,7 @@ return [
     'address' => 'Dirección',
     'addresses' => 'Direcciones',
     'createAddress' => 'Crear dirección',
+    'editAddress' => 'Editar dirección',
     'viewAddress' => 'Mostrar direcciones',
     'country' => 'País',
     'state' => 'Estado',

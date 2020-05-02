@@ -19,7 +19,7 @@ class CreateReceiptsTable extends Migration
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('id')->on('users');
             $table->unsignedBigInteger('addressId');
-            $table->foreign('addressId')->references('id')->on('address');
+            $table->foreign('addressId')->references('id')->on('addresses');
             $table->timestamps();
         });
     }
