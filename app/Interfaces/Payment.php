@@ -6,5 +6,5 @@ use Illuminate\Http\Request;
 
 interface Payment
 {
-    public function pay(Request $request);
+    public function pay($amount);
 }
