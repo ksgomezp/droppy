@@ -2,14 +2,21 @@
 
 namespace App\Util;
 
+use App\User;
 use App\Interfaces\Payment;
+use Illuminate\Support\Facades\Auth;
 
 class DirectPayment implements Payment
 {
-    public function pay($request)
+    public function pay($amount)
     {
-        // Restar a user.wallet, crear y guardar los items y el receipt.
-        // Posiblemente tengamos que agregar otro parametro que seaa el userId
-        // tanto aca como en la interfaz
+        $user = User::findOrFail(Auth::user()->id);
+
+        if ($user->getWallet() >= $amount) {
+            $user->setWallet($user->getWallet() - $amount);
+            return true;
+        }
+
+        return false;
     }
 }
