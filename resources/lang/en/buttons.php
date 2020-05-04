@@ -10,5 +10,6 @@ return [
     'login' => 'Login',
     'logout' => 'Logout',
     'register' => 'Register',
-    'edit' => 'Edit'
+    'edit' => 'Edit',
+    'buy' => 'Buy'
 ];

@@ -44,3 +44,6 @@ Route::delete('users/{userId}/addresses/{addressId}', 'AddressController@destroy
 Route::get('shoppingCart/index', 'ShoppingCartController@index')->name('shoppingCart.index');
 Route::post('shoppingCart/store/{productId}', 'ShoppingCartController@store')->name('shoppingCart.store');
 Route::delete('shoppingCart/destroy/{productId}', 'ShoppingCartController@destroy')->name('shoppingCart.destroy');
+
+//Item
+Route::get('item', 'ItemController@index')->name('item.index');

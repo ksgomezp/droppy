@@ -10,5 +10,6 @@ return [
     'login' => 'Ingresar',
     'logout' => 'Salir',
     'register' => 'Registro',
-    'edit' => 'Editar'
+    'edit' => 'Editar',
+    'buy' => 'Comprar'
 ];
