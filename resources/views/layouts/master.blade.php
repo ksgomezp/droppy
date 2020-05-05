@@ -33,6 +33,9 @@
                 <a class="navbar-brand" href="{{ route('user.index') }}">
                     {{ __('users.users') }}
                 </a>
+                <a class="navbar-brand" href="{{ route('receipt.index') }}">
+                    {{ __('receipts.receipt') }}
+                </a>
                 <a class="navbar-brand" href="{{ route('shoppingCart.index') }}">
                     {{ __('categories.shoppingCart') }}
                 </a>
