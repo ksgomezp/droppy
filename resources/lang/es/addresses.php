@@ -11,4 +11,8 @@ return [
     'city' => 'Ciudad',
     'deliveryAddress' => 'Dirección de envío',
     'postalCode' => 'Código postal',
+    'selectCountry' => 'Seleccione país',
+    'selectState' => 'Seleccione estado',
+    'selectCity' => 'Seleccione ciudad',
+    'selectAddress' => 'Seleccione dirección'
 ];

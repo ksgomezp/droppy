@@ -14,6 +14,8 @@ class DirectPayment implements Payment
 
         if ($user->getWallet() >= $amount) {
             $user->setWallet($user->getWallet() - $amount);
+            $user->save();
+            
             return true;
         }
 

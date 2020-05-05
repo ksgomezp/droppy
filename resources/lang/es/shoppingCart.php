@@ -1,6 +1,9 @@
 <?php
 
 return [
-    'shoppingCar' => 'Carrito de Compra',
-    'addToCart' => 'Añadir al carrito'
+    'shoppingCart' => 'Carrito de Compra',
+    'addToCart' => 'Añadir al carrito',
+    'reviewOrder' => 'Verificar Orden',
+    'totalAmount' => 'Total',
+    'noProducts' =>'Por favor añada productos al carrito'
 ];

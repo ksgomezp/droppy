@@ -11,8 +11,7 @@
                 <div class="card-header font-weight-bold">{{ $data['product']->getName() }}</div>
                 <div class="card-body">
                     <b>{{ __('products.description') }}: </b> {{ $data['product']->getDescription() }}<br />
-                    <b>{{ __('products.image') }}: </b> <img
-                        src="{{ URL::asset(sprintf('storage/%s', $data['product']->getImage())) }}"><br />
+                    <b>{{ __('products.image') }}: </b> <img src="{{ URL::asset(sprintf('storage/%s', $data['product']->getImage())) }}"><br />
                     <b>{{ __('categories.category') }}: </b> {{ $data['category']->getName() }}<br />
                     <b>{{ __('products.stock') }}: </b> {{ $data['product']->getStock() }} <br />
                     <b>{{ __('products.price') }}: </b> {{ $data['product']->getPrice() }} <br />
@@ -24,7 +23,7 @@
                         <a class="btn btn-info" href="{{ route('comment.index', $data['product']->getId()) }}">{{ __('comments.viewComments') }}</a>
                         <input class="btn btn-warning" type="submit" value="{{ __('shoppingCart.addToCart') }}" />
                         <a class="btn btn-success" href="{{ route('product.edit', $data['product']->getId()) }}">{{ __('buttons.edit') }}</a>
-                        <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.cancel') }}</a>
+                        <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
                     </form>
 
                     <form method="POST" action="{{ route('product.destroy', $data['product']->getId()) }}">

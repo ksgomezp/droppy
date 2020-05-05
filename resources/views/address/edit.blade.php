@@ -15,9 +15,9 @@
                         <div class="form-group">
                             <label>{{ __('addresses.country') }}</label>
                             <select name="country" id="country" class="form-control input-lg dynamic" data-dependent="state" value="{{ old('city') }}">
-                                <option value="">Select Country</option>
+                                <option value="">{{ __('addresses.selectCountry') }}</option>
                                 @foreach($data['countries'] as $country)
-                                <option value="{{ $country->getId() }}"@if ($country->getId() ==
+                                <option value="{{ $country->getId() }}" @if ($country->getId() ==
                                     $data['country']->getId())
                                     selected
                                     @endif>{{ $country->getName() }}</option>
@@ -28,9 +28,9 @@
                         <div class="form-group">
                             <label>{{ __('addresses.state') }}</label>
                             <select name="state" id="state" class="form-control input-lg dynamic" data-dependent="city" value="{{ old('city') }}">
-                                <option value="">Select State</option>
+                                <option value="">{{ __('addresses.selectState') }}</option>
                                 @foreach($data['states'] as $state)
-                                <option value="{{ $state->getId() }}"@if ($state->getId() ==
+                                <option value="{{ $state->getId() }}" @if ($state->getId() ==
                                     $data['state']->getId())
                                     selected
                                     @endif>{{ $state->getName() }}</option>
@@ -41,7 +41,7 @@
                         <div class="form-group">
                             <label>{{ __('addresses.city') }}</label>
                             <select name="cityId" id="cityId" class="form-control input-lg" value="{{ old('cityId') }}">
-                                <option value="">Select City</option>
+                                <option value="">{{ __('addresses.selectCity') }}</option>
                                 @foreach($data['cities'] as $city)
                                 <option value="{{ $city->getId() }}" @if ($city->getId() ==
                                     $data['address']->getCityId())
@@ -62,7 +62,7 @@
                         </div>
 
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.save') }}" />
-                        <a class="btn btn-light" href="{{ route('address.index', $data['user']->getId()) }}">{{ __('buttons.cancel') }}</a>
+                        <a class="btn btn-light" href="{{ route('address.index', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>
             </div>

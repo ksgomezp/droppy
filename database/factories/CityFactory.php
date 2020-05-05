@@ -3,7 +3,6 @@
 use App\City;
 use App\State;
 use Faker\Generator as Faker;
-use Illiminate\Support\Str;
 
 $factory->define(City::class, function (Faker $faker) {
     return [

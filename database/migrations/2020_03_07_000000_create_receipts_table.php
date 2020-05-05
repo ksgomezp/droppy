@@ -15,11 +15,10 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedDecimal('totalAmount',10,2);
+            $table->unsignedDecimal('totalAmount', 10, 2);
+            $table->string('address', 500);
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('id')->on('users');
-            $table->unsignedBigInteger('addressId');
-            $table->foreign('addressId')->references('id')->on('addresses');
             $table->timestamps();
         });
     }
