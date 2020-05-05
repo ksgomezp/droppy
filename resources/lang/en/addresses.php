@@ -11,4 +11,8 @@ return [
     'city' => 'City',
     'deliveryAddress' => 'Delivery address',
     'postalCode' => 'Postal code',
+    'selectCountry' => 'Select Country',
+    'selectState' => 'Select State',
+    'selectCity' => 'Select City',
+    'selectAddress' => 'Select address'
 ];

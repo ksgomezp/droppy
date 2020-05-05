@@ -59,7 +59,7 @@
                         </div>
 
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.create') }}" />
-                        <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.cancel') }}</a>
+                        <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>
             </div>

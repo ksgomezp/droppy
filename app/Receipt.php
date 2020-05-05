@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 
 class Receipt extends Model
 {
-    protected $fillable = ['totalAmount', 'userId', 'addressId'];
+    protected $fillable = ['totalAmount', 'address', 'userId'];
 
     public static function validate(Request $request)
     {
         $request->validate([
             'totalAmount' => 'required|numeric|gte:0',
+            'address' => 'required|max:500',
             'userId' => 'required',
-            'addressId' => 'required'
+
         ]);
     }
 
@@ -38,6 +39,16 @@ class Receipt extends Model
         $this->attributes['totalAmount'] = $totalAmount;
     }
 
+    public function getAddress()
+    {
+        return $this->attributes['address'];
+    }
+
+    public function setAddress($address)
+    {
+        $this->attributes['address'] = $address;
+    }
+
     public function getCreated()
     {
         return $this->attributes['created_at'];
@@ -56,21 +67,6 @@ class Receipt extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function getAddressId()
-    {
-        return $this->attributes['addressId'];
-    }
-
-    public function setAddressId($addressId)
-    {
-        $this->attributes['addressId'] = $addressId;
-    }
-
-    public function address()
-    {
-        return $this->belongsTo(Address::class);
     }
 
     public function items()

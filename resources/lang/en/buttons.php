@@ -11,5 +11,8 @@ return [
     'logout' => 'Logout',
     'register' => 'Register',
     'edit' => 'Edit',
-    'buy' => 'Buy'
+    'buy' => 'Buy',
+    'remove' => 'Remove',
+    'back' => 'Back',
+    'reviewOrder' => 'Review Order'
 ];

@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <a class="btn btn-light"
-                            href="{{ route('product.show', $data['product']->getId()) }}">{{ __('buttons.cancel') }}</a>
+                            href="{{ route('product.show', $data['product']->getId()) }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>
             </div>

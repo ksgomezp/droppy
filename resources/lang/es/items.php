@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'total' => 'Total'
+    'subtotal' => 'Subtotal',
+    'quantity' => 'Cantidad'
 ];

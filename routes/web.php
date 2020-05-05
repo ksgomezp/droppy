@@ -40,10 +40,10 @@ Route::get('users/{userId}/addresses/{addressId}/edit', 'AddressController@edit'
 Route::patch('users/{userId}/addresses/{addressId}', 'AddressController@update')->name('address.update');
 Route::delete('users/{userId}/addresses/{addressId}', 'AddressController@destroy')->name('address.destroy');
 
-//ShoppingCart
-Route::get('shoppingCart/index', 'ShoppingCartController@index')->name('shoppingCart.index');
+// ShoppingCart
+Route::get('shoppingCart', 'ShoppingCartController@index')->name('shoppingCart.index');
 Route::post('shoppingCart/store/{productId}', 'ShoppingCartController@store')->name('shoppingCart.store');
 Route::delete('shoppingCart/destroy/{productId}', 'ShoppingCartController@destroy')->name('shoppingCart.destroy');
-
-//Item
-Route::get('item', 'ItemController@index')->name('item.index');
+Route::post('shoppingCart/review', 'ShoppingCartController@review')->name('shoppingCart.review');
+Route::post('shoppingCart/buy', 'ShoppingCartController@buy')->name('shoppingCart.buy');
+Route::post('shoppingCart/review/prueba', 'ShoppingCartController@prueba')->name('shoppingCart.prueba');

@@ -11,5 +11,8 @@ return [
     'logout' => 'Salir',
     'register' => 'Registro',
     'edit' => 'Editar',
-    'buy' => 'Comprar'
+    'buy' => 'Comprar',
+    'remove' => 'Quitar',
+    'back' => 'Atrás',
+    'reviewOrder' => 'Verificar orden'
 ];
