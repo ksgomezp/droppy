@@ -46,4 +46,3 @@ Route::post('shoppingCart/store/{productId}', 'ShoppingCartController@store')->n
 Route::delete('shoppingCart/destroy/{productId}', 'ShoppingCartController@destroy')->name('shoppingCart.destroy');
 Route::post('shoppingCart/review', 'ShoppingCartController@review')->name('shoppingCart.review');
 Route::post('shoppingCart/buy', 'ShoppingCartController@buy')->name('shoppingCart.buy');
-Route::post('shoppingCart/review/prueba', 'ShoppingCartController@prueba')->name('shoppingCart.prueba');

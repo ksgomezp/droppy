@@ -145,11 +145,4 @@ class ShoppingCartController extends Controller
             return redirect()->route('shoppingCart.index')->with('paymentError', true);
         }
     }
-
-    public function prueba(Request $request)
-    {
-        $json = $request->all();
-        $data = json_decode($json['data'], true);
-        dd($json['address']);
-    }
 }
