@@ -34,7 +34,7 @@
 @endif
 
 @if ($message = Session::get('paymentError'))
-<div class="alert alert-error alert-block">
+<div class="alert alert-danger alert-block">
     <button type="button" class="close" data-dismiss="alert">×</button>
     <strong>{{ __('messages.paymentError') }}</strong>
 </div>

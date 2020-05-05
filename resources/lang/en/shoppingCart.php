@@ -4,5 +4,6 @@ return [
     'shoppingCart' => 'Shopping Cart',
     'addToCart' => 'Add to cart',
     'reviewOrder' => 'Review Order',
-    'totalAmount' => 'Total'
+    'totalAmount' => 'Total',
+    'noProducts' =>'Please add products to the Cart'
 ];

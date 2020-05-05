@@ -47,10 +47,14 @@
                         @endif
                     </tbody>
                 </table>
-                @if($data["products"])
+                @if ($data["products"])
                 <input class="btn btn-warning" type="submit" value="{{ __('buttons.reviewOrder') }}" form="reviewOrder" />
                 @else
-                <input class="btn btn-warning" type="submit" value="{{ __('buttons.reviewOrder') }}" form="reviewOrder" disabled/>
+                <div class="alert alert-danger alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ __('shoppingCart.noProducts') }}</strong>
+                </div>
+                <input class="btn btn-warning" type="submit" value="{{ __('buttons.reviewOrder') }}" form="reviewOrder" disabled />
                 @endif
                 <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
             </div>
