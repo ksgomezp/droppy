@@ -1,5 +1,14 @@
 <?php
 
 return [
-    'receipt' => 'Receipt'
+    'receipt' => 'Receipt',
+    'orders' => 'My orders',
+    'date' => 'Date of the order',
+    'address' => 'Shipping address:'
 ];
+
+
+
+
+
+

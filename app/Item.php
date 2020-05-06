@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
@@ -63,6 +64,12 @@ class Item extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function productTemp($productId)
+    {
+        return Product::findOrFail($productId);
+    }
+
 
     public function getReceiptId()
     {
