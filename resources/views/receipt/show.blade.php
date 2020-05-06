@@ -14,7 +14,8 @@
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>{{ __('products.product') }}</th>
+                            <th>{{ __('products.name') }}</th>
+                            <th>{{ __('products.price') }}</th>
                             <th>{{ __('items.quantity') }}</th>
                             <th>{{ __('items.subtotal') }}</th>
                         </tr>
@@ -24,7 +25,8 @@
                         @if($data["receipt"])
                         @foreach($data["receipt"]->items as $item)
                         <tr>
-                            <td>{{ $item->getProductId() }}</td>
+                            <td>{{ $item->productTemp($item->getProductId())->getName()}}</td>
+                            <td>{{ $item->productTemp($item->getProductId())->getPrice() }}</td>
                             <td>{{ $item->getQuantity() }}</td>
                             <td>{{ $item->getSubtotal() }}</td>
 
@@ -41,7 +43,8 @@
                         </tr>
                     </tbody>
                 </table>
-
+                <td><b>{{ __('receipts.address') }}</b>{{$data['receipt']->getAddress()}}</td>
+                <br></br>
                 <a class="btn btn-light" href="{{ route('receipt.index') }}">{{ __('buttons.back') }}</a>
                     
                 </div>

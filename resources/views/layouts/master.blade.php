@@ -34,7 +34,7 @@
                     {{ __('users.users') }}
                 </a>
                 <a class="navbar-brand" href="{{ route('receipt.index') }}">
-                    {{ __('receipts.receipt') }}
+                    {{ __('receipts.orders') }}
                 </a>
                 <a class="navbar-brand" href="{{ route('shoppingCart.index') }}">
                     {{ __('categories.shoppingCart') }}
