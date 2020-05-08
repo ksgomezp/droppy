@@ -4,6 +4,7 @@
 Route::get('/', 'HomeController@index')->name('home.index');
 
 // Users
+Route::resource('admin/users', 'AdminUsersController');
 Route::get('users', 'UserController@index')->name('user.index');
 Route::get('users/{userId}', 'UserController@show')->name('user.show');
 Route::get('users/buyers/{userId}', 'UserController@buyers')->name('user.buyers');

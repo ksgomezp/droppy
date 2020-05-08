@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminUsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
+    public function __construct()
+    {
+        $this->middleware('IsAdmin');
+        
+    }
      
     public function index()
     {
@@ -21,11 +21,14 @@ class AdminUsersController extends Controller
         return view('admin.users.index')->with('data', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function show($userId)
+    {
+        $data = [];
+        $data['user'] = User::findOrFail($userId);
+
+        return view('admin.users.show')->with('data', $data);
+    }
+
     public function update($userId)
     {
         return view('admin.users.update');
@@ -35,15 +38,9 @@ class AdminUsersController extends Controller
     {
         User::destroy($userId);
 
-        return redirect()->route('admin.users.destroy');
+        return redirect()->route('admin.users.index');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //

@@ -16,7 +16,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'phone', 'dateOfBirth', 'wallet', 'isAdmin'];
+    protected $fillable = ['role_id', 'name', 'email', 'password', 'phone', 'dateOfBirth', 'wallet'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -42,13 +42,14 @@ class User extends Authenticatable
     public static function validate(Request $request)
     {
         $request->validate([
+            'role_id' => 'required'
             'name' => 'required|max:50',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'phone' => 'required|numeric|min:3000000000',
             'dateOfBirth' => 'required|date',
             'wallet' => 'required|gte:0',
-            'isAdmin' => 'required'
+            
         ]);
     }
 
