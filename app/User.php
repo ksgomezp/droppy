@@ -38,11 +38,17 @@ class User extends Authenticatable
     public function role(){
         return $this->belongsTo('app/Role');
     }
+    public function IsAdmin(){
+        if($this->role->name=='admin'){
+            return true;
+        }
+        return false;
+    }
 
     public static function validate(Request $request)
     {
         $request->validate([
-            'role_id' => 'required'
+            'role_id' => 'required',
             'name' => 'required|max:50',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:8|confirmed',
