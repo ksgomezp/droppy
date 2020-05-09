@@ -22,6 +22,10 @@ Route::get('search', 'ProductController@search')->name('product.search');
 Route::get('mostComments', 'ProductController@mostComments')->name('product.mostComments');
 Route::get('topProducts', 'ProductController@topProducts')->name('product.topProducts');
 
+// Receipts
+Route::get('receipts', 'ReceiptController@index')->name('receipt.index');
+Route::get('receipts/{receiptId}', 'ReceiptController@show')->name('receipt.show');
+
 // Categories
 Route::get('categories', 'CategoryController@index')->name('category.index');
 Route::get('categories/create', 'CategoryController@create')->name('category.create');
