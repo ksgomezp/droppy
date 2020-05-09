@@ -126,13 +126,12 @@ class ShoppingCartController extends Controller
 
 
             for ($i = 0; $i < sizeof($data['products']); $i++) {
-
-                $itemAttributes['quantity'] = $data['quantities'][$i];
-                $itemAttributes['subtotal'] = $data['subtotals'][$i];
-                $itemAttributes['productId'] =  $data['products'][$i]['id'];
-                $itemAttributes['receiptId'] = $receipt->getId();
-                
-                Item::create($itemAttributes);
+                $item = new Item();
+                $item->setQuantity($data['quantities'][$i]);
+                $item->setSubtotal($data['subtotals'][$i]);
+                $item->setProductId($data['products'][$i]['id']);
+                $item->setReceiptId($receipt->getId());
+                $item->save();
 
                 $product = Product::findOrFail($data['products'][$i]['id']);
                 $product->setStock($product->getStock() - $data['quantities'][$i]);
