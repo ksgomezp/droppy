@@ -18,12 +18,15 @@ class IsAdmin
         $user=Auth::user();
         if(!$user->IsAdmin())
         {
-            return redirect('/');
+            echo "eres cliente";
+            return redirect()->route('home.index');
 
         }
         else
         {
-            return redirect('/admin/users');
+            echo "eres administrador";
+            //return redirect()->route('admin.users.index');
+            return redirect('/');
 
         }
         return $next($request);

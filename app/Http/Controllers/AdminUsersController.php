@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class AdminUsersController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('IsAdmin');
-        
-    }
      
     public function index()
     {

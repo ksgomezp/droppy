@@ -7,16 +7,18 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
+    
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['role_id', 'name', 'email', 'password', 'phone', 'dateOfBirth', 'wallet'];
+    protected $fillable = ['name', 'email', 'password', 'phone', 'dateOfBirth', 'wallet', 'type'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -35,14 +37,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function role(){
-        return $this->belongsTo('app/Role');
-    }
-    public function IsAdmin(){
-        if($this->role->name=='admin'){
-            return true;
-        }
-        return false;
+    
+    public function admin(){
+        return $this->type === 'admin';
     }
 
     public static function validate(Request $request)
@@ -68,14 +65,14 @@ class User extends Authenticatable
         $this->attributes['id'] = $id;
     }
 
-    public function getRole_id()
+    public function getType()
     {
-        return $this->attributes['role_id'];
+        return $this->attributes['type'];
     }
 
-    public function setRole_id($role_id)
+    public function setType($type)
     {
-        $this->attributes['role_id'] = $role_id;
+        $this->attributes['type'] = $type;
     }
 
 
