@@ -1,8 +1,8 @@
 <?php
 
 // Home
-Route::get('/', 'HomeController@index')->name('home.index');
-
+ Route::get('/admin', 'HomeController@index')->name('home.index');
+Route::get('/', 'ProductController@index')->name('product.index');
 // Users
 Route::resource('admin/users', 'AdminUsersController');
 Route::get('users', 'UserController@index')->name('user.index');

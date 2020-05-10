@@ -48,13 +48,12 @@ class User extends Authenticatable
     public static function validate(Request $request)
     {
         $request->validate([
-            'role_id' => 'required',
+            
             'name' => 'required|max:50',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'phone' => 'required|numeric|min:3000000000',
             'dateOfBirth' => 'required|date',
-            'wallet' => 'required|gte:0',
             
         ]);
     }
@@ -68,6 +67,17 @@ class User extends Authenticatable
     {
         $this->attributes['id'] = $id;
     }
+
+    public function getRole_id()
+    {
+        return $this->attributes['role_id'];
+    }
+
+    public function setRole_id($role_id)
+    {
+        $this->attributes['role_id'] = $role_id;
+    }
+
 
     public function getName()
     {

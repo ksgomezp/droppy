@@ -9,17 +9,17 @@ class AlterUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('role_id')->index();
             $table->unsignedInteger('phone');
             $table->date('dateOfBirth');
             $table->unsignedDecimal('wallet')->default(100000);
+            $table->integer('role_id')->index()->default(1);
         });
     }
 
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['role_id', 'phone', 'dateOfBirth', 'wallet']);
+            $table->dropColumn([ 'phone', 'dateOfBirth', 'wallet', 'role_id']);
         });
     }
 }
