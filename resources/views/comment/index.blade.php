@@ -28,7 +28,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a class="btn btn-light"
+                    <a class="btn btn-secondary"
                         href="{{ route('product.show', $data['product']->getId()) }}">{{ __('buttons.back') }}</a>
                 </div>
             </div>

@@ -56,7 +56,7 @@
                 </div>
                 <input class="btn btn-warning" type="submit" value="{{ __('buttons.reviewOrder') }}" form="reviewOrder" disabled />
                 @endif
-                <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
+                <a class="btn btn-secondary" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
             </div>
 
         </div>
