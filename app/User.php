@@ -7,16 +7,18 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
+    
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'phone', 'dateOfBirth', 'wallet', 'isAdmin'];
+    protected $fillable = ['name', 'email', 'password', 'phone', 'dateOfBirth', 'wallet', 'type'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -35,17 +37,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function admin(){
+        return $this->type === 'admin';
+    }
 
     public static function validate(Request $request)
     {
         $request->validate([
+            
             'name' => 'required|max:50',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'phone' => 'required|numeric|min:3000000000',
             'dateOfBirth' => 'required|date',
-            'wallet' => 'required|gte:0',
-            'isAdmin' => 'required'
+            
         ]);
     }
 
@@ -58,6 +64,17 @@ class User extends Authenticatable
     {
         $this->attributes['id'] = $id;
     }
+
+    public function getType()
+    {
+        return $this->attributes['type'];
+    }
+
+    public function setType($type)
+    {
+        $this->attributes['type'] = $type;
+    }
+
 
     public function getName()
     {

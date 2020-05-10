@@ -1,9 +1,16 @@
 <?php
 
 // Home
-Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/', 'ProductController@index')->name('product.index');
+Route::get('/home', 'HomeController@index')->name('home.index');
+// Admins
+Route::group(['middleware' => 'admin'], function(){
+    Route::get('/admin', 'AdminUsersController@index')->name('admin.users.index');
+
+});
 
 // Users
+//Route::resource('admin/users', 'AdminUsersController');
 Route::get('users', 'UserController@index')->name('user.index');
 Route::get('users/{userId}', 'UserController@show')->name('user.show');
 Route::get('users/buyers/{userId}', 'UserController@buyers')->name('user.buyers');

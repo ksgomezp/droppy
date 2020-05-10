@@ -23,36 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('home.index') }}">
-                    {{ __('messages.home') }}
-                </a>
-                <a class="navbar-brand" href="{{ route('product.index') }}">
-                    {{ __('products.products') }}
-                </a>              
-                <a class="navbar-brand" href="{{ route('category.index') }}">
-                    {{ __('categories.categories') }}
-                </a>
-                @if(Auth::user())
-                @if(Auth::user()->admin())
-                <a class="navbar-brand" href="{{ route('admin.users.index') }}">
-                    {{ __('users.users') }}
-                </a>
-                <a class="navbar-brand" href="{{ route('product.create') }}">
-                    {{ __('products.createProduct') }}
-                </a>
-                <a class="navbar-brand" href="{{ route('category.create') }}">
-                    {{ __('categories.createCategory') }}
-                </a>
-                @endif
-                @if(!Auth::user()->admin())
-                <a class="navbar-brand" href="{{ route('receipt.index') }}">
-                    {{ __('receipts.orders') }}
-                </a>
-                <a class="navbar-brand" href="{{ route('shoppingCart.index') }}">
-                    {{ __('categories.shoppingCart') }}
-                </a>
-                @endif
-                @endif
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

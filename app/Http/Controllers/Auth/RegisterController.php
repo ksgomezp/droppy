@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'phone' => ['required', 'numeric', 'min:3000000000'],
             'dateOfBirth' => ['required', 'date'],
-            'wallet' => ['required', 'gte:0'],
+            
         ]);
     }
 
@@ -74,7 +74,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'phone' => $data['phone'],
             'dateOfBirth' => $data['dateOfBirth'],
-            'wallet' => $data['wallet']
+            
         ]);
     }
 }

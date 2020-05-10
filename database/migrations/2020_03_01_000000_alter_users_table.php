@@ -12,14 +12,14 @@ class AlterUsersTable extends Migration
             $table->unsignedInteger('phone');
             $table->date('dateOfBirth');
             $table->unsignedDecimal('wallet')->default(100000);
-            $table->boolean('isAdmin')->default(false);
+            $table->enum('type', ['member', 'admin'])->default('member');
         });
     }
 
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['phone', 'dateOfBirth', 'wallet', 'isAdmin']);
+            $table->dropColumn([ 'phone', 'dateOfBirth', 'wallet', 'type']);
         });
     }
 }
