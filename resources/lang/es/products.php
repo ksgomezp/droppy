@@ -2,8 +2,9 @@
 
 return [
     'product' => 'Producto',
-    'products' => "Productos",
+    'products' => 'Productos',
     'createProduct' => 'Crear producto',
+    'moreInfo' => 'Más información',
     'name' => 'Nombre',
     'description' => 'Descripción',
     'image' => 'Imagen',

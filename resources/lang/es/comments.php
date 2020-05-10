@@ -1,6 +1,7 @@
 <?php
 
 return [
+  'comment' => 'Comentar',
   'comments' => 'Comentarios',
   'commentProduct' => 'Comenta este producto',
   'createComment' => 'Crear comentario',
