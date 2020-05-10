@@ -13,7 +13,7 @@ Before writing any code have a look at the [code guidelines](guidelines) that ar
     4. `npm install`
     5. `npm run dev`
     6. `php artisan key:generate`
-    7. `php artisan migrate`
-    8. `php artisan db:seed`
-    9. `php artisan storage:link`
+    7. `php artisan storage:link`
+    8. `php artisan migrate`
+    9. `php artisan db:seed`
     10. `php artisan serve`
