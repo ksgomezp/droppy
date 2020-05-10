@@ -24,11 +24,11 @@
                                 name="content" value="{{ old('content') }}" />
                             <div class="input-group-append">
                                 <span class="form-group-btn">
-                                    <input class="btn btn-success" type="submit" value="Send" />
+                                    <input class="btn btn-success" type="submit" value="{{ __('comments.comment') }}" />
                                 </span>
                             </div>
                         </div>
-                        <a class="btn btn-light"
+                        <a class="btn btn-secondary"
                             href="{{ route('product.show', $data['product']->getId()) }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>
