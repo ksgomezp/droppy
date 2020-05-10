@@ -15,4 +15,5 @@ Before writing any code have a look at the [code guidelines](guidelines) that ar
     6. `php artisan key:generate`
     7. `php artisan migrate`
     8. `php artisan db:seed`
-    7. `php artisan serve`
+    9. `php artisan storage:link`
+    10. `php artisan serve`
