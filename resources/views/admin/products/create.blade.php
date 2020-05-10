@@ -22,13 +22,13 @@
                         @csrf
                         <div class="form-group">
                             <label>{{ __('products.name') }}</label>
-                            <input class="form-control" type="text" placeholder="Enter name" name="name"
+                        <input class="form-control" type="text" placeholder="{{ __('products.enterName') }}" name="name"
                                 value="{{ old('name') }}" />
                         </div>
 
                         <div class="form-group">
                             <label>{{ __('products.description') }}</label>
-                            <input class="form-control" type="text" placeholder="Enter description" name="description"
+                            <input class="form-control" type="text" placeholder="{{ __('products.enterDescription') }}" name="description"
                                 value="{{ old('description') }}" />
                         </div>
 
@@ -48,13 +48,13 @@
 
                         <div class="form-group">
                             <label>{{ __('products.stock') }}</label>
-                            <input class="form-control" type="text" placeholder="Enter stock" name="stock"
+                            <input class="form-control" type="text" placeholder="{{ __('products.enterStock') }}" name="stock"
                                 value="{{ old('stock') }}" />
                         </div>
 
                         <div class="form-group">
                             <label>{{ __('products.price') }}</label>
-                            <input class="form-control" type="text" placeholder="Enter price" name="price"
+                            <input class="form-control" type="text" placeholder="{{ __('products.enterPrice') }}" name="price"
                                 value="{{ old('price') }}" />
                         </div>
 

@@ -6,7 +6,7 @@
 <div class="container">
     <form method="GET" action="{{ route('product.search') }}">
         <div class="input-group mb-3">
-            <input type="search" class="form-control" name="search" placeholder="Search">
+            <input type="search" class="form-control" name="search" placeholder="{{ __('products.search') }}">
             <div class="input-group-append">
                 <span class="form-group-btn">
                     <button type="submit" class="btn btn-primary">{{ __('buttons.search') }}</button>
