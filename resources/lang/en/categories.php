@@ -5,5 +5,6 @@ return [
     'categories' => 'Categories',
     'createCategory' => 'Create category',
     'name' => 'Name',
-    'shoppingCart' => 'Cart'
+    'shoppingCart' => 'Cart',
+    'enterName' => 'Enter name'
 ];

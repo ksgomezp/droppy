@@ -10,5 +10,4 @@ return [
     'remove' => 'Quitado satisfactoriamente!',
     'successfulPurchase' => 'Compra satisfactoria!',
     'paymentError' => 'Error en el pago - revise su saldo'
-
 ];
