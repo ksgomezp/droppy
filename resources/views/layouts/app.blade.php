@@ -31,19 +31,19 @@
                 <a class="navbar-brand" href="{{ route('product.index') }}">
                     {{ __('products.products') }}
                 </a>
-                <a class="navbar-brand" href="{{ route('category.index') }}">
-                    {{ __('categories.categories') }}
-                </a>
                 @if(Auth::user())
                 @if(Auth::user()->admin())
                 <a class="navbar-brand" href="{{ route('admin.users.index') }}">
                     {{ __('users.users') }}
                 </a>
-                <a class="navbar-brand" href="{{ route('product.create') }}">
+                <a class="navbar-brand" href="{{ route('admin.products.create') }}">
                     {{ __('products.createProduct') }}
                 </a>
-                <a class="navbar-brand" href="{{ route('category.create') }}">
+                <a class="navbar-brand" href="{{ route('admin.categories.create') }}">
                     {{ __('categories.createCategory') }}
+                </a>
+                <a class="navbar-brand" href="{{ route('category.index') }}">
+                    {{ __('categories.categories') }}
                 </a>
                 @endif
                 @if(!Auth::user()->admin())
