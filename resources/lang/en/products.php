@@ -14,6 +14,7 @@ return [
     'price' => 'Price',
     'commentedProducts' => 'Most commented products',
     'topProducts' => 'Top 3 selling products',
+    'topCategory' => 'Category with most products',
     'enterName' => 'Enter name',
     'enterDescription' => 'Enter description',
     'enterStock' => 'Enter stock',
