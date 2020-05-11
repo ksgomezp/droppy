@@ -4,7 +4,7 @@
 Before writing any code have a look at the [code guidelines](guidelines) that are to be used.
 
 ## 2. Setup
-1. Clone the repository using `git clone https://github.com/cgavir29/droppy.git`
+1. Clone the repository using `git clone https://github.com/ksgomezp/droppy.git`
 2. Create a MySQL database with **name** = 'droppy', **username** = 'root' and **password** = '' (empty) if you don't want to make changes to the `.env` file.
 3. Run the following commands.
     1. `cd droppy`
