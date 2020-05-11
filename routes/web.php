@@ -32,6 +32,7 @@ Route::delete('products/{productId}', 'ProductController@destroy')->name('produc
 Route::get('search', 'ProductController@search')->name('product.search');
 Route::get('mostComments', 'ProductController@mostComments')->name('product.mostComments');
 Route::get('topProducts', 'ProductController@topProducts')->name('product.topProducts');
+Route::get('topCategory', 'ProductController@topCategory')->name('product.topCategory');
 
 // Receipts
 Route::get('receipts', 'ReceiptController@index')->name('receipt.index');
