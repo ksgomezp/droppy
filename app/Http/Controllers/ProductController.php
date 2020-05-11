@@ -23,7 +23,7 @@ class ProductController extends Controller
         $data = [];
         $data['categories'] = Category::all();
 
-        return view('product.create')->with('data', $data);
+        return view('admin.products.create')->with('data', $data);
     }
 
     public function store(Request $request)
