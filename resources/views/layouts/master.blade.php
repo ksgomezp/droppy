@@ -39,6 +39,9 @@
                 <a class="navbar-brand" href="{{ route('shoppingCart.index') }}">
                     {{ __('categories.shoppingCart') }}
                 </a>
+                <a class="navbar-brand" href="{{ route('api.course.index') }}">
+                    {{ __('courses.api') }}
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
