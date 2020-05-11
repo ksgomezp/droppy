@@ -14,10 +14,13 @@
             </div>
         </div>
     </form>
+
     <div class="input-group mb-3">
         <a class="btn btn-primary" href="{{ route('product.mostComments') }}">{{ __('products.commentedProducts') }}</a>
         &nbsp;
         <a class="btn btn-primary" href="{{ route('product.topProducts') }}">{{ __('products.topProducts') }}</a>
+        &nbsp;
+        <a class="btn btn-primary" href="{{ route('product.topCategory') }}">{{ __('products.topCategory') }}</a>
     </div>
 
     <div class="row">

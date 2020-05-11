@@ -14,6 +14,7 @@ return [
     'price' => 'Precio',
     'commentedProducts' => 'Productos más comentados',
     'topProducts' => 'Top 3 productos más vendidos',
+    'topCategory' => 'Categoría con más productos',
     'enterName' => 'Ingrese el nombre',
     'enterDescription' => 'Ingrese la descripción',
     'enterStock' => 'Ingrese la cantidad de ejemplares',
