@@ -16,8 +16,4 @@ class CourseController extends Controller
         return view('course.index')->with('data', $data);
     }
 
-    public function show($courseId)
-    {
-       
-    }
 }
