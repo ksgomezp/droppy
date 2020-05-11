@@ -10,7 +10,7 @@ $factory->define(Address::class, function (Faker $faker) {
 
     return [
         'deliveryAddress' => $faker->address,
-        'postalCode' => $faker->postcode,
+        'postalCode' => $faker->numberBetween(0, 999999),
         'userId' => $user->getId(),
         'cityId' => function () {
             return factory(City::class)->create()->id;
