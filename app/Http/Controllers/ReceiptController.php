@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Receipt;
+use App\Auth;
 use Illuminate\Http\Request;
 
 
 class ReceiptController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         $data = [];
-        $data['receipts'] = Receipt::all();
-
+        $userId = Auth()->user()->getId();
+        $data['receipts'] = Receipt::all()->where('userId','=',$userId);
+        
         return view('receipt.index')->with('data', $data);
     }
 

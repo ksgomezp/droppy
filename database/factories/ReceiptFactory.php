@@ -8,13 +8,11 @@ use App\Country;
 use App\Product;
 use App\State;
 use App\City;
-use App\Product;
 use Faker\Generator as Faker;
 
 $factory->define(Receipt::class, function (Faker $faker) {
     $user = User::all()->random(1)->first();
 
-    $user = User::inRandomOrder()->value('id');
     $address = Address::inRandomOrder()->first();
     $city = City::findOrFail($address->getCityId());
     $state = State::findOrFail($city->getStateId());
