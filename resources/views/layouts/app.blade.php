@@ -53,6 +53,9 @@
                 <a class="navbar-brand" href="{{ route('shoppingCart.index') }}">
                     {{ __('categories.shoppingCart') }}
                 </a>
+                <a class="navbar-brand" href="{{ route('api.course.index') }}">
+                    {{ __('courses.api') }}
+                </a>
                 @endif
                 @endif
 
