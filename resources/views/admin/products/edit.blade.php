@@ -34,8 +34,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label>{{ __('products.image') }}</label>
-                            <img src="{{ URL::asset(sprintf('storage/%s', $data['product']->getImage())) }}">
+                            <img src="{{ URL::asset('storage/' . $data['product']->getImage()) }}">
+                            <br>
+                            <br>
                             <input type="file" name="image">
                             <input type="hidden" name="image" value="{{ $data['product']->getImage() }}">
                         </div>
@@ -66,7 +67,7 @@
                         </div>
 
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.save') }}" />
-                        <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
+                        <a class="btn btn-secondary" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>
             </div>

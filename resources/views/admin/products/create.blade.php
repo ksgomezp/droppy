@@ -22,14 +22,14 @@
                         @csrf
                         <div class="form-group">
                             <label>{{ __('products.name') }}</label>
-                        <input class="form-control" type="text" placeholder="{{ __('products.enterName') }}" name="name"
-                                value="{{ old('name') }}" />
+                            <input class="form-control" type="text" placeholder="{{ __('products.enterName') }}"
+                                name="name" value="{{ old('name') }}" />
                         </div>
 
                         <div class="form-group">
                             <label>{{ __('products.description') }}</label>
-                            <input class="form-control" type="text" placeholder="{{ __('products.enterDescription') }}" name="description"
-                                value="{{ old('description') }}" />
+                            <input class="form-control" type="text" placeholder="{{ __('products.enterDescription') }}"
+                                name="description" value="{{ old('description') }}" />
                         </div>
 
                         <div class="form-group">
@@ -48,18 +48,18 @@
 
                         <div class="form-group">
                             <label>{{ __('products.stock') }}</label>
-                            <input class="form-control" type="text" placeholder="{{ __('products.enterStock') }}" name="stock"
-                                value="{{ old('stock') }}" />
+                            <input class="form-control" type="text" placeholder="{{ __('products.enterStock') }}"
+                                name="stock" value="{{ old('stock') }}" />
                         </div>
 
                         <div class="form-group">
                             <label>{{ __('products.price') }}</label>
-                            <input class="form-control" type="text" placeholder="{{ __('products.enterPrice') }}" name="price"
-                                value="{{ old('price') }}" />
+                            <input class="form-control" type="text" placeholder="{{ __('products.enterPrice') }}"
+                                name="price" value="{{ old('price') }}" />
                         </div>
 
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.create') }}" />
-                        <a class="btn btn-light" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
+                        <a class="btn btn-secondary" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>
             </div>
