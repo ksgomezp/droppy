@@ -21,42 +21,49 @@
                         </tr>
 
                     </thead>
-                    <tbody>
-                        <form id="reviewOrder" method="POST" action="{{ route('shoppingCart.review') }}">
-                            @csrf
-                            @if($data["products"])
-                            @foreach($data["products"] as $product)
-                            <tr>
-                                <td>{{ $product->getName() }}</td>
-                                <td>{{ $product->getDescription() }}</td>
-                                <td>{{ $product->getPrice() }}</td>
-                                <td>
-                                    <input type="number" name="{{ $loop->index }}" value="1" min="1" max="{{ $product->getStock() }}" form="reviewOrder" required />
-                                </td>
-                        </form>
 
-                        <td>
-                            <form id="delete" method="POST" action="{{ route('shoppingCart.destroy', $product->getId()) }}">
-                                @method('DELETE')
-                                @csrf
-                                <input class="btn btn-danger" type="submit" value="{{ __('buttons.remove') }}" form="delete" />
-                            </form>
-                        </td>
+                    <tbody>
+                        @if($data["products"])
+                        @foreach($data["products"] as $product)
+                        <tr>
+                            <td>{{ $product->getName() }}</td>
+                            <td>{{ $product->getDescription() }}</td>
+                            <td>{{ $product->getPrice() }}</td>
+                            <td>
+                                <input type="number" name="{{ $loop->index }}" value="1" min="1" max="{{ $product->getStock() }}" form="reviewOrder" required />
+                            </td>
+
+                            <td>
+                                <form id="delete" method="POST" action="{{ route('shoppingCart.destroy', $product->getId()) }}">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input class="btn btn-danger" type="submit" value="{{ __('buttons.remove') }}" form="delete" />
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                         @endif
                     </tbody>
+
                 </table>
+
                 @if ($data["products"])
-                <input class="btn btn-warning" type="submit" value="{{ __('buttons.reviewOrder') }}" form="reviewOrder" />
+                <form id="reviewOrder" method="POST" action="{{ route('shoppingCart.review') }}">
+                    @csrf
+                    <input class="btn btn-warning" type="submit" value="{{ __('buttons.reviewOrder') }}" form="reviewOrder" />
+                    <a class="btn btn-secondary" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
+
+                </form>
                 @else
                 <div class="alert alert-danger alert-block">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     <strong>{{ __('shoppingCart.noProducts') }}</strong>
                 </div>
                 <input class="btn btn-warning" type="submit" value="{{ __('buttons.reviewOrder') }}" form="reviewOrder" disabled />
-                @endif
                 <a class="btn btn-secondary" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
+
+                @endif
+
             </div>
 
         </div>

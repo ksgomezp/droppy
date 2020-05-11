@@ -1,5 +1,6 @@
 <?php
 
+use App\Receipt;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AddressesTableSeeder::class);
         $this->call(ProductsTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
-        //$this->call(ReceiptsTableSeeder::class);
+        $this->call(ReceiptsTableSeeder::class);
+
+        Receipt::where('totalAmount', 0)->delete();
     }
 }
