@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <ul class="list-group">
                     @foreach($data['users'] as $user)
-                    <a href="{{ route('admin.users.show', $user->getId()) }}">
+                    <a href="{{ route('admin.user.show', $user->getId()) }}">
                         <li class="list-group-item">{{ $user->getName() }}</li>
                     </a>
                     @endforeach

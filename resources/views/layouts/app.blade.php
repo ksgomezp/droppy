@@ -33,13 +33,13 @@
                 </a>
                 @if(Auth::user())
                 @if(Auth::user()->admin())
-                <a class="navbar-brand" href="{{ route('admin.users.index') }}">
+                <a class="navbar-brand" href="{{ route('admin.user.index') }}">
                     {{ __('users.users') }}
                 </a>
-                <a class="navbar-brand" href="{{ route('admin.products.create') }}">
+                <a class="navbar-brand" href="{{ route('admin.product.create') }}">
                     {{ __('products.createProduct') }}
                 </a>
-                <a class="navbar-brand" href="{{ route('admin.categories.create') }}">
+                <a class="navbar-brand" href="{{ route('admin.category.create') }}">
                     {{ __('categories.createCategory') }}
                 </a>
                 <a class="navbar-brand" href="{{ route('category.index') }}">

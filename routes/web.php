@@ -23,10 +23,10 @@ Auth::routes();
 
 // Products
 Route::get('products', 'ProductController@index')->name('product.index');
-Route::get('admin/products/create', 'ProductController@create')->name('admin.products.create');
+Route::get('admin/products/create', 'ProductController@create')->name('admin.product.create');
 Route::post('products', 'ProductController@store')->name('product.store');
 Route::get('products/{productId}', 'ProductController@show')->name('product.show');
-Route::get('products/{productId}/edit', 'ProductController@edit')->name('product.edit');
+Route::get('admin/products/{productId}/edit', 'ProductController@edit')->name('admin.product.edit');
 Route::patch('products/{productId}', 'ProductController@update')->name('product.update');
 Route::delete('products/{productId}', 'ProductController@destroy')->name('product.destroy');
 Route::get('search', 'ProductController@search')->name('product.search');
@@ -40,7 +40,7 @@ Route::get('receipts/{receiptId}', 'ReceiptController@show')->name('receipt.show
 
 // Categories
 Route::get('categories', 'CategoryController@index')->name('category.index');
-Route::get('admin/categories/create', 'CategoryController@create')->name('admin.categories.create');
+Route::get('admin/categories/create', 'CategoryController@create')->name('admin.category.create');
 Route::post('categories', 'CategoryController@store')->name('category.store');
 
 // Comments
