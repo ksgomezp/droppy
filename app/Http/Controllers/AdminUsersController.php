@@ -26,7 +26,9 @@ class AdminUsersController extends Controller
 
     public function update($userId)
     {
-        return view('admin.users.update');
+        $data = [];
+        $data['user'] = User::findOrFail($userId);
+        return view('admin.users.update')->with('data', $data);
     }
 
     public function destroy($userId)
