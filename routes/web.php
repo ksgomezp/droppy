@@ -1,4 +1,6 @@
 <?php
+// API UNITOR
+Route::get('/courses', 'CourseController@index')->name('api.course.index');
 
 // Home
 Route::get('/', 'ProductController@index')->name('product.index');
