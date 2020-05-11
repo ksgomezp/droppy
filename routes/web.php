@@ -9,15 +9,15 @@ Route::get('/home', 'HomeController@index')->name('home.index');
 //Route::group(['middleware' => 'Admin'], function () {
     Route::get('/admin', 'AdminUsersController@index')->name('admin.users.index');
     Route::get('admin/users/{userId}', 'AdminUsersController@show')->name('admin.users.show');
-    Route::get('admin/users/buyers', 'AdminUsersController@buyers')->name('admin.users.buyers');
+    Route::get('buyer', 'AdminUsersController@buyer')->name('admin.users.buyer');
     Route::delete('admin/users/{userId}', 'AdminUsersController@destroy')->name('admin.users.destroy');
 //});
 
 // Users
 //Route::resource('admin/users', 'AdminUsersController');
 //Route::get('users', 'UserController@index')->name('user.index');
-//Route::get('users/{userId}', 'UserController@show')->name('user.show');
-Route::get('users/buyers/{userId}', 'UserController@buyers')->name('user.buyers');
+Route::get('users/{userId}', 'UserController@show')->name('user.show');
+//Route::get('users/buyer', 'UserController@buyer')->name('admin.user.buyer');
 Route::delete('users/{userId}', 'UserController@destroy')->name('user.destroy');
 Auth::routes();
 

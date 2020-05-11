@@ -38,8 +38,23 @@ class AdminUsersController extends Controller
         return redirect()->route('admin.users.index');
     }
 
-    public function store(Request $request)
+    public function buyer()
     {
-        //
+        $data = [];
+
+        $wallets = User::all();
+        $minval = 110000;
+        $bestBuyer = null;
+
+        foreach ($wallets as $wallet) {
+            /*if ($wallet < $minval) {
+                $minval = $wallet;              
+            }*/
+            $bestBuyer = $wallet;
+        }
+        
+        $data['users'] = $wallets;
+
+        return view('admin.users.index')->with('data', $data);
     }
 }

@@ -4,6 +4,10 @@
 
 @section('content')
 <div class="container">
+    <a class="btn btn-primary" href="{{ route('admin.users.buyer') }}">{{ __('users.bestBuyer') }}</a>
+</div>
+
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
