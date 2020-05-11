@@ -6,9 +6,8 @@ Route::get('/courses', 'CourseController@index')->name('api.course.index');
 Route::get('/', 'ProductController@index')->name('product.index');
 Route::get('/home', 'HomeController@index')->name('home.index');
 // Admins
-Route::group(['middleware' => 'admin'], function(){
+Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin', 'AdminUsersController@index')->name('admin.users.index');
-
 });
 
 // Users

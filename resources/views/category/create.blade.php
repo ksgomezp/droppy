@@ -22,8 +22,8 @@
                         @csrf
                         <div class="form-group">
                             <label>{{ __('categories.name') }}</label>
-                            <input class="form-control" type="text" placeholder="Enter name" name="name"
-                                value="{{ old('name') }}" />
+                            <input class="form-control" type="text" placeholder="{{ __('categories.enterName') }}"
+                                name="name" value="{{ old('name') }}" />
                         </div>
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.create') }}" />
                         <a class="btn btn-light" href="{{ route('category.index') }}">{{ __('buttons.back') }}</a>

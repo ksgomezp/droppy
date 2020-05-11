@@ -4,6 +4,5 @@ return [
     'receipt' => 'Recibo',
     'orders' => 'Mis ordenes',
     'date' => 'Fecha de orden',
-    'address' => 'Dirección de envio:'
-    
+    'address' => 'Dirección de envío:'
 ];
