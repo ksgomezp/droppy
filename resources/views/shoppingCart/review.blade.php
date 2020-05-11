@@ -61,7 +61,7 @@
                     
                     <input class="btn btn-warning" type="submit" value="{{ __('buttons.buy') }}" />
 
-                    <a class="btn btn-light" href="{{ route('shoppingCart.index') }}">{{ __('buttons.back') }}</a>
+                    <a class="btn btn-secondary" href="{{ route('shoppingCart.index') }}">{{ __('buttons.back') }}</a>
 
                 </form>
 
