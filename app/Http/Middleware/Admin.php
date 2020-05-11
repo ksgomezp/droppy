@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use app\User;
 use Illuminate\Contracts\Auth\Guard;
 
 class Admin
@@ -10,7 +11,7 @@ class Admin
     protected $auth;
     public function __construct(Guard $auth)
     {
-        $this->auth = auth;
+        $this->auth = 'auth';
     }
 
     public function handle($request, Closure $next)

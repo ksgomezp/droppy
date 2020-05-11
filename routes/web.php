@@ -6,21 +6,24 @@ Route::get('/courses', 'CourseController@index')->name('api.course.index');
 Route::get('/', 'ProductController@index')->name('product.index');
 Route::get('/home', 'HomeController@index')->name('home.index');
 // Admins
-Route::group(['middleware' => 'admin'], function () {
+//Route::group(['middleware' => 'Admin'], function () {
     Route::get('/admin', 'AdminUsersController@index')->name('admin.users.index');
-});
+    Route::get('admin/users/{userId}', 'AdminUsersController@show')->name('admin.users.show');
+    Route::get('admin/users/buyers', 'AdminUsersController@buyers')->name('admin.users.buyers');
+    Route::delete('admin/users/{userId}', 'AdminUsersController@destroy')->name('admin.users.destroy');
+//});
 
 // Users
 //Route::resource('admin/users', 'AdminUsersController');
-Route::get('users', 'UserController@index')->name('user.index');
-Route::get('users/{userId}', 'UserController@show')->name('user.show');
+//Route::get('users', 'UserController@index')->name('user.index');
+//Route::get('users/{userId}', 'UserController@show')->name('user.show');
 Route::get('users/buyers/{userId}', 'UserController@buyers')->name('user.buyers');
 Route::delete('users/{userId}', 'UserController@destroy')->name('user.destroy');
 Auth::routes();
 
 // Products
 Route::get('products', 'ProductController@index')->name('product.index');
-Route::get('products/create', 'ProductController@create')->name('product.create');
+Route::get('admin/products/create', 'ProductController@create')->name('admin.products.create');
 Route::post('products', 'ProductController@store')->name('product.store');
 Route::get('products/{productId}', 'ProductController@show')->name('product.show');
 Route::get('products/{productId}/edit', 'ProductController@edit')->name('product.edit');
@@ -36,7 +39,7 @@ Route::get('receipts/{receiptId}', 'ReceiptController@show')->name('receipt.show
 
 // Categories
 Route::get('categories', 'CategoryController@index')->name('category.index');
-Route::get('categories/create', 'CategoryController@create')->name('category.create');
+Route::get('admin/categories/create', 'CategoryController@create')->name('admin.categories.create');
 Route::post('categories', 'CategoryController@store')->name('category.store');
 
 // Comments
