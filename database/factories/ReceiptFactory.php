@@ -12,7 +12,7 @@ use Faker\Generator as Faker;
 $factory->define(Receipt::class, function (Faker $faker) {
     $user = User::inRandomOrder()->value('id');
 
-    $address = Address::inRandomOrder()->value('id');
+    $address = Address::inRandomOrder()->first();
     $city = City::findOrFail($address->getCityId());
     $state = State::findOrFail($city->getStateId());
     $country = Country::findOrFail($state->getCountryId());
