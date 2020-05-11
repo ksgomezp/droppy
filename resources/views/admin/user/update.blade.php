@@ -17,7 +17,7 @@
                     </ul>
                     @endif
 
-                    <form method="POST" action="{{ route('admin.users.update', $data['user']->getId()) }}"
+                    <form method="POST" action="{{ route('admin.user.update', $data['user']->getId()) }}"
                         enctype="multipart/form-data">
                         @method('PATCH')
                         @csrf
@@ -46,7 +46,7 @@
                         </div>
 
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.save') }}" />
-                        <a class="btn btn-light" href="{{ route('admin.products.index') }}">{{ __('buttons.back') }}</a>
+                        <a class="btn btn-light" href="{{ route('admin.product.index') }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>
             </div>

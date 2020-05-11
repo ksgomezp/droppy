@@ -13,7 +13,7 @@ class AdminUsersController extends Controller
         $data = [];
         $data['users'] = User::all();
 
-        return view('admin.users.index')->with('data', $data);
+        return view('admin.user.index')->with('data', $data);
     }
 
     public function show($userId)
@@ -21,21 +21,21 @@ class AdminUsersController extends Controller
         $data = [];
         $data['user'] = User::findOrFail($userId);
 
-        return view('admin.users.show')->with('data', $data);
+        return view('admin.user.show')->with('data', $data);
     }
 
     public function update($userId)
     {
         $data = [];
         $data['user'] = User::findOrFail($userId);
-        return view('admin.users.update')->with('data', $data);
+        return view('admin.user.update')->with('data', $data);
     }
 
     public function destroy($userId)
     {
         User::destroy($userId);
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('admin.user.index');
     }
 
     public function store(Request $request)
