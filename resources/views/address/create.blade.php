@@ -52,12 +52,12 @@
 
                         <div class="form-group">
                             <label>{{ __('addresses.deliveryAddress') }}</label>
-                            <input class="form-control" type="text" placeholder="Enter deliveryAddress" name="deliveryAddress" value="{{ old('deliveryAddress') }}" />
+                            <input class="form-control" type="text" placeholder="{{ __('addresses.enterDeliveryAddress') }}" name="deliveryAddress" value="{{ old('deliveryAddress') }}" />
                         </div>
 
                         <div class="form-group">
                             <label>{{ __('addresses.postalCode') }}</label>
-                            <input class="form-control" type="text" placeholder="Enter postalCode" name="postalCode" value="{{ old('postalCode') }}" />
+                            <input class="form-control" type="text" placeholder="{{ __('addresses.enterPostalCode') }}" name="postalCode" value="{{ old('postalCode') }}" />
                         </div>
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.create') }}" />
                         <a class="btn btn-secondary" href="{{ route('user.show', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>

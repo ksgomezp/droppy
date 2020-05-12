@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class AdminUsersController extends Controller
 {
-     
+
     public function index()
     {
         $data = [];
@@ -45,7 +45,7 @@ class AdminUsersController extends Controller
         */
         $user->update($attributes);
 
-        return redirect()->route('admin.user.show', $userId);
+        return redirect()->route('admin.user.show', $userId)->with('update', true);
     }
 
     public function update($userId)
@@ -56,16 +56,16 @@ class AdminUsersController extends Controller
     }
 
     public function destroy($userId)
-    {   
-        Address::where('usertId', $userId)->delete();
-        $receipts = Receipt::all()->where('usertId', $userId);
+    {
+        Address::where('userId', $userId)->delete();
+        $receipts = Receipt::all()->where('userId', $userId);
         foreach ($receipts as $receipt) {
             Item::where('receiptId', $receipt->getId())->delete();
         }
-        Receipt::where('usertId', $userId)->delete();
+        Receipt::where('userId', $userId)->delete();
         User::destroy($userId);
 
-        return redirect()->route('admin.user.index');
+        return redirect()->route('admin.user.index')->with('delete', true);
     }
 
     public function buyer()
@@ -77,7 +77,5 @@ class AdminUsersController extends Controller
         } else {
             return redirect()->back();
         }
-
-        
     }
 }

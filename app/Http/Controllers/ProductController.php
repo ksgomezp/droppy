@@ -78,7 +78,7 @@ class ProductController extends Controller
 
         $product->update($attributes);
 
-        return redirect()->route('product.show', $productId);
+        return redirect()->route('product.show', $productId)->with('update',true);
     }
 
     public function destroy($productId)
@@ -86,7 +86,7 @@ class ProductController extends Controller
         Comment::where('productId', $productId)->delete();
         Product::destroy($productId);
 
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('remove',true);
     }
 
     public function search(Request $request)
@@ -108,7 +108,7 @@ class ProductController extends Controller
         if (sizeof($data['products']) > 0) {
             return view('product.index')->with('data', $data);
         } else {
-            return redirect()->back();
+            return redirect()->back()->with('notComments', true);
         }
     }
 
@@ -121,7 +121,7 @@ class ProductController extends Controller
         if (sizeof($data['products']) > 0) {
             return view('product.index')->with('data', $data);
         } else {
-            return redirect()->back();
+            return redirect()->back()->with('notSales', true);
         }
     }
 

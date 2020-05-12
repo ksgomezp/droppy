@@ -76,13 +76,13 @@ class AddressController extends Controller
         echo $request['cityId'];
         $address->update($request->only(['userId', 'cityId', 'deliveryAddress', 'postalCode']));
 
-        return redirect()->route('address.index', $userId);
+        return redirect()->route('address.index', $userId)->with('update', true);
     }
 
     public function destroy($userId, $addressId)
     {
         Address::destroy($addressId);
 
-        return redirect()->route('address.index', $userId);
+        return redirect()->route('address.index', $userId)->with('remove', true);
     }
 }
