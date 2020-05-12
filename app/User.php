@@ -163,6 +163,6 @@ class User extends Authenticatable
 
     public function receipts()
     {
-        return $this->hasMany(Receipt::class);
+        return $this->hasMany(Receipt::class,'userId');
     }
 }
