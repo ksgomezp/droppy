@@ -14,11 +14,11 @@
                     <b>{{ __('users.dateOfBirth') }}: </b> {{ $data['user']->getDateOfBirth() }} <br/>
                     <b>{{ __('users.wallet') }}: </b> {{ $data['user']->getWallet() }} <br/>
                     <br/>
-                    <form method="POST" action="{{ route('admin.users.destroy', $data['user']->getId()) }}">
+                    <form method="POST" action="{{ route('admin.user.destroy', $data['user']->getId()) }}">
                         @method('DELETE')
                         @csrf
                         <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />
-                        <a class="btn btn-secondary" href="{{ route('admin.users.index') }}">{{ __('buttons.back') }}</a>
+                        <a class="btn btn-secondary" href="{{ route('admin.user.index') }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>
             </div>

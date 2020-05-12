@@ -7,26 +7,26 @@ Route::get('/', 'ProductController@index')->name('product.index');
 Route::get('/home', 'HomeController@index')->name('home.index');
 // Admins
 //Route::group(['middleware' => 'Admin'], function () {
-Route::get('/admin', 'AdminUsersController@index')->name('admin.users.index');
-Route::get('admin/users/{userId}', 'AdminUsersController@show')->name('admin.users.show');
-Route::get('admin/users/buyers', 'AdminUsersController@buyers')->name('admin.users.buyers');
-Route::delete('admin/users/{userId}', 'AdminUsersController@destroy')->name('admin.users.destroy');
+    Route::get('/admin', 'AdminUsersController@index')->name('admin.user.index');
+    Route::get('admin/user/{userId}', 'AdminUsersController@show')->name('admin.user.show');
+    Route::get('buyer', 'AdminUsersController@buyer')->name('admin.user.buyer');
+    Route::delete('admin/user/{userId}', 'AdminUsersController@destroy')->name('admin.user.destroy');
 //});
 
 // Users
 //Route::resource('admin/users', 'AdminUsersController');
 //Route::get('users', 'UserController@index')->name('user.index');
-//Route::get('users/{userId}', 'UserController@show')->name('user.show');
-Route::get('users/buyers/{userId}', 'UserController@buyers')->name('user.buyers');
+Route::get('users/{userId}', 'UserController@show')->name('user.show');
+//Route::get('users/buyer', 'UserController@buyer')->name('admin.user.buyer');
 Route::delete('users/{userId}', 'UserController@destroy')->name('user.destroy');
 Auth::routes();
 
 // Products
 Route::get('products', 'ProductController@index')->name('product.index');
-Route::get('admin/products/create', 'ProductController@create')->name('admin.products.create');
+Route::get('admin/products/create', 'ProductController@create')->name('admin.product.create');
 Route::post('products', 'ProductController@store')->name('product.store');
 Route::get('products/{productId}', 'ProductController@show')->name('product.show');
-Route::get('products/{productId}/edit', 'ProductController@edit')->name('product.edit');
+Route::get('admin/products/{productId}/edit', 'ProductController@edit')->name('admin.product.edit');
 Route::patch('products/{productId}', 'ProductController@update')->name('product.update');
 Route::delete('products/{productId}', 'ProductController@destroy')->name('product.destroy');
 Route::get('search', 'ProductController@search')->name('product.search');
@@ -40,7 +40,7 @@ Route::get('receipts/{receiptId}', 'ReceiptController@show')->name('receipt.show
 
 // Categories
 Route::get('categories', 'CategoryController@index')->name('category.index');
-Route::get('admin/categories/create', 'CategoryController@create')->name('admin.categories.create');
+Route::get('admin/categories/create', 'CategoryController@create')->name('admin.category.create');
 Route::post('categories', 'CategoryController@store')->name('category.store');
 
 // Comments

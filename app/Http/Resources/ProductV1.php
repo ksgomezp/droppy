@@ -15,10 +15,10 @@ class ProductV1 extends JsonResource
             'name' => $this->getName(),
             'description' => $this->getDescription(),
             // 'category' => Category::findOrFail($this->getId())->getName(),
-            'image' => config('app.url') . ':8000' . Storage::url($this->getImage()),
+            'image' => config('app.url') . '/public' . Storage::url($this->getImage()),
             // 'stock' => $this->getStock(),
             'price' => $this->getPrice(),
-            'url' => config('app.url') . ':8000' . '/products/' . $this->getId()
+            'url' => config('app.url') . '/public/' . 'products/' . $this->getId()
         ];
     }
 }

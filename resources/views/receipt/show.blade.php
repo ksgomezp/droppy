@@ -8,9 +8,9 @@
         <div class="col-md-8">
             @include('util.message')
             <div class="card">
-                <div class="card-header font-weight-bold">{{ $data['receipt']->getId() }}</div>
+
+                <div class="card-header font-weight-bold">{{ __('receipts.receipt') }}</div>
                 <div class="card-body">
-                    <div class="card-header font-weight-bold">{{ __('receipts.receipt') }}</div>
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
@@ -36,7 +36,10 @@
                             <tr>
                                 <td></td>
                                 <td></td>
+<<<<<<< HEAD
                                 <td></td>
+=======
+>>>>>>> master
                                 <td><b>{{ __('shoppingCart.totalAmount') }}</b></td>
                                 <td>{{$data['totalAmount']}}</td>
 
@@ -45,8 +48,13 @@
                     </table>
                     <td><b>{{ __('receipts.address') }}</b>{{$data['receipt']->getAddress()}}</td>
                     <br></br>
+<<<<<<< HEAD
                     <a class="btn btn-secondary" href="{{ route('receipt.index') }}">{{ __('buttons.back') }}</a>
 
+=======
+
+                    <a class="btn btn-secondary" href="{{ route('receipt.index') }}">{{ __('buttons.back') }}</a>
+>>>>>>> master
                 </div>
             </div>
         </div>

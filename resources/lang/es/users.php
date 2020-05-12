@@ -9,5 +9,7 @@ return [
     'phone' => 'Teléfono',
     'email' => 'Correo electrónico',
     'dateOfBirth' => 'Fecha de nacimiento',
-    'wallet' => 'Billetera'
+    'wallet' => 'Billetera',
+    'bestBuyer' => 'Mejor Comprador',
+    'myAccount' => 'Mi Cuenta'
 ];

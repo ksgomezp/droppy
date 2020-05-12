@@ -9,5 +9,7 @@ return [
     'delete' => 'Borrado satisfactoriamente!',
     'remove' => 'Quitado satisfactoriamente!',
     'successfulPurchase' => 'Compra satisfactoria!',
-    'paymentError' => 'Error en el pago - revise su saldo'
+    'paymentError' => 'Error en el pago - revise su saldo',
+    'notComments' => 'No hay productos con comentarios aun',
+    'notSales' => 'No hay productos vendidos aun'
 ];

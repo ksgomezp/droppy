@@ -26,14 +26,17 @@
                         @csrf
                         @if(Auth::user())
                         @if(!Auth::user()->admin())
-                        <a class="btn btn-primary" href="{{ route('comment.create', $data['product']->getId()) }}">{{ __('comments.comment') }}</a>
+                        <a class="btn btn-primary"
+                            href="{{ route('comment.create', $data['product']->getId()) }}">{{ __('comments.comment') }}</a>
                         <input class="btn btn-warning" type="submit" value="{{ __('shoppingCart.addToCart') }}" />
                         @endif
                         @if(Auth::user()->admin())
-
+                        <a class="btn btn-success"
+                            href="{{ route('admin.product.edit', $data['product']->getId()) }}">{{ __('buttons.edit') }}</a>
                         @endif
                         @endif
-                        <a class="btn btn-info" href="{{ route('comment.index', $data['product']->getId()) }}">{{ __('comments.viewComments') }}</a>
+                        <a class="btn btn-info"
+                            href="{{ route('comment.index', $data['product']->getId()) }}">{{ __('comments.viewComments') }}</a>
 
                         <a class="btn btn-secondary" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
                     </form>

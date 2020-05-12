@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'failed' => 'Estas credencias con coinciden con nuestros registros.',
+    'failed' => 'Estas credenciales con coinciden con nuestros registros.',
     'throttle' => 'Demasiados intentos de ingreso. Por favor inténtelo de nuevo en :seconds segundos.',
     'confirm' => 'Confirmar contraseña',
     'reset' => 'Restaurar contraseña',
