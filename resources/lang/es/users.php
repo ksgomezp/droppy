@@ -10,7 +10,7 @@ return [
     'email' => 'Correo electrónico',
     'dateOfBirth' => 'Fecha de nacimiento',
     'wallet' => 'Billetera',
-    'bestBuyer' => 'Mejor Comprador',
+    'bestBuyer' => 'Top 3 Compradores',
     'myAccount' => 'Mi Cuenta',
     'editUser' => 'Editar usuario'
 ];

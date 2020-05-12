@@ -1,6 +1,9 @@
 <?php
 // API UNITOR
 Route::get('/courses', 'CourseController@index')->name('api.course.index');
+// Api jsonplaceholder
+Route::get('/posts', 'PostsController@index')->name('posts.index');
+Route::get('/posts/{id}', 'PostsController@show')->name('posts.show');
 
 // Home
 Route::get('/', 'ProductController@index')->name('product.index');

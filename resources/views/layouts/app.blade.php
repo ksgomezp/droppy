@@ -62,8 +62,12 @@
                 <a class="navbar-brand" href="{{ route('api.course.index') }}">
                     {{ __('courses.api') }}
                 </a>
+                <a class="navbar-brand" href="{{ route('posts.index') }}">
+                    {{ __('posts.api') }}
+                </a>
                 @endif
                 @endif
+                
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
