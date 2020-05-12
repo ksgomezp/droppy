@@ -57,13 +57,27 @@
                             <option value="{{ $address }}">{{ $address }}</option>
                             @endforeach
                         </select>
+                        @if ($data["addressesStr"])
                         <input class="form-control" type="hidden" name="data" value="{{ $data['json'] }}" />
+                        @else
+
+                        <div class="alert alert-danger alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>{{ __('messages.notAddress') }}</strong>
+                        </div>
+
+                        <input class="form-control" type="hidden" name="data" value="{{ $data['json'] }}" disabled />
+                        @endif
+
 
 
                     </div>
-
+                    @if ($data["addressesStr"])
                     <input class="btn btn-warning" type="submit" value="{{ __('buttons.buy') }}" />
+                    @else
+                    <input class="btn btn-warning" type="submit" value="{{ __('buttons.buy') }}" disabled />
 
+                    @endif
                     <a class="btn btn-secondary" href="{{ route('shoppingCart.index') }}">{{ __('buttons.back') }}</a>
 
                 </form>

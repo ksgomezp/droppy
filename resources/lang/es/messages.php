@@ -8,8 +8,10 @@ return [
     'add' => 'Añadido satisfactoriamente!',
     'delete' => 'Borrado satisfactoriamente!',
     'remove' => 'Quitado satisfactoriamente!',
+    'update' => 'Actualizado satisfactoriamente!',
     'successfulPurchase' => 'Compra satisfactoria!',
     'paymentError' => 'Error en el pago - revise su saldo',
-    'notComments' => 'No hay productos con comentarios aun',
-    'notSales' => 'No hay productos vendidos aun'
+    'notComments' => 'No hay productos con comentarios aún',
+    'notSales' => 'No hay productos vendidos aún',
+    'notAddress' => 'No hay direcciones, por favor vaya a Mi Cuenta y cree direcciones'
 ];
