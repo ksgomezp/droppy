@@ -62,20 +62,13 @@ class AdminUsersController extends Controller
     public function buyer()
     {
         $data = [];
-
-        $wallets = User::all();
-        $minval = 110000;
-        $bestBuyer = null;
-
-        foreach ($wallets as $wallet) {
-            /*if ($wallet < $minval) {
-                $minval = $wallet;              
-            }*/
-            $bestBuyer = $wallet;
+        $data['users'] = User::has('receipts')->withCount('receipts')->orderBy('receipts_count', 'desc')->take(3)->get();
+        if (sizeof($data['users']) > 0) {
+            return view('admin.user.index')->with('data', $data);
+        } else {
+            return redirect()->back();
         }
-        
-        $data['users'] = $wallets;
 
-        return view('admin.user.index')->with('data', $data);
+        
     }
 }
