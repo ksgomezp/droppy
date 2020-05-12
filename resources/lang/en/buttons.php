@@ -14,5 +14,7 @@ return [
     'buy' => 'Buy',
     'remove' => 'Remove',
     'back' => 'Back',
-    'reviewOrder' => 'Review Order'
+    'reviewOrder' => 'Review Order',
+    'view' => 'View'
+    
 ];
