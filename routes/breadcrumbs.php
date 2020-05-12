@@ -31,6 +31,12 @@ Breadcrumbs::for('showComments', function ($trail, $product) {
     $trail->push(__('comments.viewComments'));
 });
 
+// Home > Products > [product name] > Edit
+Breadcrumbs::for('editProduct', function ($trail, $product) {
+    $trail->parent('product', $product);
+    $trail->push(__('products.editProduct'));
+});
+
 
 //Receipts
 
@@ -78,7 +84,7 @@ Breadcrumbs::for('myAccount', function ($trail, $user) {
 
 Breadcrumbs::for('editUser', function ($trail, $user) {
     $trail->parent('myAccount',  $user);
-    $trail->push(__('users.editUser'), route('admin.user.update', $user->getId()));
+    $trail->push(__('users.editUser'), route('user.update', $user->getId()));
 });
 
 // My Account > Create Address
@@ -97,4 +103,24 @@ Breadcrumbs::for('viewAddress', function ($trail, $user) {
 Breadcrumbs::for('editAddress', function ($trail, $user) {
     $trail->parent('viewAddress', $user);
     $trail->push(__('addresses.editAddress'));
+});
+
+//Users
+
+// Home > Users
+Breadcrumbs::for('users', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('users.users'), route('admin.user.index'));
+});
+
+// Home > Users > [user name]
+Breadcrumbs::for('user', function ($trail, $user) {
+    $trail->parent('users');
+    $trail->push($user->getName(), route('admin.user.show', $user->getId()));
+});
+
+// Home > Users > [user name] > Edit
+Breadcrumbs::for('adminUserEdit', function ($trail, $user) {
+    $trail->parent('user', $user);
+    $trail->push(__('users.editUser'), route('admin.user.update', $user->getId()));
 });

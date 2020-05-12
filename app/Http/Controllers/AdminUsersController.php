@@ -42,7 +42,7 @@ class AdminUsersController extends Controller
         */
         $user->update($attributes);
 
-        return redirect()->route('user.show', $userId);
+        return redirect()->route('admin.user.show', $userId);
     }
 
     public function update($userId)

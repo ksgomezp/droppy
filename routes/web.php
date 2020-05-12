@@ -19,6 +19,8 @@ Route::get('/home', 'HomeController@index')->name('home.index');
 //Route::resource('admin/users', 'AdminUsersController');
 //Route::get('users', 'UserController@index')->name('user.index');
 Route::get('users/{userId}', 'UserController@show')->name('user.show');
+Route::patch('users/{userId}', 'UserController@edit')->name('user.edit');
+Route::get('users/{userId}/edit', 'UserController@update')->name('user.update');
 //Route::get('users/buyer', 'UserController@buyer')->name('admin.user.buyer');
 Route::delete('users/{userId}', 'UserController@destroy')->name('user.destroy');
 Auth::routes();
