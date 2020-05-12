@@ -19,4 +19,4 @@ Droppy al tiempo que nos representa un beneficio económico ya que cobramos una 
 
 ## 4. Diagrama de Arquitectura
 
-![mvc](droppy-mvc.png)
+![mvc](Droppy-MVC.png)
