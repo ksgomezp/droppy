@@ -15,8 +15,8 @@ class Admin
     }
 
     public function handle($request, Closure $next)
-    {
-        if($this->auth->user()->admin())
+    {   
+        if(Auth()->user()->getType()=='admin')
         {
             return $next($request);
         }
