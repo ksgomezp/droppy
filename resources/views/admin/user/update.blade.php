@@ -17,7 +17,7 @@
                     </ul>
                     @endif
 
-                    <form method="POST" action="{{ route('admin.user.update', $data['user']->getId()) }}"
+                    <form method="POST" action="{{ route('admin.user.edit', $data['user']->getId()) }}"
                         enctype="multipart/form-data">
                         @method('PATCH')
                         @csrf
@@ -27,11 +27,7 @@
                                 value="{{ $data['user']->getName() }}" />
                         </div>
 
-                        <div class="form-group">
-                            <label>{{ __('users.email') }}</label>
-                            <input class="form-control" type="text" name="email"
-                                value="{{ $data['user']->getEmail() }}" />
-                        </div>
+                        
 
                         <div class="form-group">
                             <label>{{ __('users.dateOfBirth') }}</label>
@@ -40,17 +36,26 @@
                         </div>
 
                         <div class="form-group">
+                            <label>{{ __('users.phone') }}</label>
+                            <input class="form-control" type="text" name="phone"
+                                value="{{ $data['user']->getPhone() }}" />
+                        </div>
+                        @if(Auth::user())
+                        @if(Auth::user()->admin())
+                        <div class="form-group">
                             <label>{{ __('users.wallet') }}</label>
                             <input class="form-control" type="text" name="wallet"
                                 value="{{ $data['user']->getWallet() }}" />
                         </div>
+                        @endif
+                        @endif
 
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.save') }}" />
-<<<<<<< HEAD:resources/views/admin/users/update.blade.php
+
+                        <a class="btn btn-light" href="{{ route('admin.user.index') }}">{{ __('buttons.back') }}</a>
+
                         <a class="btn btn-secondary" href="{{ route('admin.products.index') }}">{{ __('buttons.back') }}</a>
-=======
-                        <a class="btn btn-light" href="{{ route('admin.product.index') }}">{{ __('buttons.back') }}</a>
->>>>>>> master:resources/views/admin/user/update.blade.php
+
                     </form>
                 </div>
             </div>

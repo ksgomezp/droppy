@@ -54,6 +54,16 @@ class User extends Authenticatable
             
         ]);
     }
+    public static function validateEdit(Request $request)
+    {
+        $request->validate([
+            
+            'name' => 'required|max:50',
+            'phone' => 'required|numeric|min:3000000000',
+            'dateOfBirth' => 'required|date',
+            
+        ]);
+    }
 
     public function getId()
     {
