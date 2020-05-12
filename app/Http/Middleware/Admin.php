@@ -22,7 +22,7 @@ class Admin
         }
         else
         {
-            dd("acceso denegado");
+            dd( 'Access Denied' );
         }
 
         

@@ -1,6 +1,7 @@
 <?php
 // API UNITOR
 Route::get('/courses', 'CourseController@index')->name('api.course.index');
+
 // Api jsonplaceholder
 Route::get('/posts', 'PostsController@index')->name('posts.index');
 Route::get('/posts/{id}', 'PostsController@show')->name('posts.show');
@@ -8,6 +9,7 @@ Route::get('/posts/{id}', 'PostsController@show')->name('posts.show');
 // Home
 Route::get('/', 'ProductController@index')->name('product.index');
 Route::get('/home', 'HomeController@index')->name('home.index');
+
 // Admins
 Route::group(['middleware' => 'Admin'], function () {
     Route::get('/admin', 'AdminUsersController@index')->name('admin.user.index');
@@ -16,6 +18,8 @@ Route::group(['middleware' => 'Admin'], function () {
     Route::patch('admin/user/{userId}', 'AdminUsersController@edit')->name('admin.user.edit');
     Route::get('buyer', 'AdminUsersController@buyer')->name('admin.user.buyer');
     Route::delete('admin/user/{userId}', 'AdminUsersController@destroy')->name('admin.user.destroy');
+    Route::get('admin/products/create', 'ProductController@create')->name('admin.product.create');
+    Route::get('admin/products/{productId}/edit', 'ProductController@edit')->name('admin.product.edit');
 });
 
 // Users
@@ -30,10 +34,8 @@ Auth::routes();
 
 // Products
 Route::get('products', 'ProductController@index')->name('product.index');
-Route::get('admin/products/create', 'ProductController@create')->name('admin.product.create');
 Route::post('products', 'ProductController@store')->name('product.store');
 Route::get('products/{productId}', 'ProductController@show')->name('product.show');
-Route::get('admin/products/{productId}/edit', 'ProductController@edit')->name('admin.product.edit');
 Route::patch('products/{productId}', 'ProductController@update')->name('product.update');
 Route::delete('products/{productId}', 'ProductController@destroy')->name('product.destroy');
 Route::get('search', 'ProductController@search')->name('product.search');
