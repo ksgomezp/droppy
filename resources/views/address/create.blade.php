@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", __('addresses.createAddress'))
-
+@section('breadcrumbs', Breadcrumbs::render('createAddress', $data['user']))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -60,7 +60,7 @@
                             <input class="form-control" type="text" placeholder="Enter postalCode" name="postalCode" value="{{ old('postalCode') }}" />
                         </div>
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.create') }}" />
-                        <a class="btn btn-secondary" href="{{ route('admin.users.show', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
+                        <a class="btn btn-secondary" href="{{ route('user.show', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>
             </div>

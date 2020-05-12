@@ -9,8 +9,9 @@
             @include('util.message')
             <div class="card-body">
                 <div class="card-header font-weight-bold">{{ __('shoppingCart.shoppingCart') }}</div>
-
-
+                <br />
+                <div><strong>{{ __('users.wallet') }}:</strong> {{ $data['user']->getWallet() }}</div>
+                <br />
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>

@@ -43,7 +43,7 @@ Breadcrumbs::for('receipts', function ($trail) {
 // Home > Receipts > [receipt id]
 Breadcrumbs::for('receipt', function ($trail, $receipt) {
     $trail->parent('receipts');
-    $trail->push($receipt->getId(), route('receipt.show',$receipt->getId()));
+    $trail->push($receipt->getId(), route('receipt.show', $receipt->getId()));
 });
 
 
@@ -61,3 +61,35 @@ Breadcrumbs::for('reviewOrder', function ($trail) {
     $trail->push(__('shoppingCart.reviewOrder'), route('shoppingCart.review'));
 });
 
+//Unitor Api
+
+// Home > Unitor Api
+Breadcrumbs::for('unitorApi', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('courses.api'), route('api.course.index'));
+});
+
+//My Account
+
+// My Account
+Breadcrumbs::for('myAccount', function ($trail, $user) {
+    $trail->push(__('users.myAccount'), route('user.show', $user->getId()));
+});
+
+// My Account > Create Address
+Breadcrumbs::for('createAddress', function ($trail, $user) {
+    $trail->parent('myAccount',  $user);
+    $trail->push(__('addresses.createAddress'), route('address.create', $user->getId()));
+});
+
+// My Account > View address
+Breadcrumbs::for('viewAddress', function ($trail, $user) {
+    $trail->parent('myAccount',  $user);
+    $trail->push(__('addresses.viewAddress'), route('address.index', $user->getId()));
+});
+
+// My Account > View address > Edit
+Breadcrumbs::for('editAddress', function ($trail, $user) {
+    $trail->parent('viewAddress', $user);
+    $trail->push(__('addresses.viewAddress'));
+});

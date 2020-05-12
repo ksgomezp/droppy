@@ -18,6 +18,7 @@ class ShoppingCartController extends Controller
     public function index(Request $request)
     {
         $data = [];
+        $data['user'] = Auth::user();
         $data['products'] = [];
         $productsId = $request->session()->get('products');
 
@@ -71,6 +72,7 @@ class ShoppingCartController extends Controller
         $data['states'] = [];
         $data['countries'] = [];
         $data['addressesStr'] = [];
+        $data['wallet'] = Auth::user()->wallet;
 
         foreach ($data['addresses'] as $address) {
             $data['cities'][] = City::findOrFail($address->getCityId());

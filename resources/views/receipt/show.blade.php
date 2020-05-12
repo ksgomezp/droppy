@@ -36,10 +36,6 @@
                             <tr>
                                 <td></td>
                                 <td></td>
-<<<<<<< HEAD
-                                <td></td>
-=======
->>>>>>> master
                                 <td><b>{{ __('shoppingCart.totalAmount') }}</b></td>
                                 <td>{{$data['totalAmount']}}</td>
 
@@ -48,13 +44,8 @@
                     </table>
                     <td><b>{{ __('receipts.address') }}</b>{{$data['receipt']->getAddress()}}</td>
                     <br></br>
-<<<<<<< HEAD
-                    <a class="btn btn-secondary" href="{{ route('receipt.index') }}">{{ __('buttons.back') }}</a>
-
-=======
 
                     <a class="btn btn-secondary" href="{{ route('receipt.index') }}">{{ __('buttons.back') }}</a>
->>>>>>> master
                 </div>
             </div>
         </div>

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section("title", __('addresses.addresses'))
-
+@section('breadcrumbs', Breadcrumbs::render('viewAddress', $data['user']))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header font-weight-bold">{{ $data['user']->getName() }} - {{ __('addresses.addresses') }}</div>
+                <div class="card-header font-weight-bold">{{ __('addresses.addresses') }}</div>
                 <div class="card-body">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
@@ -41,7 +41,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a class="btn btn-secondary" href="{{ route('admin.users.show', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
+                    <a class="btn btn-secondary" href="{{ route('user.show', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
                 </div>
             </div>
         </div>
