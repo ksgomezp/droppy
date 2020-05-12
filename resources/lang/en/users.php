@@ -10,7 +10,7 @@ return [
     'email' => 'E-mail',
     'dateOfBirth' => 'Date of birth',
     'wallet' => 'Wallet',
-    'bestBuyer' => 'Best Buyer',
+    'bestBuyer' => 'Top 3 Buyers',
     'myAccount' => 'My Account'
 
 ];
