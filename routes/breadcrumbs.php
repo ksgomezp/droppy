@@ -13,6 +13,12 @@ Breadcrumbs::for('products', function ($trail) {
     $trail->push(__('products.products'), route('product.index'));
 });
 
+// Home > Create products
+Breadcrumbs::for('createProduct', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('products.createProduct'));
+});
+
 // Home > Products > [product name]
 Breadcrumbs::for('product', function ($trail, $product) {
     $trail->parent('products');
@@ -123,4 +129,18 @@ Breadcrumbs::for('user', function ($trail, $user) {
 Breadcrumbs::for('adminUserEdit', function ($trail, $user) {
     $trail->parent('user', $user);
     $trail->push(__('users.editUser'), route('admin.user.update', $user->getId()));
+});
+
+//Category
+
+// Home > Categories
+Breadcrumbs::for('categories', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('categories.categories'));
+});
+
+// Home > Create category
+Breadcrumbs::for('createCategory', function ($trail) {
+    $trail->parent('home');
+    $trail->push(__('categories.createCategory'));
 });
