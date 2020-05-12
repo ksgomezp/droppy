@@ -68,7 +68,7 @@
                         </div>
 
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.save') }}" />
-                        <a class="btn btn-light"
+                        <a class="btn btn-secondary"
                             href="{{ route('address.index', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", $data['receipt']->getId())
-
+@section('breadcrumbs', Breadcrumbs::render('receipt',$data['receipt']))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -10,43 +10,43 @@
             <div class="card">
                 <div class="card-header font-weight-bold">{{ $data['receipt']->getId() }}</div>
                 <div class="card-body">
-                <div class="card-header font-weight-bold">{{ __('receipts.receipt') }}</div>
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>{{ __('products.name') }}</th>
-                            <th>{{ __('products.price') }}</th>
-                            <th>{{ __('items.quantity') }}</th>
-                            <th>{{ __('items.subtotal') }}</th>
-                        </tr>
+                    <div class="card-header font-weight-bold">{{ __('receipts.receipt') }}</div>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>{{ __('products.name') }}</th>
+                                <th>{{ __('products.price') }}</th>
+                                <th>{{ __('items.quantity') }}</th>
+                                <th>{{ __('items.subtotal') }}</th>
+                            </tr>
 
-                    </thead>
-                    <tbody>
-                        @if($data["receipt"])
-                        @foreach($data["receipt"]->items as $item)
-                        <tr>
-                            <td>{{ $item->productTemp($item->getProductId())->getName()}}</td>
-                            <td>{{ $item->productTemp($item->getProductId())->getPrice() }}</td>
-                            <td>{{ $item->getQuantity() }}</td>
-                            <td>{{ $item->getSubtotal() }}</td>
+                        </thead>
+                        <tbody>
+                            @if($data["receipt"])
+                            @foreach($data["receipt"]->items as $item)
+                            <tr>
+                                <td>{{ $item->productTemp($item->getProductId())->getName()}}</td>
+                                <td>{{ $item->productTemp($item->getProductId())->getPrice() }}</td>
+                                <td>{{ $item->getQuantity() }}</td>
+                                <td>{{ $item->getSubtotal() }}</td>
 
-                        </tr>
-                        @endforeach
-                        @endif
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><b>{{ __('shoppingCart.totalAmount') }}</b></td>
-                            <td>{{$data['totalAmount']}}</td>
+                            </tr>
+                            @endforeach
+                            @endif
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><b>{{ __('shoppingCart.totalAmount') }}</b></td>
+                                <td>{{$data['totalAmount']}}</td>
 
-                        </tr>
-                    </tbody>
-                </table>
-                <td><b>{{ __('receipts.address') }}</b>{{$data['receipt']->getAddress()}}</td>
-                <br></br>
-                <a class="btn btn-light" href="{{ route('receipt.index') }}">{{ __('buttons.back') }}</a>
-                    
+                            </tr>
+                        </tbody>
+                    </table>
+                    <td><b>{{ __('receipts.address') }}</b>{{$data['receipt']->getAddress()}}</td>
+                    <br></br>
+                    <a class="btn btn-secondary" href="{{ route('receipt.index') }}">{{ __('buttons.back') }}</a>
+
                 </div>
             </div>
         </div>

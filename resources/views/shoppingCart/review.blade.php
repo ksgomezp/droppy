@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", __('shoppingCart.reviewOrder'))
-
+@section('breadcrumbs', Breadcrumbs::render('reviewOrder'))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

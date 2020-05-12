@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", $data['product']->getName())
-
+@section('breadcrumbs', Breadcrumbs::render('product',$data['product']))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -9,8 +9,7 @@
             @include('util.message')
             <div class="card">
                 <h5 class="card-header font-weight-bold bg-white text-dark">{{ $data['product']->getName() }}</h5>
-                <img class="card-img-top" src="{{ URL::asset('storage/' . $data['product']->getImage()) }}"
-                    alt="{{ $data['product']->getImage() }}">
+                <img class="card-img-top" src="{{ URL::asset('storage/' . $data['product']->getImage()) }}" alt="{{ $data['product']->getImage() }}">
                 <div class="card-body">
                     <p class="card-text">
                         <strong>{{ __('products.description') }}: </strong>{{ $data['product']->getDescription() }}
@@ -27,21 +26,19 @@
                         @csrf
                         @if(Auth::user())
                         @if(!Auth::user()->admin())
-                        <a class="btn btn-primary"
-                            href="{{ route('comment.create', $data['product']->getId()) }}">{{ __('comments.comment') }}</a>
-                            <input class="btn btn-warning" type="submit" value="{{ __('shoppingCart.addToCart') }}" />
+                        <a class="btn btn-primary" href="{{ route('comment.create', $data['product']->getId()) }}">{{ __('comments.comment') }}</a>
+                        <input class="btn btn-warning" type="submit" value="{{ __('shoppingCart.addToCart') }}" />
                         @endif
                         @if(Auth::user()->admin())
-                            
+
                         @endif
                         @endif
-                        <a class="btn btn-info"
-                            href="{{ route('comment.index', $data['product']->getId()) }}">{{ __('comments.viewComments') }}</a>
-                        
+                        <a class="btn btn-info" href="{{ route('comment.index', $data['product']->getId()) }}">{{ __('comments.viewComments') }}</a>
+
                         <a class="btn btn-secondary" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
-                    </form>                          
-                        
-                   
+                    </form>
+
+
                 </div>
             </div>
         </div>
