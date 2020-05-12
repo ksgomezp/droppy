@@ -2,6 +2,7 @@
 
 return [
     'api' => 'Api Placeholder',
-    'publications' => 'Publicaciones'
+    'publications' => 'Publicaciones',
+    'error' => 'Página No Encontrada'
 
 ];

@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-header font-weight-bold">{{ __('users.users') }}</div>
                 <div class="card-body">
-                <a class="btn btn-primary" href="{{ route('admin.user.buyer') }}">{{ __('users.bestBuyer') }}</a>
+                
                 <td></td>
                     <ul class="list-group">
                         @foreach($data['users'] as $user)
@@ -21,6 +21,7 @@
                         @endforeach
                     </ul>
                 </div>
+                <a class="btn btn-primary" href="{{ route('admin.user.buyer') }}">{{ __('users.bestBuyer') }}</a>
             </div>
         </div>
     </div>

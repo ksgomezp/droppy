@@ -12,5 +12,6 @@ return [
     'wallet' => 'Billetera',
     'bestBuyer' => 'Top 3 Compradores',
     'myAccount' => 'Mi Cuenta',
-    'editUser' => 'Editar usuario'
+    'editUser' => 'Editar usuario',
+    'denied' => 'Acceso Denegado'
 ];

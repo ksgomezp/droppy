@@ -12,6 +12,7 @@ return [
     'wallet' => 'Wallet',
     'bestBuyer' => 'Top 3 Buyers',
     'myAccount' => 'My Account',
-    'editUser' => 'Edit user'
+    'editUser' => 'Edit user',
+    'denied' => 'Access Denied'
 
 ];
