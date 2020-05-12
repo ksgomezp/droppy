@@ -112,7 +112,9 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('buttons.logout') }}
                                 </a>
-
+                                
+                                <a class="dropdown-item" href="{{ route('user.show', Auth::user()->getId()) }}">{{ __('users.myAccount') }}                                
+                                </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     style="display: none;">
                                     @csrf

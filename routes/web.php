@@ -7,17 +7,17 @@ Route::get('/', 'ProductController@index')->name('product.index');
 Route::get('/home', 'HomeController@index')->name('home.index');
 // Admins
 //Route::group(['middleware' => 'Admin'], function () {
-Route::get('/admin', 'AdminUsersController@index')->name('admin.user.index');
-Route::get('admin/users/{userId}', 'AdminUsersController@show')->name('admin.user.show');
-Route::get('admin/users/buyers', 'AdminUsersController@buyers')->name('admin.user.buyers');
-Route::delete('admin/users/{userId}', 'AdminUsersController@destroy')->name('admin.user.destroy');
+    Route::get('/admin', 'AdminUsersController@index')->name('admin.user.index');
+    Route::get('admin/user/{userId}', 'AdminUsersController@show')->name('admin.user.show');
+    Route::get('buyer', 'AdminUsersController@buyer')->name('admin.user.buyer');
+    Route::delete('admin/user/{userId}', 'AdminUsersController@destroy')->name('admin.user.destroy');
 //});
 
 // Users
 //Route::resource('admin/users', 'AdminUsersController');
 //Route::get('users', 'UserController@index')->name('user.index');
-//Route::get('users/{userId}', 'UserController@show')->name('user.show');
-Route::get('users/buyers/{userId}', 'UserController@buyers')->name('user.buyers');
+Route::get('users/{userId}', 'UserController@show')->name('user.show');
+//Route::get('users/buyer', 'UserController@buyer')->name('admin.user.buyer');
 Route::delete('users/{userId}', 'UserController@destroy')->name('user.destroy');
 Auth::routes();
 
