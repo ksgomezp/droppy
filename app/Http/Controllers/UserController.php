@@ -50,7 +50,7 @@ class UserController extends Controller
         */
         $user->update($attributes);
 
-        return redirect()->route('user.show', $userId);
+        return redirect()->route('user.show', $userId)->with('update', true);
     }
 
     public function update($userId)
@@ -65,6 +65,6 @@ class UserController extends Controller
     {
         User::destroy($userId);
 
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('delete', true);
     }
 }

@@ -26,6 +26,13 @@
 </div>
 @endif
 
+@if ($message = Session::get('update'))
+<div class="alert alert-success alert-block">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong>{{ __('messages.update') }}</strong>
+</div>
+@endif
+
 @if ($message = Session::get('successfulPurchase'))
 <div class="alert alert-success alert-block">
     <button type="button" class="close" data-dismiss="alert">×</button>
@@ -39,4 +46,20 @@
     <strong>{{ __('messages.paymentError') }}</strong>
 </div>
 @endif
+
+@if ($message = Session::get('notSales'))
+<div class="alert alert-danger alert-block">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong>{{ __('messages.notSales') }}</strong>
+</div>
+@endif
+
+@if ($message = Session::get('notComments'))
+<div class="alert alert-danger alert-block">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong>{{ __('messages.notComments') }}</strong>
+</div>
+@endif
+
+
 

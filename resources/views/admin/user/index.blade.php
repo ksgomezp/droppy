@@ -8,6 +8,7 @@
     <div class="row justify-content-center">
 
         <div class="col-md-8">
+        @include('util.message')
             <div class="card">
                 <div class="card-header font-weight-bold">{{ __('users.users') }}</div>
                 <div class="card-body">

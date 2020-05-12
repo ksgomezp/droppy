@@ -5,6 +5,7 @@
 @section('content')
 
 <div class="container">
+    @include('util.message')
     <form method="GET" action="{{ route('product.search') }}">
         <div class="input-group mb-3">
             <input type="search" class="form-control" name="search" placeholder="{{ __('products.search') }}">
