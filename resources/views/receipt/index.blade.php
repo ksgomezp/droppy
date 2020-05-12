@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", __('receipts.receipt'))
-
+@section('breadcrumbs', Breadcrumbs::render('receipts'))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -25,7 +25,7 @@
                                     <td>{{ $receipt->getTotalAmount() }}</td>
                                     <td>{{ $receipt->getCreated() }}</td>
                                     <td><a class="btn btn-primary"
-                                            href="{{ route('receipt.show', $receipt->getId()) }}">{{ __('buttons.reviewOrder') }}</a>
+                                            href="{{ route('receipt.show', $receipt->getId()) }}">{{ __('buttons.view') }}</a>
                                     </td>
                                 </tr>
                                 @endforeach

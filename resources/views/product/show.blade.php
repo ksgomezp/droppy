@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", $data['product']->getName())
-
+@section('breadcrumbs', Breadcrumbs::render('product',$data['product']))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -9,8 +9,7 @@
             @include('util.message')
             <div class="card">
                 <h5 class="card-header font-weight-bold bg-white text-dark">{{ $data['product']->getName() }}</h5>
-                <img class="card-img-top" src="{{ URL::asset('storage/' . $data['product']->getImage()) }}"
-                    alt="{{ $data['product']->getImage() }}">
+                <img class="card-img-top" src="{{ URL::asset('storage/' . $data['product']->getImage()) }}" alt="{{ $data['product']->getImage() }}">
                 <div class="card-body">
                     <p class="card-text">
                         <strong>{{ __('products.description') }}: </strong>{{ $data['product']->getDescription() }}

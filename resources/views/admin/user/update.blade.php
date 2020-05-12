@@ -51,7 +51,11 @@
                         @endif
 
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.save') }}" />
+
                         <a class="btn btn-light" href="{{ route('admin.user.index') }}">{{ __('buttons.back') }}</a>
+
+                        <a class="btn btn-secondary" href="{{ route('admin.products.index') }}">{{ __('buttons.back') }}</a>
+
                     </form>
                 </div>
             </div>
