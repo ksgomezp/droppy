@@ -11,6 +11,7 @@ return [
     'dateOfBirth' => 'Date of birth',
     'wallet' => 'Wallet',
     'bestBuyer' => 'Top 3 Buyers',
-    'myAccount' => 'My Account'
+    'myAccount' => 'My Account',
+    'editUser' => 'Edit user'
 
 ];

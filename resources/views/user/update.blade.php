@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", $data['user']->getName())
-@section('breadcrumbs', Breadcrumbs::render('adminUserEdit',$data['user']))
+@section('breadcrumbs', Breadcrumbs::render('editUser',$data['user']))
 
 @section('content')
 <div class="container">
@@ -18,7 +18,7 @@
                     </ul>
                     @endif
 
-                    <form method="POST" action="{{ route('admin.user.edit', $data['user']->getId()) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('user.edit', $data['user']->getId()) }}" enctype="multipart/form-data">
                         @method('PATCH')
                         @csrf
                         <div class="form-group">
@@ -38,14 +38,9 @@
                             <input class="form-control" type="text" name="phone" value="{{ $data['user']->getPhone() }}" />
                         </div>
 
-                        <div class="form-group">
-                            <label>{{ __('users.wallet') }}</label>
-                            <input class="form-control" type="text" name="wallet" value="{{ $data['user']->getWallet() }}" />
-                        </div>
-
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.save') }}" />
 
-                        <a class="btn btn-secondary" href="{{ route('admin.user.show', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
+                        <a class="btn btn-secondary" href="{{ route('user.show', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
 
 
 

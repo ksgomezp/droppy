@@ -11,5 +11,6 @@ return [
     'dateOfBirth' => 'Fecha de nacimiento',
     'wallet' => 'Billetera',
     'bestBuyer' => 'Top 3 Compradores',
-    'myAccount' => 'Mi Cuenta'
+    'myAccount' => 'Mi Cuenta',
+    'editUser' => 'Editar usuario'
 ];

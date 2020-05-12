@@ -9,19 +9,21 @@ Route::get('/posts/{id}', 'PostsController@show')->name('posts.show');
 Route::get('/', 'ProductController@index')->name('product.index');
 Route::get('/home', 'HomeController@index')->name('home.index');
 // Admins
-//Route::group(['middleware' => 'Admin'], function () {
+Route::group(['middleware' => 'Admin'], function () {
     Route::get('/admin', 'AdminUsersController@index')->name('admin.user.index');
     Route::get('admin/user/{userId}', 'AdminUsersController@show')->name('admin.user.show');
     Route::get('admin/user/{userId}/edit', 'AdminUsersController@update')->name('admin.user.update');
     Route::patch('admin/user/{userId}', 'AdminUsersController@edit')->name('admin.user.edit');
     Route::get('buyer', 'AdminUsersController@buyer')->name('admin.user.buyer');
     Route::delete('admin/user/{userId}', 'AdminUsersController@destroy')->name('admin.user.destroy');
-//});
+});
 
 // Users
 //Route::resource('admin/users', 'AdminUsersController');
 //Route::get('users', 'UserController@index')->name('user.index');
 Route::get('users/{userId}', 'UserController@show')->name('user.show');
+Route::patch('users/{userId}', 'UserController@edit')->name('user.edit');
+Route::get('users/{userId}/edit', 'UserController@update')->name('user.update');
 //Route::get('users/buyer', 'UserController@buyer')->name('admin.user.buyer');
 Route::delete('users/{userId}', 'UserController@destroy')->name('user.destroy');
 Auth::routes();
@@ -38,6 +40,8 @@ Route::get('search', 'ProductController@search')->name('product.search');
 Route::get('mostComments', 'ProductController@mostComments')->name('product.mostComments');
 Route::get('topProducts', 'ProductController@topProducts')->name('product.topProducts');
 Route::get('topCategory', 'ProductController@topCategory')->name('product.topCategory');
+Route::get('orderByPrice', 'ProductController@orderByPrice')->name('product.orderByPrice');
+Route::get('orderByStock', 'ProductController@orderByStock')->name('product.orderByStock');
 
 // Receipts
 Route::get('receipts', 'ReceiptController@index')->name('receipt.index');
