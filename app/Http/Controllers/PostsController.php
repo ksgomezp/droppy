@@ -24,17 +24,25 @@ class PostsController extends Controller
 
     public function show($id)
     {
-       $client = new Client([
+        //throw new Exception( __(posts.error) );
+        try{
+            $client = new Client([
     
-            'base_uri' => 'https://jsonplaceholder.typicode.com',
+                'base_uri' => 'https://jsonplaceholder.typicode.com',
+        
+            ]);
     
-        ]);
-
-        $response = $client->request('GET', "posts/{$id}");
-
-        $posts = json_decode( $response->getBody()->getContents());
-
-        return view('posts.show', compact('posts'));
+            $response = $client->request('GET', "posts/{$id}");
+    
+            $posts = json_decode( $response->getBody()->getContents());
+    
+            return view('posts.show', compact('posts'));
+        }catch (Exception $e)
+        {
+            return view('posts.index', compact('posts'));
+            echo ( __(posts.error) );
+        }
+       
     }
     
 }

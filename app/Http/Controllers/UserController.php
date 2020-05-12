@@ -39,15 +39,6 @@ class UserController extends Controller
         $user = User::findOrFail($userId);
         $attributes = $request->all();
 
-        // If a new image is uploaded set the product's image attribute to match the image's name
-        /*if ($request->hasFile('image')) {
-            $storeInterface = app(ImageStorage::class);
-            $storeInterface->store($request);
-
-            $attributes = $request->only(['name', 'description', 'stock', 'price', 'categoryId']);
-            $attributes['image'] = $request->file('image')->getClientOriginalName();
-        }
-        */
         $user->update($attributes);
 
         return redirect()->route('user.show', $userId)->with('update', true);
