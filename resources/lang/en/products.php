@@ -21,4 +21,5 @@ return [
     'enterDescription' => 'Enter description',
     'enterStock' => 'Enter stock',
     'enterPrice' => 'Enter price',
+    'editProduct' => 'Edit product'
 ];

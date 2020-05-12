@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", __('users.user'))
-
+@section('breadcrumbs', Breadcrumbs::render('users'))
 @section('content')
 
 <div class="container">

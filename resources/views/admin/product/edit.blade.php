@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", $data['product']->getName())
-
+@section('breadcrumbs', Breadcrumbs::render('editProduct', $data['product']))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -17,20 +17,17 @@
                     </ul>
                     @endif
 
-                    <form method="POST" action="{{ route('product.update', $data['product']->getId()) }}"
-                        enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('product.update', $data['product']->getId()) }}" enctype="multipart/form-data">
                         @method('PATCH')
                         @csrf
                         <div class="form-group">
                             <label>{{ __('products.name') }}</label>
-                            <input class="form-control" type="text" name="name"
-                                value="{{ $data['product']->getName() }}" />
+                            <input class="form-control" type="text" name="name" value="{{ $data['product']->getName() }}" />
                         </div>
 
                         <div class="form-group">
                             <label>{{ __('products.description') }}</label>
-                            <input class="form-control" type="text" name="description"
-                                value="{{ $data['product']->getDescription() }}" />
+                            <input class="form-control" type="text" name="description" value="{{ $data['product']->getDescription() }}" />
                         </div>
 
                         <div class="form-group">
@@ -56,18 +53,16 @@
 
                         <div class="form-group">
                             <label>{{ __('products.stock') }}</label>
-                            <input class="form-control" type="text" name="stock"
-                                value="{{ $data['product']->getStock() }}" />
+                            <input class="form-control" type="text" name="stock" value="{{ $data['product']->getStock() }}" />
                         </div>
 
                         <div class="form-group">
                             <label>{{ __('products.price') }}</label>
-                            <input class="form-control" type="text" name="price"
-                                value="{{ $data['product']->getPrice() }}" />
+                            <input class="form-control" type="text" name="price" value="{{ $data['product']->getPrice() }}" />
                         </div>
 
                         <input class="btn btn-primary" type="submit" value="{{ __('buttons.save') }}" />
-                        <a class="btn btn-secondary" href="{{ route('product.index') }}">{{ __('buttons.back') }}</a>
+                        <a class="btn btn-secondary" href="{{ route('product.show', $data['product']->getId()) }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>
             </div>
