@@ -19,6 +19,7 @@
                         @csrf
                         <a class="btn btn-primary" href="{{ route('address.create', $data['user']->getId()) }}">{{ __('addresses.createAddress') }}</a>
                         <a class="btn btn-info" href="{{ route('address.index', $data['user']->getId()) }}">{{ __('addresses.viewAddress') }}</a>
+                        <a class="btn btn-success" href="{{ route('admin.user.update', $data['user']->getId()) }}">{{ __('buttons.edit') }}</a>
                         
                     </form>
                 </div>

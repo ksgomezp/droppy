@@ -18,6 +18,7 @@
                         @method('DELETE')
                         @csrf
                         <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />
+                        <a class="btn btn-success" href="{{ route('admin.user.update', $data['user']->getId()) }}">{{ __('buttons.edit') }}</a>
                         <a class="btn btn-secondary" href="{{ route('admin.user.index') }}">{{ __('buttons.back') }}</a>
                     </form>
                 </div>

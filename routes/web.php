@@ -9,6 +9,8 @@ Route::get('/home', 'HomeController@index')->name('home.index');
 //Route::group(['middleware' => 'Admin'], function () {
     Route::get('/admin', 'AdminUsersController@index')->name('admin.user.index');
     Route::get('admin/user/{userId}', 'AdminUsersController@show')->name('admin.user.show');
+    Route::get('admin/user/{userId}/edit', 'AdminUsersController@update')->name('admin.user.update');
+    Route::patch('admin/user/{userId}', 'AdminUsersController@edit')->name('admin.user.edit');
     Route::get('buyer', 'AdminUsersController@buyer')->name('admin.user.buyer');
     Route::delete('admin/user/{userId}', 'AdminUsersController@destroy')->name('admin.user.destroy');
 //});
