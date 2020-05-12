@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", __('shoppingCart.reviewOrder'))
-
+@section('breadcrumbs', Breadcrumbs::render('reviewOrder'))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -9,6 +9,9 @@
             @include('util.message')
             <div class="card-body">
                 <div class="card-header font-weight-bold">{{ __('shoppingCart.reviewOrder') }}</div>
+                <br />
+                <div><strong>{{ __('users.wallet') }}:</strong> {{ $data['wallet'] }}</div>
+                <br />
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
@@ -58,7 +61,7 @@
 
 
                     </div>
-                    
+
                     <input class="btn btn-warning" type="submit" value="{{ __('buttons.buy') }}" />
 
                     <a class="btn btn-secondary" href="{{ route('shoppingCart.index') }}">{{ __('buttons.back') }}</a>
