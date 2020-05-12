@@ -21,4 +21,5 @@ return [
     'enterDescription' => 'Ingrese la descripción',
     'enterStock' => 'Ingrese la cantidad de ejemplares',
     'enterPrice' => 'Ingrese el precio',
+    'editProduct' => 'Editar producto'
 ];
