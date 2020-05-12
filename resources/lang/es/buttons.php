@@ -14,5 +14,6 @@ return [
     'buy' => 'Comprar',
     'remove' => 'Quitar',
     'back' => 'Atrás',
-    'reviewOrder' => 'Verificar orden'
+    'reviewOrder' => 'Verificar orden',
+    'view' => 'Ver'
 ];

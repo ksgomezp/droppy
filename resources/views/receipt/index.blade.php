@@ -25,7 +25,7 @@
                                     <td>{{ $receipt->getTotalAmount() }}</td>
                                     <td>{{ $receipt->getCreated() }}</td>
                                     <td><a class="btn btn-primary"
-                                            href="{{ route('receipt.show', $receipt->getId()) }}">{{ __('buttons.reviewOrder') }}</a>
+                                            href="{{ route('receipt.show', $receipt->getId()) }}">{{ __('buttons.view') }}</a>
                                     </td>
                                 </tr>
                                 @endforeach
