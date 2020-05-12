@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Address;
+use App\Receipt;
+use App\Item;
 use Illuminate\Http\Request;
 
 class AdminUsersController extends Controller
@@ -53,7 +56,13 @@ class AdminUsersController extends Controller
     }
 
     public function destroy($userId)
-    {
+    {   
+        Address::where('usertId', $userId)->delete();
+        $receipts = Receipt::all()->where('usertId', $userId);
+        foreach ($receipts as $receipt) {
+            Item::where('receiptId', $receipt->getId())->delete();
+        }
+        Receipt::where('usertId', $userId)->delete();
         User::destroy($userId);
 
         return redirect()->route('admin.user.index');
