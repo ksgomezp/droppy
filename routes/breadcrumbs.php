@@ -91,5 +91,5 @@ Breadcrumbs::for('viewAddress', function ($trail, $user) {
 // My Account > View address > Edit
 Breadcrumbs::for('editAddress', function ($trail, $user) {
     $trail->parent('viewAddress', $user);
-    $trail->push(__('addresses.viewAddress'));
+    $trail->push(__('addresses.editAddress'));
 });

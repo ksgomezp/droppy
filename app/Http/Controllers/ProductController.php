@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use App\Comment;
-use Illuminate\Support\Facades\Lang;
 use Illuminate\Http\Request;
 use App\Interfaces\ImageStorage;
 
@@ -106,27 +105,24 @@ class ProductController extends Controller
         $data = [];
         //$data['products'] = Product::withCount('comments')->orderBy('comments_count', 'desc')->take(3)->get();
         $data['products'] = Product::has('comments')->withCount('comments')->orderBy('comments_count', 'desc')->take(3)->get();
-        if(sizeof($data['products'])>0){
+        if (sizeof($data['products']) > 0) {
             return view('product.index')->with('data', $data);
+        } else {
+            return redirect()->back();
         }
-        else{
-            return redirect()->back()->with('status', Lang::get('messages.notComments'));
-        }
-        
     }
 
     public function topProducts()
     {
 
         $data = [];
-       // $data['products'] = Product::withCount('items')->orderBy('items_count', 'desc')->take(3)->get();
-       $data['products'] = Product::has('items')->withCount('items')->orderBy('items_count', 'desc')->take(3)->get();
-       if(sizeof($data['products'])>0){
-           return view('product.index')->with('data', $data);
-       }
-       else{
-           return redirect()->back()->with('status', Lang::get('messages.notSales'));
-       }
+        // $data['products'] = Product::withCount('items')->orderBy('items_count', 'desc')->take(3)->get();
+        $data['products'] = Product::has('items')->withCount('items')->orderBy('items_count', 'desc')->take(3)->get();
+        if (sizeof($data['products']) > 0) {
+            return view('product.index')->with('data', $data);
+        } else {
+            return redirect()->back();
+        }
     }
 
     public function topCategory()
@@ -146,6 +142,23 @@ class ProductController extends Controller
 
         $data['products'] = $topCat;
 
+        return view('product.index')->with('data', $data);
+    }
+
+
+    public function orderByPrice()
+    {
+
+        $data = [];
+        $data['products'] = Product::all()->sortBy('price');
+        return view('product.index')->with('data', $data);
+    }
+
+    public function orderByStock()
+    {
+
+        $data = [];
+        $data['products'] = Product::all()->sortByDesc('stock');
         return view('product.index')->with('data', $data);
     }
 }

@@ -15,6 +15,8 @@ return [
     'commentedProducts' => 'Most commented products',
     'topProducts' => 'Top 3 selling products',
     'topCategory' => 'Category with most products',
+    'orderByPrice' => 'Order by price asc',
+    'orderByStock' => 'Order by stock desc',
     'enterName' => 'Enter name',
     'enterDescription' => 'Enter description',
     'enterStock' => 'Enter stock',
