@@ -33,6 +33,8 @@ Route::get('search', 'ProductController@search')->name('product.search');
 Route::get('mostComments', 'ProductController@mostComments')->name('product.mostComments');
 Route::get('topProducts', 'ProductController@topProducts')->name('product.topProducts');
 Route::get('topCategory', 'ProductController@topCategory')->name('product.topCategory');
+Route::get('orderByPrice', 'ProductController@orderByPrice')->name('product.orderByPrice');
+Route::get('orderByStock', 'ProductController@orderByStock')->name('product.orderByStock');
 
 // Receipts
 Route::get('receipts', 'ReceiptController@index')->name('receipt.index');

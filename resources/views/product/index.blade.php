@@ -22,6 +22,10 @@
         <a class="btn btn-primary" href="{{ route('product.topProducts') }}">{{ __('products.topProducts') }}</a>
         &nbsp;
         <a class="btn btn-primary" href="{{ route('product.topCategory') }}">{{ __('products.topCategory') }}</a>
+        &nbsp;
+        <a class="btn btn-primary" href="{{ route('product.orderByPrice') }}">{{ __('products.orderByPrice') }}</a>
+        &nbsp;
+        <a class="btn btn-primary" href="{{ route('product.orderByStock') }}">{{ __('products.orderByStock') }}</a>
     </div>
 
     <div class="row">
