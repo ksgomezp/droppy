@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section("title", $data['user']->getName())
+@section('breadcrumbs', Breadcrumbs::render('editUser',$data['user']))
 
 @section('content')
 <div class="container">
@@ -17,35 +18,30 @@
                     </ul>
                     @endif
 
-                    <form method="POST" action="{{ route('admin.user.edit', $data['user']->getId()) }}"
-                        enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.user.edit', $data['user']->getId()) }}" enctype="multipart/form-data">
                         @method('PATCH')
                         @csrf
                         <div class="form-group">
                             <label>{{ __('users.name') }}</label>
-                            <input class="form-control" type="text" name="name"
-                                value="{{ $data['user']->getName() }}" />
+                            <input class="form-control" type="text" name="name" value="{{ $data['user']->getName() }}" />
                         </div>
 
-                        
+
 
                         <div class="form-group">
                             <label>{{ __('users.dateOfBirth') }}</label>
-                            <input class="form-control" type="text" name="dateOfBirth"
-                                value="{{ $data['user']->getDateOfBirth() }}" />
+                            <input class="form-control" type="text" name="dateOfBirth" value="{{ $data['user']->getDateOfBirth() }}" />
                         </div>
 
                         <div class="form-group">
                             <label>{{ __('users.phone') }}</label>
-                            <input class="form-control" type="text" name="phone"
-                                value="{{ $data['user']->getPhone() }}" />
+                            <input class="form-control" type="text" name="phone" value="{{ $data['user']->getPhone() }}" />
                         </div>
                         @if(Auth::user())
                         @if(Auth::user()->admin())
                         <div class="form-group">
                             <label>{{ __('users.wallet') }}</label>
-                            <input class="form-control" type="text" name="wallet"
-                                value="{{ $data['user']->getWallet() }}" />
+                            <input class="form-control" type="text" name="wallet" value="{{ $data['user']->getWallet() }}" />
                         </div>
                         @endif
                         @endif
@@ -54,7 +50,7 @@
 
                         <a class="btn btn-secondary" href="{{ route('user.show', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
 
-                        
+
 
                     </form>
                 </div>

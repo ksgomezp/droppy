@@ -76,6 +76,11 @@ Breadcrumbs::for('myAccount', function ($trail, $user) {
     $trail->push(__('users.myAccount'), route('user.show', $user->getId()));
 });
 
+Breadcrumbs::for('editUser', function ($trail, $user) {
+    $trail->parent('myAccount',  $user);
+    $trail->push(__('users.editUser'), route('admin.user.update', $user->getId()));
+});
+
 // My Account > Create Address
 Breadcrumbs::for('createAddress', function ($trail, $user) {
     $trail->parent('myAccount',  $user);
