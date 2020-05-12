@@ -7,10 +7,10 @@ Route::get('/', 'ProductController@index')->name('product.index');
 Route::get('/home', 'HomeController@index')->name('home.index');
 // Admins
 //Route::group(['middleware' => 'Admin'], function () {
-    Route::get('/admin', 'AdminUsersController@index')->name('admin.users.index');
-    Route::get('admin/users/{userId}', 'AdminUsersController@show')->name('admin.users.show');
-    Route::get('buyer', 'AdminUsersController@buyer')->name('admin.users.buyer');
-    Route::delete('admin/users/{userId}', 'AdminUsersController@destroy')->name('admin.users.destroy');
+    Route::get('/admin', 'AdminUsersController@index')->name('admin.user.index');
+    Route::get('admin/user/{userId}', 'AdminUsersController@show')->name('admin.user.show');
+    Route::get('buyer', 'AdminUsersController@buyer')->name('admin.user.buyer');
+    Route::delete('admin/user/{userId}', 'AdminUsersController@destroy')->name('admin.user.destroy');
 //});
 
 // Users

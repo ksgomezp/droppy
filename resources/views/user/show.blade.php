@@ -18,11 +18,7 @@
                         @csrf
                         <a class="btn btn-primary" href="{{ route('address.create', $data['user']->getId()) }}">{{ __('addresses.createAddress') }}</a>
                         <a class="btn btn-info" href="{{ route('address.index', $data['user']->getId()) }}">{{ __('addresses.viewAddress') }}</a>
-                        @if(Auth::user())
-                        @if(Auth::user()->admin())
-                        <input class="btn btn-danger" type="submit" value="{{ __('buttons.delete') }}" />
-                        @endif
-                        @endif
+                        
                     </form>
                 </div>
             </div>

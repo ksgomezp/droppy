@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-    <a class="btn btn-primary" href="{{ route('admin.users.buyer') }}">{{ __('users.bestBuyer') }}</a>
+    <a class="btn btn-primary" href="{{ route('admin.user.buyer') }}">{{ __('users.bestBuyer') }}</a>
 </div>
 
 <div class="container">

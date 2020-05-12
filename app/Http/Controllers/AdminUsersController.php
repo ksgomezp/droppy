@@ -55,6 +55,6 @@ class AdminUsersController extends Controller
         
         $data['users'] = $wallets;
 
-        return view('admin.users.index')->with('data', $data);
+        return view('admin.user.index')->with('data', $data);
     }
 }

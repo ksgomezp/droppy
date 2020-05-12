@@ -41,7 +41,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a class="btn btn-light" href="{{ route('admin.users.show', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
+                    <a class="btn btn-light" href="{{ route('user.show', $data['user']->getId()) }}">{{ __('buttons.back') }}</a>
                 </div>
             </div>
         </div>
