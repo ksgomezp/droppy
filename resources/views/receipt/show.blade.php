@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", $data['receipt']->getId())
-
+@section('breadcrumbs', Breadcrumbs::render('receipt',$data['receipt']))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

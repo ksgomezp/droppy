@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", __('comments.createComment'))
-
+@section('breadcrumbs', Breadcrumbs::render('comment',$data['product']))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

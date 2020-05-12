@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section("title", __('courses.courses'))
-
+@section('breadcrumbs', Breadcrumbs::render('unitorApi'))
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

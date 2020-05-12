@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section("title", __('products.product'))
-
+@section('breadcrumbs', Breadcrumbs::render('products'))
 @section('content')
+
 <div class="container">
     <form method="GET" action="{{ route('product.search') }}">
         <div class="input-group mb-3">
@@ -28,13 +29,11 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <img class="card-img-top" src="{{ URL::asset('storage/' . $product->getImage()) }}"
-                        alt="{{ $product->getImage() }}" height="380" width="540">
+                    <img class="card-img-top" src="{{ URL::asset('storage/' . $product->getImage()) }}" alt="{{ $product->getImage() }}" height="380" width="540">
                     <div class="card-body">
                         <h5 class="card-title font-weight-bold">{{ $product->getName() }}</h5>
                         <p class="card-text">{{ $product->getDescription() }}</p>
-                        <a href="{{ route('product.show', $product->getId()) }}"
-                            class="btn btn-primary">{{ __('products.moreInfo') }}</a>
+                        <a href="{{ route('product.show', $product->getId()) }}" class="btn btn-primary">{{ __('products.moreInfo') }}</a>
                     </div>
                 </div>
             </div>
